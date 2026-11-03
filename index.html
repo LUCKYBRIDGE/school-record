@@ -1,123 +1,83 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f9fc">
-  <title>AI 평어 생성기 | Gemini Canvas 실행 안내</title>
-  <style>
-    :root{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;color:#17253d;background:#f7f9fc}
-    *{box-sizing:border-box}body{margin:0}main{max-width:800px;margin:0 auto;padding:44px 20px 80px}
-    .eyebrow{font-size:13px;font-weight:800;letter-spacing:.04em;color:#365dd5}
-    h1{font-size:clamp(27px,4.4vw,40px);letter-spacing:-.04em;margin:12px 0}
-    .intro{line-height:1.8;color:#526078;margin:0 0 28px}
-    .notice{border:1px solid #cbd8f6;background:#edf3ff;padding:16px 20px;border-radius:14px;color:#28436c;line-height:1.6;margin-bottom:26px}
-    .step{background:#fff;border:1px solid #e0e6ef;border-radius:20px;padding:26px;margin:18px 0;box-shadow:0 6px 22px #24345b08}
-    .heading{display:flex;align-items:center;gap:12px;margin-bottom:10px}.num{display:grid;place-items:center;border-radius:11px;background:#e8eeff;color:#254cbd;width:34px;height:34px;font-weight:800}
-    h2{font-size:21px;letter-spacing:-.03em;margin:0}p{line-height:1.7;color:#526078;margin:8px 0 15px}
-    button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:51px;padding:12px 20px;gap:9px;background:#2857d5;border:1px solid #2857d5;color:#fff;border-radius:11px;font:inherit;font-weight:750;cursor:pointer;text-decoration:none}
-    button:hover:not(:disabled),.button:hover{background:#1c46b5}button:disabled{cursor:not-allowed;opacity:.55}
-    .secondary{background:#fff;border-color:#cbd4e4;color:#263c63}.secondary:hover{background:#f0f4fc!important}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
-    .status{min-height:24px;font-size:14px;font-weight:650}.status.error{color:#bc3245}.status.ok{color:#1d7c4c}
-    details{border:1px solid #e2e7ee;border-radius:12px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;font-weight:650}
-    pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:280px;overflow:auto;background:#f5f7fa;padding:12px;border-radius:8px;font-size:12px}
-    ol{color:#40506c;line-height:1.95;padding-left:24px}a{color:#2857d5}
-    footer{font-size:13px;line-height:1.7;text-align:center;color:#758197;margin-top:32px}
-    @media(max-width:550px){main{padding-top:28px}.step{padding:20px}.actions>*{width:100%}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#edfbf7"><meta name="description" content="놀평어: 초등학교 생활기록부 AI 평어 생성 도구. 코드를 복사하여 Gemini Canvas에서 실행하세요.">
+<link rel="icon" href="./assets/nolpyeongeo-logo.svg" type="image/svg+xml">
+<title>놀평어 | AI 평어 생성 도구</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#162a39;background:#f8fbfa;font-synthesis:none}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}a{color:inherit}button{font:inherit;cursor:pointer}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #167dcb;outline-offset:3px}
+.wrap{max-width:1060px;padding:0 24px;margin:auto}.site-header{background:#fff;border-bottom:1px solid #e3ebe9}.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:18px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.brand img{width:50px;height:50px}.brand strong{font-size:25px;letter-spacing:-.06em}.brand small{display:block;font-size:12px;font-weight:650;color:#647773}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{font-size:13px;font-weight:750;text-decoration:none;padding:9px 12px;border:1px solid #e4ecea;border-radius:12px}.nav a:hover{background:#f0faf6}
+.hero{background:radial-gradient(ellipse at 88% 15%,#c7f9e9,transparent 52%),linear-gradient(125deg,#effdf8,#f4f7ff);padding:68px 0 59px;border-bottom:1px solid #e1efea}.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:38px;align-items:center}.eyebrow{font-size:13px;font-weight:800;color:#087d72;letter-spacing:.02em}.hero h1{font-size:clamp(36px,5.4vw,59px);letter-spacing:-.075em;line-height:1.17;margin:13px 0 22px}.hero h1 em{font-style:normal;color:#0e9b88}.hero p{font-size:17px;line-height:1.8;color:#526e70;max-width:580px}.hero-logo{width:100%;max-width:292px;filter:drop-shadow(0 20px 25px #0845351a);justify-self:center}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:49px;padding:12px 19px;border-radius:13px;font-weight:800;font-size:14px;border:1px solid #0d927f;background:#0d927f;color:#fff;text-decoration:none;transition:transform .15s,background .15s}.btn:hover:not(:disabled){transform:translateY(-1px);background:#087e6f}.btn.secondary{background:#fff;border-color:#d5e6e1;color:#20534c}.btn.secondary:hover:not(:disabled){background:#ecf8f4}.btn:disabled{background:#e2eae7;border-color:#e2eae7;color:#7c918a}.section{padding-top:62px}.section-head{margin-bottom:23px}.section-head h2{font-size:clamp(25px,3vw,32px);letter-spacing:-.055em;margin:0 0 8px}.section-head p{margin:0;color:#637773;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:#fff;border:1px solid #e0ebe7;box-shadow:0 8px 26px #18473509;border-radius:21px;padding:24px;display:flex;flex-direction:column;min-height:240px}.card .tag{font-size:12px;color:#167c72;font-weight:800}.card h3{font-size:21px;letter-spacing:-.05em;line-height:1.35;margin:10px 0}.card p{font-size:14px;color:#6c807b;line-height:1.65;flex:1}.card button{width:100%}.state{font-size:12px;min-height:18px;color:#7b8c87;margin-top:10px}.state.success{color:#087c59}.state.error{color:#ae4242}
+.guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.guide-step{background:white;border:1px solid #e0ebe7;border-radius:19px;padding:23px;min-height:160px}.step-title{display:flex;align-items:center;gap:11px}.step-num{display:grid;place-items:center;background:#d8f5eb;color:#066e61;border-radius:11px;width:33px;height:33px;font-weight:900}.guide-step h3{font-size:18px;letter-spacing:-.045em;margin:0}.guide-step p{color:#60746e;font-size:14px;line-height:1.8;margin:14px 0 0}.prompt{background:#f1f7f5;border:1px solid #e1ece8;border-radius:11px;padding:12px 14px;font-size:13px;font-weight:650;margin-top:12px;line-height:1.6;overflow-wrap:anywhere}.notice{padding:18px 21px;background:#f0f8f5;border:1px solid #d7ebe3;border-radius:15px;font-size:14px;color:#4d6a61;line-height:1.8;margin-top:21px}.notice strong{color:#164d44}
+footer{margin-top:67px;padding:30px 0;border-top:1px solid #e0eae7;color:#748881;font-size:12px;line-height:1.7}footer .footrow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+@media(max-width:780px){.hero-grid{grid-template-columns:1fr}.hero-logo{max-width:190px;grid-row:1;justify-self:start}.hero{padding:40px 0}.cards{grid-template-columns:1fr}.card{min-height:0}.guide{grid-template-columns:1fr}.nav{gap:5px}.nav a{font-size:12px;padding:7px}.header-inner{align-items:flex-start;flex-direction:column;padding-top:14px;padding-bottom:14px}.section{padding-top:47px}}
+</style>
 </head>
 <body>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="./"><img src="./assets/nolpyeongeo-logo.svg" alt="놀평어 로고"><span><strong>놀평어</strong><small>AI 평어 생성 도구</small></span></a>
+<nav class="nav" aria-label="놀퀴즈 서비스"><a href="https://knolquiz.com/" target="_blank" rel="noopener noreferrer">놀퀴즈 ↗</a><a href="https://print.knolquiz.com/" target="_blank" rel="noopener noreferrer">놀프린트 ↗</a><a href="https://art.knolquiz.com/" target="_blank" rel="noopener noreferrer">놀아트 ↗</a></nav>
+</div></header>
 <main>
-  <div class="eyebrow">AI 평어 생성기 · Gemini Canvas</div>
-  <h1>코드 복사부터 실행까지</h1>
-  <p class="intro">Gemini Canvas 공유 화면에서 정상 실행되지 않는 경우, 아래 순서에 따라 본인의 Gemini에서 코드를 직접 실행할 수 있습니다.</p>
-  <div class="notice">이 페이지는 Gemini의 공식 서비스가 아닌 별도 사용 안내 페이지입니다. Google 계정 로그인은 Gemini 공식 사이트에서만 진행하세요.</div>
-
-  <section class="step" aria-labelledby="s1"><div class="heading"><span class="num">1</span><h2 id="s1">전체 코드 복사</h2></div>
-    <p>아래 버튼을 누르면 실행에 필요한 코드 전체가 복사됩니다. 코드 일부만 선택할 필요가 없습니다.</p>
-    <div class="actions"><button id="copy" disabled>전체 코드 복사</button><button id="retry" class="secondary" hidden>다시 불러오기</button></div>
-    <div class="status" id="codeStatus" role="status" aria-live="polite">코드가 아직 등록되지 않았습니다. 등록 후 복사 버튼이 활성화됩니다.</div>
-    <details><summary>복사할 코드 미리 보기</summary><pre id="preview">아직 등록된 코드가 없습니다.</pre></details>
-  </section>
-
-  <section class="step" aria-labelledby="s2"><div class="heading"><span class="num">2</span><h2 id="s2">Gemini를 새 창으로 열기</h2></div>
-    <p>본인의 Google 계정으로 로그인하세요. 아래 버튼은 가능한 경우 별도 브라우저 창을 요청합니다.</p>
-    <div class="actions"><button id="openGemini">Gemini 새 창 열기 ↗</button><a class="button secondary" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">직접 열기 ↗</a></div>
-    <div class="status" id="openStatus" role="status" aria-live="polite"></div>
-  </section>
-
-  <section class="step" aria-labelledby="s3"><div class="heading"><span class="num">3</span><h2 id="s3">Canvas에 코드 붙여넣기</h2></div>
-    <ol><li>Gemini에서 Canvas 기능을 열고 코드 편집 화면으로 이동합니다.</li><li>기존 코드가 있으면 전체 선택 후 지웁니다.</li><li>1단계에서 복사한 코드를 그대로 붙여넣습니다. (Windows: Ctrl+V / Mac: ⌘+V)</li></ol>
-    <p>Gemini의 실제 메뉴 명칭과 화면 구성은 계정 또는 서비스 업데이트에 따라 달라질 수 있습니다.</p>
-  </section>
-
-  <section class="step" aria-labelledby="s4"><div class="heading"><span class="num">4</span><h2 id="s4">미리보기에서 실행</h2></div>
-    <p>Canvas의 미리보기 화면에서 실행 상태를 확인하세요. 코드가 실행되지 않는 경우 전체 코드가 빠짐없이 붙여넣어졌는지 먼저 확인합니다.</p>
-  </section>
-  <footer>코드 공유용 안내 페이지 · 개인정보나 Google 비밀번호를 이 페이지에 입력하지 마세요.</footer>
+<section class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">놀퀴즈의 AI 학교생활기록부 평어 도구</div><h1>평어 작성도,<br><em>놀평어</em>로 간편하게.</h1><p>필요한 평어 생성 코드를 복사한 뒤, 본인의 Gemini Canvas에 붙여넣어 사용하세요. 공유 링크가 제대로 실행되지 않을 때도 직접 이용할 수 있도록 안내합니다.</p><div class="hero-actions"><a class="btn" href="#code-list">평어 코드 선택하기 ↓</a><a class="btn secondary" href="#how-to">사용 방법 보기 ↓</a></div></div>
+<img class="hero-logo" src="./assets/nolpyeongeo-logo.svg" alt="기록장을 들고 있는 놀평어 유령 캐릭터">
+</div></section>
+<section class="section wrap" id="code-list"><div class="section-head"><h2>평어 생성 코드 선택</h2><p>사용할 항목을 선택해 전체 코드를 복사하세요. 현재는 코드 등록을 준비 중입니다.</p></div>
+<div class="cards">
+<article class="card" data-code="codes/5-2-creative.txt"><span class="tag">5학년 · 2학기</span><h3>창의적 체험활동 평어</h3><p>자율·자치활동, 동아리활동 등 창의적 체험활동의 평어 작성을 지원합니다.</p><button class="btn copy-btn" disabled>코드 준비 중</button><div class="state" role="status" aria-live="polite">코드 등록 전</div></article>
+<article class="card" data-code="codes/5-2-subject.txt"><span class="tag">5학년 · 2학기</span><h3>교과학습발달상황</h3><p>교과 성취기준과 학습 내용을 바탕으로 학생별 평어 작성을 지원합니다.</p><button class="btn copy-btn" disabled>코드 준비 중</button><div class="state" role="status" aria-live="polite">코드 등록 전</div></article>
+<article class="card" data-code="codes/5-2-behavior.txt"><span class="tag">5학년 · 2학기</span><h3>행동특성 및 종합의견</h3><p>학생의 관찰 기록을 바탕으로 행동특성과 종합의견 작성을 지원합니다.</p><button class="btn copy-btn" disabled>코드 준비 중</button><div class="state" role="status" aria-live="polite">코드 등록 전</div></article>
+</div></section>
+<section class="section wrap" id="how-to"><div class="section-head"><h2>Gemini Canvas에서 실행하는 방법</h2><p>코드 복사부터 미리보기까지 다음 순서로 진행하세요.</p></div>
+<div class="guide">
+<div class="guide-step"><div class="step-title"><span class="step-num">1</span><h3>사용할 코드 복사</h3></div><p>위에서 원하는 평어 항목의 <b>전체 코드 복사</b> 버튼을 누릅니다. 복사 완료 표시를 확인하세요.</p></div>
+<div class="guide-step"><div class="step-title"><span class="step-num">2</span><h3>Gemini에서 Canvas 선택</h3></div><p>아래 <b>Gemini 새 창 열기</b> 버튼으로 본인의 Gemini에 접속한 다음 입력창의 <b>＋</b> 메뉴에서 <b>Canvas</b>를 선택합니다.</p><div style="margin-top:12px"><button class="btn secondary" id="open-gemini">Gemini 새 창 열기 ↗</button><p id="open-message" role="status" style="margin:8px 0 0"></p></div></div>
+<div class="guide-step"><div class="step-title"><span class="step-num">3</span><h3>Canvas 작업 창 열기</h3></div><p>Canvas가 선택된 상태에서 아래 문장을 입력하고 전송하면 코드 작업 창을 여는 데 도움이 됩니다.</p><div class="prompt">캔버스에 코드를 붙여넣어서 미리보기를 볼 거야. 캔버스 창을 열어줘.</div><button class="btn secondary" id="copy-prompt" style="margin-top:12px">안내 문장 복사</button></div>
+<div class="guide-step"><div class="step-title"><span class="step-num">4</span><h3>‘코드’ 탭으로 전환</h3></div><p>Canvas 창 상단의 <b>코드</b> 탭을 누릅니다. 기존 코드가 있다면 편집 영역에서 전체 선택(<b>Ctrl+A</b> 또는 <b>⌘+A</b>) 후 지웁니다.</p></div>
+<div class="guide-step"><div class="step-title"><span class="step-num">5</span><h3>코드 전체 붙여넣기</h3></div><p>코드 편집 영역에 클릭한 다음 <b>Ctrl+V</b>(Windows) 또는 <b>⌘+V</b>(Mac)로 복사한 코드를 그대로 붙여넣습니다. 우클릭 후 ‘붙여넣기’도 가능합니다.</p></div>
+<div class="guide-step"><div class="step-title"><span class="step-num">6</span><h3>미리보기에서 실행</h3></div><p>붙여넣기가 끝나면 상단의 <b>미리보기</b> 탭을 클릭합니다. 평어 생성 화면이 보이면 사용할 수 있습니다. 더 넓게 보려면 <b>전체 화면</b> 버튼을 누르세요.</p></div>
+</div>
+<div class="notice"><strong>사용 전 확인</strong> — 코드를 일부만 복사하거나 기존 코드 뒤에 덧붙이지 마세요. Gemini 화면 구성은 업데이트에 따라 달라질 수 있으며, 이 페이지에서는 Google 계정 정보나 학생 개인정보를 요구하지 않습니다.</div>
+</section>
 </main>
+<footer><div class="wrap footrow"><span>© 놀평어 · 놀퀴즈 서비스</span><span>Gemini 및 Canvas는 Google의 서비스입니다. 놀평어는 별도의 사용 안내 사이트입니다.</span></div></footer>
 <script>
 (() => {
-  'use strict';
-  const CODE_URL = './app-code.txt';
-  const copy = document.getElementById('copy');
-  const retry = document.getElementById('retry');
-  const codeStatus = document.getElementById('codeStatus');
-  const preview = document.getElementById('preview');
-  const openStatus = document.getElementById('openStatus');
-  let fullCode = '';
-
-  async function loadCode() {
-    copy.disabled = true;
-    retry.hidden = true;
-    codeStatus.className = 'status';
-    codeStatus.textContent = '코드를 확인하는 중입니다.';
-    try {
-      const response = await fetch(CODE_URL, {cache:'no-store'});
-      if (!response.ok) throw new Error('HTTP ' + response.status);
-      const data = await response.text();
-      if (!data.trim() || data.trim() === 'CODE_NOT_READY') throw new Error('empty');
-      fullCode = data;
-      preview.textContent = data;
-      copy.disabled = false;
-      codeStatus.textContent = '코드가 준비되었습니다. 전체 코드 복사를 누르세요.';
-    } catch (error) {
-      fullCode = '';
-      preview.textContent = '아직 등록된 코드가 없습니다.';
-      codeStatus.textContent = '코드가 아직 등록되지 않았습니다. 등록 후 복사 버튼이 활성화됩니다.';
-      retry.hidden = false;
-    }
-  }
-
-  copy.addEventListener('click', async () => {
-    if (!fullCode) return;
-    try {
-      await navigator.clipboard.writeText(fullCode);
-      codeStatus.className = 'status ok';
-      codeStatus.textContent = '✓ 전체 코드가 복사되었습니다. 2단계로 진행하세요.';
-      copy.textContent = '✓ 복사 완료';
-    } catch (error) {
-      codeStatus.className = 'status error';
-      codeStatus.textContent = '자동 복사가 차단되었습니다. 아래의 코드 미리 보기를 펼쳐 전체 선택 후 직접 복사하세요.';
-      const details = preview.closest('details');
-      details.open = true;
-    }
-  });
-  retry.addEventListener('click', loadCode);
-
-  document.getElementById('openGemini').addEventListener('click', () => {
-    const win = window.open('https://gemini.google.com/', '_blank', 'popup=yes,width=1280,height=900,resizable=yes,scrollbars=yes');
-    if (win) {
-      try { win.opener = null; } catch (_) {}
-      openStatus.textContent = 'Gemini를 열도록 요청했습니다. 브라우저 설정에 따라 새 탭으로 열릴 수 있습니다.';
-    } else {
-      openStatus.className = 'status error';
-      openStatus.textContent = '팝업이 차단되었습니다. 옆의 직접 열기 링크를 이용하거나 팝업을 허용하세요.';
-    }
-  });
-  loadCode();
+'use strict';
+const cards = Array.from(document.querySelectorAll('[data-code]'));
+for (const card of cards) {
+ const button = card.querySelector('.copy-btn'), state = card.querySelector('.state'), path = card.dataset.code;
+ let code = '';
+ async function load(){
+   try {
+     const response=await fetch(path,{cache:'no-store'});
+     if(!response.ok) throw new Error('not registered');
+     const text=await response.text();
+     if(!text.trim() || text.trim()==='CODE_NOT_READY') throw new Error('empty');
+     code=text; button.disabled=false; button.textContent='전체 코드 복사'; state.textContent='코드 복사 가능';
+   } catch {code='';button.disabled=true;button.textContent='코드 준비 중';state.textContent='코드 등록 전';}
+ }
+ button.addEventListener('click',async()=>{
+   if(!code)return;
+   try {await navigator.clipboard.writeText(code); button.textContent='✓ 복사 완료';state.textContent='전체 코드가 복사되었습니다. 아래 안내에 따라 붙여넣으세요.';state.className='state success';}
+   catch {state.textContent='자동 복사가 차단되었습니다. HTTPS 접속 및 클립보드 권한을 확인하세요.';state.className='state error';}
+ });
+ load();
+}
+const gemini=document.getElementById('open-gemini'),message=document.getElementById('open-message');
+gemini.addEventListener('click',()=>{
+ const win=window.open('https://gemini.google.com/','_blank','popup=yes,width=1280,height=900,resizable=yes,scrollbars=yes');
+ if(win){try{win.opener=null}catch(_){} message.textContent='새 창 열기를 요청했습니다. 브라우저 설정에 따라 새 탭으로 열릴 수 있습니다.'}
+ else {message.innerHTML='팝업이 차단되었습니다. <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini 직접 열기 ↗</a>'}
+});
+document.getElementById('copy-prompt').addEventListener('click',async e=>{
+ try{await navigator.clipboard.writeText('캔버스에 코드를 붙여넣어서 미리보기를 볼 거야. 캔버스 창을 열어줘.');e.currentTarget.textContent='✓ 문장 복사 완료';}
+ catch{e.currentTarget.textContent='복사 실패 · 문장을 직접 선택해 주세요';}
+});
 })();
 </script>
-</body>
-</html>
+</body></html>
