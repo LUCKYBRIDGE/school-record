@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="놀평어 로고">
+<rect x="10" y="10" width="492" height="492" rx="126" fill="#39dbc0" stroke="#142838" stroke-width="18"/>
+<g stroke="#142838" stroke-linecap="round" stroke-linejoin="round">
+<path d="M78 143l24 17M138 88l8 28" fill="none" stroke-width="16"/>
+<path d="M132 291c0-126 47-202 125-202 80 0 127 74 127 202" fill="#fffdf7" stroke-width="19"/>
+<ellipse cx="219" cy="209" rx="14" ry="20" fill="#142838" stroke="none"/><ellipse cx="285" cy="209" rx="14" ry="20" fill="#142838" stroke="none"/>
+<path d="M236 258q20 23 43-2" fill="none" stroke-width="14"/>
+<path d="M256 336Q185 291 85 327v128q99-26 171 27 72-53 171-27V327q-100-36-171 9Z" fill="#fffdf7" stroke-width="18"/>
+<path d="M256 337v142" fill="none" stroke-width="15"/>
+<circle cx="100" cy="336" r="24" fill="#fffdf7" stroke-width="15"/><circle cx="410" cy="336" r="24" fill="#fffdf7" stroke-width="15"/>
+<path d="M119 387h90M119 412h73" stroke="#67cbb4" stroke-width="13"/>
+<path d="m298 390 16 16 26-31M298 433l16 14 26-29" stroke="#ff9268" fill="none" stroke-width="14"/>
+<path d="M349 385h47M349 428h47" stroke="#67cbb4" stroke-width="12"/>
+<path d="m398 117 12 24 24 12-24 12-12 24-12-24-24-12 24-12z" fill="#ff9268" stroke-width="12"/>
+</g></svg>
