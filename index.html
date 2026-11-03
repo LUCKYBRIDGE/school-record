@@ -15,11 +15,11 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .section{padding-top:58px}.section h2{font-size:30px;letter-spacing:-.055em;margin:0 0 8px}.lead{color:#657a73;line-height:1.75;margin:0 0 22px}.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 26px}.how div{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 16px;font-size:13px;line-height:1.65;color:#566e67}.how b{display:block;color:#156f60;margin-bottom:3px;font-size:13px}
 .grade-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}.grade-tabs button{border:1px solid #d7e5e0;background:#fff;color:#526b64;border-radius:11px;padding:10px 15px;font-weight:850}.grade-tabs button.active{background:var(--mint);border-color:var(--mint);color:#fff}.grade-tabs button:hover:not(.active){background:#eff8f5}
 .launch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.launch-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 7px 22px #143e3009;display:flex;flex-direction:column;min-height:300px}.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.card-meta{font-size:12px;color:#0b8875;font-weight:850}.badge{background:#eff7f4;border:1px solid #d8eae4;color:#42675d;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;white-space:nowrap}.launch-card h3{font-size:22px;line-height:1.35;letter-spacing:-.047em;margin:13px 0 8px}.launch-card p{font-size:14px;line-height:1.75;color:#637770;margin:0 0 18px;flex:1}.main-btn{display:flex;align-items:center;justify-content:center;min-height:49px;border-radius:12px;background:var(--mint);color:#fff;font-weight:900;padding:12px 15px}.main-btn:hover{background:var(--mint-dark)}.fallback-btn{display:flex;align-items:center;justify-content:center;min-height:43px;margin-top:9px;border:1px solid #d5e3de;border-radius:11px;background:#fff;color:#385f56;font-size:13px;font-weight:820;padding:10px 13px}.fallback-btn:hover{background:#f1f8f5}.help{margin-top:10px;font-size:11.5px;color:#7a8c86;line-height:1.55}
-.specialist-wrap{margin-top:28px}.specialist-label{font-size:14px;font-weight:900;color:#126f60;margin:0 0 10px}.specialist-card{min-height:0;border-color:#cce7de;background:linear-gradient(135deg,#fff,#f2fbf7)}.specialist-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.copy-btn{font:inherit;cursor:pointer}.notice{margin-top:26px;background:#fffaf0;border:1px solid #f1e2bd;border-radius:14px;padding:16px 18px;color:#675a39;font-size:13px;line-height:1.75}.notice strong{color:#4f452c}
+.launch-grid[hidden],.specialist-wrap[hidden]{display:none}.specialist-card{min-height:0;border-color:#cce7de;background:linear-gradient(135deg,#fff,#f2fbf7)}.specialist-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-items:stretch}.specialist-actions .fallback-btn{margin-top:0}.copy-btn{font:inherit;cursor:pointer}.notice{margin-top:26px;background:#fffaf0;border:1px solid #f1e2bd;border-radius:14px;padding:16px 18px;color:#675a39;font-size:13px;line-height:1.75}.notice strong{color:#4f452c}
 .manual-tease{margin-top:48px;background:linear-gradient(135deg,#eafaf4,#f4f7ff);border:1px solid #d7e8e2;border-radius:20px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.manual-tease h3{margin:0 0 6px;font-size:20px;letter-spacing:-.04em}.manual-tease p{margin:0;color:#60756f;font-size:14px;line-height:1.7}.manual-link{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 16px;border-radius:11px;background:#fff;border:1px solid #cfe0da;color:#285a50;font-weight:850;white-space:nowrap}
 footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12px;color:#6a8078;line-height:1.8}
 @media(max-width:800px){.head{align-items:flex-start;flex-direction:column;padding:12px 0}.hero{padding:38px 0}.hero img{width:112px;border-radius:24px}.hero-row{gap:14px}.launch-grid,.how{grid-template-columns:1fr}.section{padding-top:45px}.launch-card{min-height:0}}
-@media(max-width:460px){.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.nav a{padding:7px 9px;font-size:11.5px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}}
+@media(max-width:460px){.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.nav a{padding:7px 9px;font-size:11.5px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}.grade-tabs button:last-child{flex-basis:100%}.specialist-actions{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -41,19 +41,18 @@ footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12p
 
 <section class="section wrap" id="launch">
 <h2>놀평어 생성기 바로 열기</h2>
-<p class="lead">학년을 선택하면 해당 학년의 교과·창체·행발 생성기 3개가 표시됩니다.</p>
+<p class="lead">1~6학년의 교과·창체·행발 또는 교과전담용 생성기를 선택하세요.</p>
 
 <div class="how">
-<div><b>1. 학년 선택</b>아래에서 1~6학년 중 필요한 학년을 선택합니다.</div>
-<div><b>2. Gemini에서 바로 열기</b>교과·창체·행발 카드의 초록색 버튼을 누릅니다.</div>
+<div><b>1. 학년·교과전담 선택</b>아래에서 담당 학년 또는 교과전담을 선택합니다.</div>
+<div><b>2. Gemini에서 바로 열기</b>필요한 생성기 카드의 초록색 버튼을 누릅니다.</div>
 <div><b>3. 안 열릴 때만 대체 방법</b>카드의 ‘링크가 안 열리면’ 버튼으로 코드 복사 매뉴얼을 이용합니다.</div>
 </div>
 
-<div class="grade-tabs" id="gradeTabs" role="tablist" aria-label="학년 선택"></div>
-<div class="launch-grid" id="launchGrid" aria-live="polite"></div>
+<div class="grade-tabs" id="gradeTabs" role="tablist" aria-label="학년·교과전담 선택"></div>
+<div class="launch-grid" id="launchGrid" role="tabpanel" tabindex="0" aria-live="polite"></div>
 
-<div class="specialist-wrap">
-  <div class="specialist-label">교과전담용</div>
+<div class="specialist-wrap" id="specialistPanel" role="tabpanel" tabindex="0" aria-labelledby="tab-specialist" hidden>
   <article class="launch-card specialist-card">
     <div class="card-top"><span class="card-meta">교과전담 · 2학기</span><span class="badge">버전 3</span></div>
     <h3>교과전담 평어</h3>
@@ -94,8 +93,9 @@ const types=[
 {key:'behavior',label:'행발',desc:'행동특성 및 종합의견 생성기'}
 ];
 const tabs=document.getElementById('gradeTabs'),grid=document.getElementById('launchGrid');
-const saved=Number(localStorage.getItem('nolpyeongeo-grade'));
-let grade=(saved>=1&&saved<=6)?saved:6;
+const specialistPanel=document.getElementById('specialistPanel');
+const saved=localStorage.getItem('nolpyeongeo-grade');
+let grade=saved==='specialist'?'specialist':(/^[1-6]$/.test(saved)?Number(saved):6);
 let specialistCodeCache=null;
 
 async function copyText(text){
@@ -117,15 +117,32 @@ async function loadSpecialistCode(){
 
 function renderTabs(){
  tabs.innerHTML='';
- for(let g=1;g<=6;g++){
+ const choices=[1,2,3,4,5,6,'specialist'];
+ for(const g of choices){
   const b=document.createElement('button');
-  b.type='button';b.role='tab';b.textContent=g+'학년';b.className=g===grade?'active':'';
+  b.type='button';b.role='tab';b.id='tab-'+g;
+  b.textContent=g==='specialist'?'교과전담':g+'학년';b.className=g===grade?'active':'';
   b.setAttribute('aria-selected',String(g===grade));
-  b.onclick=()=>{grade=g;localStorage.setItem('nolpyeongeo-grade',String(g));renderTabs();renderCards()};
+  b.setAttribute('aria-controls',g==='specialist'?'specialistPanel':'launchGrid');
+  b.tabIndex=g===grade?0:-1;
+  b.onclick=()=>selectTab(g);
+  b.onkeydown=e=>{
+   const i=choices.indexOf(g);
+   const next={ArrowRight:choices[(i+1)%choices.length],ArrowLeft:choices[(i+choices.length-1)%choices.length],Home:choices[0],End:choices[choices.length-1]}[e.key];
+   if(next!==undefined){e.preventDefault();selectTab(next)}
+  };
   tabs.appendChild(b);
  }
 }
+function selectTab(value){
+ grade=value;localStorage.setItem('nolpyeongeo-grade',String(value));
+ renderTabs();renderCards();document.getElementById('tab-'+value).focus();
+}
 function renderCards(){
+ const specialist=grade==='specialist';
+ grid.hidden=specialist;specialistPanel.hidden=!specialist;
+ if(specialist) return;
+ grid.setAttribute('aria-labelledby','tab-'+grade);
  grid.innerHTML='';
  for(const t of types){
   const a=document.createElement('article');a.className='launch-card';
