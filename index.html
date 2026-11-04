@@ -4,263 +4,127 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e9fcf5">
-<meta name="description" content="놀평어에서 1~6학년 2학기 교과·창체·행발 평어 생성기를 Gemini 공유 링크로 바로 실행하세요. 링크가 열리지 않을 때는 HTML 코드 복사 방식도 이용할 수 있습니다.">
+<meta name="description" content="놀평어 버전 2. 1~6학년 2학기 교과·창체·행발 및 교과전담 평어 생성기를 Gemini에서 바로 실행하고 HTML을 복사·다운로드할 수 있습니다.">
 <link rel="icon" type="image/png" href="assets/nolpyeongeo-logo.png">
-<title>놀평어 | Gemini에서 바로 실행</title>
+<title>놀평어 | 버전 2</title>
 <style>
-:root{--ink:#172b37;--muted:#62766f;--mint:#0b8f7b;--mint-dark:#087463;--mint-soft:#e7faf3;--line:#dfeae6;--bg:#f7faf9;--card:#fff;--navy:#173042;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #2b7ed1;outline-offset:3px}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}.head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-size:25px;font-weight:900;letter-spacing:-.06em}.brand img{width:50px;height:50px;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav a{font-size:12.5px;font-weight:800;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}.nav a:hover{background:#eef9f5}.nav .instagram-link{width:38px;height:38px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;background:#fff;border:1px solid var(--line);overflow:hidden}.nav .instagram-link:hover{background:#fff;border-color:#d8c3cf;transform:translateY(-1px)}.instagram-link svg{width:24px;height:24px;display:block;flex:0 0 auto}
-.hero{padding:58px 0;background:radial-gradient(circle at 88% 12%,#bdf4e1 0,transparent 45%),linear-gradient(120deg,#effdf6,#f4f6fd);border-bottom:1px solid #e0ece8}.hero-row{display:flex;align-items:center;justify-content:space-between;gap:36px}.eyebrow{font-size:13px;font-weight:850;color:#087d6d}.hero h1{font-size:clamp(36px,5vw,54px);line-height:1.17;letter-spacing:-.068em;margin:12px 0 17px}.hero h1 em{font-style:normal;color:#0b937f}.hero p{max-width:700px;color:#4e6963;line-height:1.8;margin:0;font-size:16px}.hero img{width:205px;max-width:27%;border-radius:44px;box-shadow:0 16px 36px #133e3022}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:999px;background:#fff;border:1px solid #cfe5dc;font-size:13px;font-weight:850;color:#235a50}
-.section{padding-top:58px}.section h2{font-size:30px;letter-spacing:-.055em;margin:0 0 8px}.lead{color:#657a73;line-height:1.75;margin:0 0 22px}.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 26px}.how div{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 16px;font-size:13px;line-height:1.65;color:#566e67}.how b{display:block;color:#156f60;margin-bottom:3px;font-size:13px}
+:root{--ink:#172b37;--muted:#62766f;--mint:#0b8f7b;--mint-dark:#087463;--mint-soft:#e7faf3;--line:#dfeae6;--bg:#f7faf9;--card:#fff;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:disabled{opacity:.55;cursor:wait}a:focus-visible,button:focus-visible{outline:3px solid #2b7ed1;outline-offset:3px}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}.head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-size:25px;font-weight:900;letter-spacing:-.06em}.brand img{width:50px;height:50px;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.nav>a{font-size:12.5px;font-weight:800;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}.nav>a:hover{background:#eef9f5}.nav .instagram-link{width:38px;height:38px;padding:0;display:inline-flex;align-items:center;justify-content:center}.instagram-link svg{width:24px;height:24px}
+.hero{padding:54px 0;background:radial-gradient(circle at 88% 12%,#bdf4e1 0,transparent 45%),linear-gradient(120deg,#effdf6,#f4f6fd);border-bottom:1px solid #e0ece8}.hero-row{display:flex;align-items:center;justify-content:space-between;gap:36px}.eyebrow{font-size:13px;font-weight:850;color:#087d6d}.hero h1{font-size:clamp(36px,5vw,54px);line-height:1.17;letter-spacing:-.068em;margin:12px 0 17px}.hero h1 em{font-style:normal;color:#0b937f}.hero p{max-width:720px;color:#4e6963;line-height:1.8;margin:0;font-size:16px}.hero img{width:205px;max-width:27%;border-radius:44px;box-shadow:0 16px 36px #133e3022}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:999px;background:#fff;border:1px solid #cfe5dc;font-size:13px;font-weight:850;color:#235a50}
+.section{padding-top:52px}.section h2{font-size:30px;letter-spacing:-.055em;margin:0 0 8px}.lead{color:#657a73;line-height:1.75;margin:0 0 20px}
+.version-tabs{display:flex;gap:9px;margin:0 0 12px}.version-tabs button{border:1px solid #d6e4df;background:#fff;border-radius:12px;padding:11px 17px;font-weight:900;color:#526b64}.version-tabs button.active{background:#0b8f7b;color:#fff;border-color:#0b8f7b}.version-tabs button.old.active{background:#475569;border-color:#475569}.version-info{border:1px solid #d7e8e2;background:#eefaf6;border-radius:13px;padding:13px 15px;color:#42655b;font-size:13px;line-height:1.65;margin-bottom:20px}.version-info.old{background:#f8fafc;border-color:#e2e8f0;color:#596773}
 .grade-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}.grade-tabs button{border:1px solid #d7e5e0;background:#fff;color:#526b64;border-radius:11px;padding:10px 15px;font-weight:850}.grade-tabs button.active{background:var(--mint);border-color:var(--mint);color:#fff}.grade-tabs button:hover:not(.active){background:#eff8f5}
-.launch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.launch-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 7px 22px #143e3009;display:flex;flex-direction:column;min-height:300px}.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.card-meta{font-size:12px;color:#0b8875;font-weight:850}.badge{background:#eff7f4;border:1px solid #d8eae4;color:#42675d;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;white-space:nowrap}.launch-card h3{font-size:22px;line-height:1.35;letter-spacing:-.047em;margin:13px 0 8px}.launch-card p{font-size:14px;line-height:1.75;color:#637770;margin:0 0 18px;flex:1}.main-btn{display:flex;align-items:center;justify-content:center;min-height:49px;border-radius:12px;background:var(--mint);color:#fff;font-weight:900;padding:12px 15px}.main-btn:hover{background:var(--mint-dark)}.fallback-btn{display:flex;align-items:center;justify-content:center;min-height:43px;margin-top:9px;border:1px solid #d5e3de;border-radius:11px;background:#fff;color:#385f56;font-size:13px;font-weight:820;padding:10px 13px}.fallback-btn:hover{background:#f1f8f5}.help{margin-top:10px;font-size:11.5px;color:#7a8c86;line-height:1.55}
-.launch-grid[hidden],.specialist-wrap[hidden]{display:none}.specialist-card{min-height:0;border-color:#cce7de;background:linear-gradient(135deg,#fff,#f2fbf7)}.specialist-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-items:stretch}.specialist-actions .fallback-btn{margin-top:0}.copy-btn{font:inherit;cursor:pointer}.notice{margin-top:26px;background:#fffaf0;border:1px solid #f1e2bd;border-radius:14px;padding:16px 18px;color:#675a39;font-size:13px;line-height:1.75}.notice strong{color:#4f452c}
-.manual-tease{margin-top:48px;background:linear-gradient(135deg,#eafaf4,#f4f7ff);border:1px solid #d7e8e2;border-radius:20px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.manual-tease h3{margin:0 0 6px;font-size:20px;letter-spacing:-.04em}.manual-tease p{margin:0;color:#60756f;font-size:14px;line-height:1.7}.manual-link{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 16px;border-radius:11px;background:#fff;border:1px solid #cfe0da;color:#285a50;font-weight:850;white-space:nowrap}
-footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12px;color:#6a8078;line-height:1.8}
-@media(max-width:800px){.head{align-items:flex-start;flex-direction:column;padding:12px 0}.hero{padding:38px 0}.hero img{width:112px;border-radius:24px}.hero-row{gap:14px}.launch-grid,.how{grid-template-columns:1fr}.section{padding-top:45px}.launch-card{min-height:0}}
-@media(max-width:460px){.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.nav a{padding:7px 9px;font-size:11.5px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}.grade-tabs button:last-child{flex-basis:100%}.specialist-actions{grid-template-columns:1fr}}
-
-.noticePopup{position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.68);display:flex;align-items:center;justify-content:center;padding:18px}
-.noticePopup[hidden]{display:none}
-.noticeDialog{width:min(690px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 28px 90px rgba(15,23,42,.35)}
-.noticeTop{padding:24px 25px 18px;background:linear-gradient(135deg,#e8faf3,#f2f7ff);border-bottom:1px solid #dceae5}
-.noticeKicker{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:#0b8f7b;color:#fff;font-size:11px;font-weight:900}
-.noticeTop h2{margin:12px 0 8px;font-size:25px;line-height:1.35;letter-spacing:-.05em}
-.noticeTop h2 em{font-style:normal;color:#087463}
-.noticeTop p{margin:0;color:#506962;font-size:14px;line-height:1.7}
-.noticeBody{padding:20px 25px 24px}
-.noticeImportant{padding:15px 16px;border:1px solid #f2c9c9;background:#fff7f7;border-radius:14px;color:#693b3b;font-size:14px;line-height:1.75}
-.noticeImportant strong{color:#b4232f}
-.demoButtons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
-.demoButton{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:10px 11px;font-size:12px;font-weight:850;color:#334155;text-align:center}
-.noticeArrow{font-size:12px;color:#6b7e77;text-align:center;margin:6px 0}
-.noticeResult{padding:12px 14px;border-radius:12px;background:#edf9f5;border:1px solid #cdeade;color:#126556;font-size:13px;line-height:1.65;text-align:center;font-weight:750}
-.v2box{margin-top:15px;padding:15px 16px;border:1px solid #cdddf8;background:#f4f7ff;border-radius:14px;font-size:13px;line-height:1.7;color:#415774}
-.v2box b{color:#2454a3}
-.noticeActions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
-.noticeConfirm{border:0;border-radius:11px;background:#0b8f7b;color:#fff;padding:11px 18px;font-weight:900}
-.noticeConfirm:hover{background:#087463}
-@media(max-width:560px){.noticeTop,.noticeBody{padding-left:17px;padding-right:17px}.noticeTop h2{font-size:21px}.demoButtons{grid-template-columns:1fr}.noticeActions{display:block}.noticeConfirm{width:100%}}
-
+.launch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.launch-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 7px 22px #143e3009;display:flex;flex-direction:column;min-height:322px}.launch-card.specialist{grid-column:1/-1;min-height:0;background:linear-gradient(135deg,#fff,#f2fbf7)}.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.card-meta{font-size:12px;color:#0b8875;font-weight:850}.badge{background:#eff7f4;border:1px solid #d8eae4;color:#42675d;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;white-space:nowrap}.badge.old{background:#f1f5f9;border-color:#dce3ea;color:#596773}.launch-card h3{font-size:22px;line-height:1.35;letter-spacing:-.047em;margin:13px 0 8px}.launch-card p{font-size:14px;line-height:1.75;color:#637770;margin:0 0 18px;flex:1}.main-btn{display:flex;align-items:center;justify-content:center;min-height:49px;border-radius:12px;background:var(--mint);color:#fff;font-weight:900;padding:12px 15px}.main-btn:hover{background:var(--mint-dark)}.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.sub-btn{border:1px solid #d5e3de;border-radius:11px;background:#fff;color:#385f56;font-size:12.5px;font-weight:850;padding:10px 11px;display:flex;align-items:center;justify-content:center;min-height:42px}.sub-btn:hover{background:#f1f8f5}.help{margin-top:10px;font-size:11.5px;color:#7a8c86;line-height:1.55;min-height:18px}.manual-link{display:inline-flex;margin-top:8px;font-size:12px;font-weight:800;color:#477269;text-decoration:underline;text-underline-offset:3px}
+.notice{margin-top:26px;background:#fffaf0;border:1px solid #f1e2bd;border-radius:14px;padding:16px 18px;color:#675a39;font-size:13px;line-height:1.75}.notice strong{color:#4f452c}footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12px;color:#6a8078;line-height:1.8}
+.noticePopup{position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.68);display:flex;align-items:center;justify-content:center;padding:18px}.noticePopup[hidden]{display:none}.noticeDialog{width:min(690px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 28px 90px rgba(15,23,42,.35)}.noticeTop{padding:24px 25px 18px;background:linear-gradient(135deg,#e8faf3,#f2f7ff);border-bottom:1px solid #dceae5}.noticeKicker{display:inline-flex;padding:5px 9px;border-radius:999px;background:#0b8f7b;color:#fff;font-size:11px;font-weight:900}.noticeTop h2{margin:12px 0 8px;font-size:25px;line-height:1.35;letter-spacing:-.05em}.noticeTop h2 em{font-style:normal;color:#087463}.noticeTop p{margin:0;color:#506962;font-size:14px;line-height:1.7}.noticeBody{padding:20px 25px 24px}.noticeImportant{padding:15px 16px;border:1px solid #f2c9c9;background:#fff7f7;border-radius:14px;color:#693b3b;font-size:14px;line-height:1.75}.noticeImportant strong{color:#b4232f}.demoButtons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}.demoButton{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:10px 11px;font-size:12px;font-weight:850;color:#334155;text-align:center}.noticeResult{padding:12px 14px;border-radius:12px;background:#edf9f5;border:1px solid #cdeade;color:#126556;font-size:13px;line-height:1.65;text-align:center;font-weight:750}.v2box{margin-top:15px;padding:15px 16px;border:1px solid #b9e4d6;background:#effbf6;border-radius:14px;font-size:13px;line-height:1.7;color:#355f54}.v2box b{color:#087463}.noticeActions{display:flex;justify-content:flex-end;margin-top:18px}.noticeConfirm{border:0;border-radius:11px;background:#0b8f7b;color:#fff;padding:11px 18px;font-weight:900}
+@media(max-width:800px){.head{align-items:flex-start;flex-direction:column;padding:12px 0}.hero{padding:38px 0}.hero img{width:112px;border-radius:24px}.hero-row{gap:14px}.launch-grid{grid-template-columns:1fr}.launch-card{min-height:0}.launch-card.specialist{grid-column:auto}.section{padding-top:42px}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}.card-actions,.demoButtons{grid-template-columns:1fr}.noticeTop,.noticeBody{padding-left:17px;padding-right:17px}.noticeConfirm{width:100%}}
 </style>
 </head>
 <body>
-
 <div class="noticePopup" id="recordGuidePopup" role="dialog" aria-modal="true" aria-labelledby="recordGuideTitle">
-  <div class="noticeDialog">
-    <div class="noticeTop">
-      <span class="noticeKicker">먼저 확인해 주세요</span>
-      <h2 id="recordGuideTitle">아래 버튼은 <em>‘내 평어함에 붙이기’</em> 기능입니다.</h2>
-      <p>AI 평어를 생성한 것만으로는 내 평어함에 저장되지 않습니다. 생성 결과에서 아래 버튼 중 하나를 눌러야 내 평어함으로 들어갑니다.</p>
-    </div>
-    <div class="noticeBody">
-      <div class="noticeImportant">
-        <strong>중요</strong> · 학생별 결과 아래의 두 버튼은 평어를 삭제하는 버튼이 아니라, <b>생성한 평어를 ‘내 평어함’으로 보내는 버튼</b>입니다.
-        <div class="demoButtons" aria-label="내 평어함 붙이기 버튼 예시">
-          <div class="demoButton">[교과] 기존 평어함 지우고 붙이기</div>
-          <div class="demoButton">[교과] 평어함 뒤에 이어붙이기</div>
-        </div>
-        <div class="noticeArrow">버튼 클릭 ↓</div>
-        <div class="noticeResult">‘내 평어함’ 탭에서 학생별 평어를 확인·수정·저장할 수 있습니다.</div>
-      </div>
-      <div class="v2box">
-        <b>버전 2 업데이트 예정</b><br>
-        선생님이 실제로 ‘내 평어함에 붙이기’를 실행했는지 바로 알 수 있도록, 붙이기 완료 시 <b>팝업 알림으로 완료 여부를 확인하는 기능</b>을 추가해 배포할 예정입니다.
-      </div>
-      <div class="noticeActions">
-        <button class="noticeConfirm" id="recordGuideConfirm" type="button">확인하고 놀평어 사용하기</button>
-      </div>
-    </div>
+ <div class="noticeDialog">
+  <div class="noticeTop">
+   <span class="noticeKicker">놀평어 버전 2 배포</span>
+   <h2 id="recordGuideTitle">생성한 평어는 <em>‘내 평어함에 붙이기’</em>를 눌러 저장하세요.</h2>
+   <p>AI 평어를 생성한 것만으로는 내 평어함에 들어가지 않습니다. 학생별 결과 아래의 붙이기 버튼을 사용하세요.</p>
   </div>
+  <div class="noticeBody">
+   <div class="noticeImportant"><strong>붙이기 버튼 안내</strong>
+    <div class="demoButtons"><div class="demoButton">기존 평어함 지우고 붙이기</div><div class="demoButton">평어함 뒤에 이어붙이기</div></div>
+    <div class="noticeResult">버전 2에서는 붙이기 완료 여부를 팝업으로 확인하고, 기존 평어가 있는 경우 덮어쓰기 전에 내용을 확인할 수 있도록 개선했습니다.</div>
+   </div>
+   <div class="v2box"><b>현재 기본 버전은 버전 2입니다.</b><br>필요한 경우 메인 화면의 <b>‘버전 1 · 이전’</b> 탭에서 이전 Gemini 공유 링크와 HTML 파일을 계속 사용할 수 있습니다.</div>
+   <div class="noticeActions"><button class="noticeConfirm" id="recordGuideConfirm" type="button">확인하고 버전 2 사용하기</button></div>
+  </div>
+ </div>
 </div>
 
 <header><div class="wrap head">
 <a class="brand" href="./"><img src="assets/nolpyeongeo-logo.png" alt="놀평어 로고">놀평어</a>
-<nav class="nav" aria-label="놀퀴즈 서비스"><a href="https://knolquiz.com/" target="_blank" rel="noopener">놀퀴즈 ↗</a><a href="https://print.knolquiz.com/" target="_blank" rel="noopener">놀프린트 ↗</a><a href="https://art.knolquiz.com/" target="_blank" rel="noopener">놀아트 ↗</a><a class="instagram-link" href="https://www.instagram.com/knolquiz/" target="_blank" rel="noopener noreferrer" aria-label="놀퀴즈 인스타그램 열기" title="Instagram">
-<svg viewBox="0 0 24 24" aria-hidden="true" role="img">
-  <defs>
-    <radialGradient id="igPaint" cx="30%" cy="107%" r="140%">
-      <stop offset="0%" stop-color="#ffd600"/>
-      <stop offset="30%" stop-color="#ff7a00"/>
-      <stop offset="55%" stop-color="#ff0169"/>
-      <stop offset="78%" stop-color="#d300c5"/>
-      <stop offset="100%" stop-color="#7638fa"/>
-    </radialGradient>
-  </defs>
-  <rect x="1.5" y="1.5" width="21" height="21" rx="6.3" fill="url(#igPaint)"/>
-  <rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-width="1.8"/>
-  <circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/>
-  <circle cx="16.1" cy="7.9" r="1.05" fill="#fff"/>
-</svg></a></nav>
+<nav class="nav"><a href="https://knolquiz.com/" target="_blank" rel="noopener">놀퀴즈 ↗</a><a href="https://print.knolquiz.com/" target="_blank" rel="noopener">놀프린트 ↗</a><a href="https://art.knolquiz.com/" target="_blank" rel="noopener">놀아트 ↗</a><a class="instagram-link" href="https://www.instagram.com/knolquiz/" target="_blank" rel="noopener noreferrer" aria-label="놀퀴즈 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="ig" cx="30%" cy="107%" r="140%"><stop offset="0%" stop-color="#ffd600"/><stop offset="30%" stop-color="#ff7a00"/><stop offset="55%" stop-color="#ff0169"/><stop offset="78%" stop-color="#d300c5"/><stop offset="100%" stop-color="#7638fa"/></radialGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6.3" fill="url(#ig)"/><rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.1" cy="7.9" r="1.05" fill="#fff"/></svg></a></nav>
 </div></header>
 
 <main>
-<section class="hero"><div class="wrap hero-row">
-<div>
-<div class="eyebrow">AI 학교생활기록부 평어 생성 도구</div>
-<h1>학년과 영역을 고르고,<br><em>Gemini에서 바로 실행</em>하세요.</h1>
-<p>교과·창체·행발 평어 생성기를 Gemini 공유 링크로 바로 열 수 있습니다. 공유 링크가 열리지 않는 경우에만 코드 복사 방식의 별도 매뉴얼을 이용하면 됩니다.</p>
-<div class="hero-actions"><a class="pill" href="#launch">생성기 선택하기 ↓</a><a class="pill" href="manual.html">링크 오류 시 코드 복사 방법 ↗</a></div>
-</div>
-<img src="assets/nolpyeongeo-logo.png" alt="기록장을 들고 있는 놀평어 캐릭터">
-</div></section>
+<section class="hero"><div class="wrap hero-row"><div>
+<div class="eyebrow">놀평어 VERSION 2 · 평어함 저장 안전 개선</div>
+<h1>최신 <em>버전 2</em>를 바로 실행하세요.</h1>
+<p>1~6학년 2학기 교과·창체·행발과 교과전담 생성기를 제공합니다. Gemini 공유 링크로 바로 열 수 있고, HTML 원본을 다운로드하거나 전체 코드로 복사할 수도 있습니다.</p>
+<div class="hero-actions"><a class="pill" href="#launch">생성기 선택 ↓</a><a class="pill" href="manual.html?version=v2">코드 복사 매뉴얼 ↗</a></div>
+</div><img src="assets/nolpyeongeo-logo.png" alt="놀평어 로고"></div></section>
 
 <section class="section wrap" id="launch">
-<h2>놀평어 생성기 바로 열기</h2>
-<p class="lead">1~6학년의 교과·창체·행발 또는 교과전담용 생성기를 선택하세요.</p>
-
-<div class="how">
-<div><b>1. 학년·교과전담 선택</b>아래에서 담당 학년 또는 교과전담을 선택합니다.</div>
-<div><b>2. Gemini에서 바로 열기</b>필요한 생성기 카드의 초록색 버튼을 누릅니다.</div>
-<div><b>3. 안 열릴 때만 대체 방법</b>카드의 ‘링크가 안 열리면’ 버튼으로 코드 복사 매뉴얼을 이용합니다.</div>
+<h2>놀평어 생성기</h2>
+<p class="lead">최신 버전 2가 기본입니다. 이전 버전이 필요한 경우 버전 1 탭을 선택하세요.</p>
+<div class="version-tabs" role="tablist" aria-label="놀평어 버전 선택">
+ <button id="ver-v2" class="active" type="button" role="tab" aria-selected="true">버전 2 · 최신</button>
+ <button id="ver-v1" class="old" type="button" role="tab" aria-selected="false">버전 1 · 이전</button>
 </div>
-
+<div class="version-info" id="versionInfo"></div>
 <div class="grade-tabs" id="gradeTabs" role="tablist" aria-label="학년·교과전담 선택"></div>
-<div class="launch-grid" id="launchGrid" role="tabpanel" tabindex="0" aria-live="polite"></div>
-
-<div class="specialist-wrap" id="specialistPanel" role="tabpanel" tabindex="0" aria-labelledby="tab-specialist" hidden>
-  <article class="launch-card specialist-card">
-    <div class="card-top"><span class="card-meta">교과전담 · 2학기</span><span class="badge">버전 3</span></div>
-    <h3>교과전담 평어</h3>
-    <p>통합교과·영어·과학·음악·미술·체육·실과를 담당하는 교과전담 교사용 평어 생성기입니다. 학년·반별 평어를 한 도구에서 관리할 수 있습니다.</p>
-    <div class="specialist-actions">
-      <a class="main-btn" href="specialist.html" target="_blank" rel="noopener noreferrer">Gemini에서 바로 열기 ↗</a>
-      <button class="fallback-btn copy-btn" id="copySpecialist" type="button">HTML 전체 복사</button>
-    </div>
-    <div class="help" id="specialistState" role="status">공유 링크로 바로 실행하거나, 원본 HTML 전체 코드를 복사할 수 있습니다.</div>
-  </article>
-</div>
-
-<div class="notice"><strong>참고</strong> · Gemini 공유 링크는 Google/Gemini 계정 상태나 서비스 변경에 따라 동작이 달라질 수 있습니다. 사이트에서 공유 링크의 성공 여부를 자동으로 판별할 수는 없으므로, 열리지 않는 경우 각 카드의 <b>‘링크가 안 열리면 코드 복사 방식’</b>을 이용하세요.</div>
-
-<div class="manual-tease">
-<div><h3>공유 링크가 열리지 않나요?</h3><p>HTML 전체 코드를 복사해 Gemini Canvas에 직접 붙여넣는 기존 방식과 사진 매뉴얼을 그대로 제공하고 있습니다.</p></div>
-<a class="manual-link" href="manual.html">코드 복사 매뉴얼 열기 →</a>
-</div>
+<div class="launch-grid" id="launchGrid" aria-live="polite"></div>
+<div class="notice"><strong>공유 링크가 열리지 않을 때</strong> · 각 카드의 <b>HTML 전체 복사</b>를 누른 뒤 <a href="manual.html?version=v2" style="text-decoration:underline">코드 복사 매뉴얼</a>을 따라 Gemini Canvas에서 실행할 수 있습니다. 다운로드한 HTML은 백업·보관용으로도 사용할 수 있습니다.</div>
 </section>
 </main>
-
-<footer><div class="wrap">놀평어 · 놀퀴즈 서비스 | Gemini 공유 링크를 이용한 빠른 실행 · Google Gemini와 별도로 제공되는 안내 사이트입니다.</div></footer>
+<footer><div class="wrap">놀평어 · 놀퀴즈 서비스 | 현재 기본: 버전 2</div></footer>
 
 <script>
 (()=>{
 'use strict';
-
-const recordGuidePopup=document.getElementById('recordGuidePopup');
-const recordGuideConfirm=document.getElementById('recordGuideConfirm');
-if(recordGuidePopup&&recordGuideConfirm){
- document.body.style.overflow='hidden';
- recordGuideConfirm.addEventListener('click',()=>{
-   recordGuidePopup.hidden=true;
-   document.body.style.overflow='';
- });
- recordGuidePopup.addEventListener('click',e=>{
-   if(e.target===recordGuidePopup){
-     recordGuidePopup.hidden=true;
-     document.body.style.overflow='';
-   }
- });
-}
-
 const links={
-1:{subject:'https://share.gemini.google/3fFMQop4KoYW',creative:'https://share.gemini.google/V0eqH6NKD7tb',behavior:'https://share.gemini.google/bfHGe8XftCuk'},
-2:{subject:'https://share.gemini.google/lyzASKFAwXK3',creative:'https://share.gemini.google/3PnsKTivR1km',behavior:'https://share.gemini.google/098rxJidyNht'},
-3:{subject:'https://share.gemini.google/4HrbDC0KD2p8',creative:'https://share.gemini.google/lK2QanapAeLp',behavior:'https://share.gemini.google/tNW8Zspaxv3C'},
-4:{subject:'https://share.gemini.google/uhwWaVQADFKZ',creative:'https://share.gemini.google/sV61UQ50VUp8',behavior:'https://share.gemini.google/5tbQqe30H7Hf'},
-5:{subject:'https://share.gemini.google/hfZwNVvZmgjJ',creative:'https://share.gemini.google/nd8mXf0Y01Uw',behavior:'https://share.gemini.google/J4LCMwBwYL6N'},
-6:{subject:'https://share.gemini.google/QgbaUhKn6G5C',creative:'https://share.gemini.google/9kDYt955c4k9',behavior:'https://share.gemini.google/ubhGGLdJ0XG9'}
+ v2:{
+  1:{subject:'https://share.gemini.google/he8eKUiHjPrl',creative:'https://share.gemini.google/tr2O0rjvIlSI',behavior:'https://share.gemini.google/CNzU02R5G1k2'},
+  2:{subject:'https://share.gemini.google/ld2nf0Grpy73',creative:'https://share.gemini.google/YU3n4QlJaN1p',behavior:'https://share.gemini.google/UPpGM7lj8IGv'},
+  3:{subject:'https://share.gemini.google/CGZIYaIVKvrs',creative:'https://share.gemini.google/NbvIPjqrYX6J',behavior:'https://share.gemini.google/WJeG8kpz3q2m'},
+  4:{subject:'https://share.gemini.google/QSh73C6bQYUl',creative:'https://share.gemini.google/34iW76gezQpI',behavior:'https://share.gemini.google/bratHhCUrPdx'},
+  5:{subject:'https://share.gemini.google/5X6tYtzKIoc2',creative:'https://share.gemini.google/G95asM0gXAlI',behavior:'https://share.gemini.google/58kjzv0uhFfd'},
+  6:{subject:'https://share.gemini.google/4CNKGiW41wgo',creative:'https://share.gemini.google/m7ZRQf9nwakn',behavior:'https://share.gemini.google/C6R29UFNjquZ'},
+  specialist:{subject:'https://share.gemini.google/NLvZQDbwb0l8'}
+ },
+ v1:{
+  1:{subject:'https://share.gemini.google/3fFMQop4KoYW',creative:'https://share.gemini.google/V0eqH6NKD7tb',behavior:'https://share.gemini.google/bfHGe8XftCuk'},
+  2:{subject:'https://share.gemini.google/lyzASKFAwXK3',creative:'https://share.gemini.google/3PnsKTivR1km',behavior:'https://share.gemini.google/098rxJidyNht'},
+  3:{subject:'https://share.gemini.google/4HrbDC0KD2p8',creative:'https://share.gemini.google/lK2QanapAeLp',behavior:'https://share.gemini.google/tNW8Zspaxv3C'},
+  4:{subject:'https://share.gemini.google/uhwWaVQADFKZ',creative:'https://share.gemini.google/sV61UQ50VUp8',behavior:'https://share.gemini.google/5tbQqe30H7Hf'},
+  5:{subject:'https://share.gemini.google/hfZwNVvZmgjJ',creative:'https://share.gemini.google/nd8mXf0Y01Uw',behavior:'https://share.gemini.google/J4LCMwBwYL6N'},
+  6:{subject:'https://share.gemini.google/QgbaUhKn6G5C',creative:'https://share.gemini.google/9kDYt955c4k9',behavior:'https://share.gemini.google/ubhGGLdJ0XG9'},
+  specialist:{subject:'https://share.gemini.google/he8GMI3HhPJc'}
+ }
 };
-const types=[
-{key:'subject',label:'교과 평어',desc:'교과학습발달상황 평어 생성기'},
-{key:'creative',label:'창체 평어',desc:'창의적 체험활동 평어 생성기'},
-{key:'behavior',label:'행발',desc:'행동특성 및 종합의견 생성기'}
-];
-const tabs=document.getElementById('gradeTabs'),grid=document.getElementById('launchGrid');
-const specialistPanel=document.getElementById('specialistPanel');
-const saved=localStorage.getItem('nolpyeongeo-grade');
-let grade=saved==='specialist'?'specialist':(/^[1-6]$/.test(saved)?Number(saved):6);
-let specialistCodeCache=null;
+const types=[{key:'subject',label:'교과 평어',desc:'교과학습발달상황 평어 생성기'},{key:'creative',label:'창체 평어',desc:'창의적 체험활동 평어 생성기'},{key:'behavior',label:'행발',desc:'행동특성 및 종합의견 생성기'}];
+const v1Paths=(g,t)=>`codes/g${g}-s2-${t}-v1.html`;
+const v2Paths=(g,t)=>`codes/v2/g${g}-s2-${t}.html`;
+const tabs=document.getElementById('gradeTabs'),grid=document.getElementById('launchGrid'),versionInfo=document.getElementById('versionInfo');
+let version=localStorage.getItem('nolpyeongeo-version')==='v1'?'v1':'v2';
+const savedGrade=localStorage.getItem('nolpyeongeo-grade');
+let grade=savedGrade==='specialist'?'specialist':(/^[1-6]$/.test(savedGrade)?Number(savedGrade):6);
+const cache=new Map();
 
-async function copyText(text){
- try{await navigator.clipboard.writeText(text);return true}
- catch{
-  const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
-  let ok=false;try{ok=document.execCommand('copy')}catch{}ta.remove();return ok;
- }
-}
-async function loadSpecialistCode(){
- if(specialistCodeCache) return specialistCodeCache;
- const paths=Array.from({length:8},(_,i)=>`codes/specialist-s2-subject-v3.part${i+1}.txt`);
- const responses=await Promise.all(paths.map(p=>fetch(p,{cache:'no-store'})));
- if(responses.some(r=>!r.ok)) throw new Error('load failed');
- const chunks=await Promise.all(responses.map(r=>r.text()));
- specialistCodeCache=chunks.join('');
- return specialistCodeCache;
-}
+function codePath(g,t){if(g==='specialist')return version==='v2'?'codes/v2/specialist-s2-subject.html':'codes/v1/specialist-s2-subject.html';return version==='v2'?v2Paths(g,t):v1Paths(g,t)}
+async function copyText(text){try{await navigator.clipboard.writeText(text);return true}catch{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch{}ta.remove();return ok}}
+async function loadCode(path){if(cache.has(path))return cache.get(path);const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw Error('load');const t=await r.text();cache.set(path,t);return t}
+function setVersion(v){version=v;localStorage.setItem('nolpyeongeo-version',v);document.getElementById('ver-v2').classList.toggle('active',v==='v2');document.getElementById('ver-v1').classList.toggle('active',v==='v1');document.getElementById('ver-v2').setAttribute('aria-selected',String(v==='v2'));document.getElementById('ver-v1').setAttribute('aria-selected',String(v==='v1'));versionInfo.className='version-info'+(v==='v1'?' old':'');versionInfo.innerHTML=v==='v2'?'<b>버전 2 · 현재 권장</b> — 내 평어함 이동 확인과 기존 평어 덮어쓰기 보호가 강화된 최신 배포본입니다.':'<b>버전 1 · 이전 버전</b> — 기존 공유 링크와 HTML을 보관용으로 제공합니다. 특별한 이유가 없다면 버전 2 사용을 권장합니다.';renderCards()}
+document.getElementById('ver-v2').onclick=()=>setVersion('v2');document.getElementById('ver-v1').onclick=()=>setVersion('v1');
 
-function renderTabs(){
- tabs.innerHTML='';
- const choices=[1,2,3,4,5,6,'specialist'];
- for(const g of choices){
-  const b=document.createElement('button');
-  b.type='button';b.role='tab';b.id='tab-'+g;
-  b.textContent=g==='specialist'?'교과전담':g+'학년';b.className=g===grade?'active':'';
-  b.setAttribute('aria-selected',String(g===grade));
-  b.setAttribute('aria-controls',g==='specialist'?'specialistPanel':'launchGrid');
-  b.tabIndex=g===grade?0:-1;
-  b.onclick=()=>selectTab(g);
-  b.onkeydown=e=>{
-   const i=choices.indexOf(g);
-   const next={ArrowRight:choices[(i+1)%choices.length],ArrowLeft:choices[(i+choices.length-1)%choices.length],Home:choices[0],End:choices[choices.length-1]}[e.key];
-   if(next!==undefined){e.preventDefault();selectTab(next)}
-  };
-  tabs.appendChild(b);
- }
-}
-function selectTab(value){
- grade=value;localStorage.setItem('nolpyeongeo-grade',String(value));
- renderTabs();renderCards();document.getElementById('tab-'+value).focus();
-}
+function renderTabs(){tabs.innerHTML='';for(const g of [1,2,3,4,5,6,'specialist']){const b=document.createElement('button');b.type='button';b.textContent=g==='specialist'?'교과전담':g+'학년';b.className=g===grade?'active':'';b.onclick=()=>{grade=g;localStorage.setItem('nolpyeongeo-grade',String(g));renderTabs();renderCards()};tabs.appendChild(b)}}
 function renderCards(){
- const specialist=grade==='specialist';
- grid.hidden=specialist;specialistPanel.hidden=!specialist;
- if(specialist) return;
- grid.setAttribute('aria-labelledby','tab-'+grade);
  grid.innerHTML='';
- for(const t of types){
-  const a=document.createElement('article');a.className='launch-card';
-  const label=`[${grade}학년 2학기] ${t.label}`;
-  a.innerHTML=`
-   <div class="card-top"><span class="card-meta">${grade}학년 · 2학기</span><span class="badge">버전 1</span></div>
-   <h3>${label}</h3>
-   <p>${t.desc}입니다. 먼저 Gemini 공유 링크로 바로 실행해 보세요.</p>
-   <a class="main-btn" href="${links[grade][t.key]}" target="_blank" rel="noopener noreferrer">Gemini에서 바로 열기 ↗</a>
-   <a class="fallback-btn" href="manual.html?grade=${grade}&type=${t.key}#codes">링크가 안 열리면 코드 복사 방식 →</a>
-   <div class="help">공유 링크 우선 · 문제가 있을 때만 HTML 코드 복사</div>`;
-  grid.appendChild(a);
- }
+ if(grade==='specialist'){grid.appendChild(makeCard('specialist',{key:'subject',label:'교과전담 평어',desc:'교과전담 교사용 2학기 평어 생성기'}));return}
+ for(const t of types)grid.appendChild(makeCard(grade,t));
 }
-const specialistBtn=document.getElementById('copySpecialist');
-const specialistState=document.getElementById('specialistState');
-specialistBtn.onclick=async()=>{
- const old=specialistBtn.textContent;
- specialistBtn.disabled=true;specialistBtn.textContent='불러오는 중…';specialistState.textContent='교과전담 HTML 전체 코드를 준비하고 있습니다.';
- try{
-  const code=await loadSpecialistCode();
-  const ok=await copyText(code);
-  if(!ok) throw new Error('copy failed');
-  specialistBtn.textContent='✓ 복사 완료';
-  specialistState.textContent='교과전담 v3 HTML 전체 코드가 클립보드에 복사되었습니다.';
- }catch{
-  specialistBtn.textContent='다시 시도';
-  specialistState.textContent='코드를 불러오거나 복사하지 못했습니다. 잠시 후 다시 시도하세요.';
- }finally{
-  setTimeout(()=>{specialistBtn.disabled=false;specialistBtn.textContent=old;},1800);
- }
-};
-renderTabs();renderCards();
+function makeCard(g,t){
+ const card=document.createElement('article');card.className='launch-card'+(g==='specialist'?' specialist':'');
+ const label=g==='specialist'?'교과전담 평어':`[${g}학년 2학기] ${t.label}`;
+ const path=codePath(g,t.key);
+ const gemini=links[version][g][t.key];
+ card.innerHTML=`<div class="card-top"><span class="card-meta">${g==='specialist'?'교과전담 · 2학기':g+'학년 · 2학기'}</span><span class="badge ${version==='v1'?'old':''}">${version==='v2'?'버전 2 · 최신':'버전 1 · 이전'}</span></div><h3>${label}</h3><p>${t.desc}입니다. Gemini에서 바로 실행하거나 HTML 원본을 보관·복사할 수 있습니다.</p><a class="main-btn" href="${gemini}" target="_blank" rel="noopener noreferrer">Gemini에서 바로 열기 ↗</a><div class="card-actions"><a class="sub-btn" href="${path}" download>HTML 다운로드 ↓</a><button class="sub-btn copy">HTML 전체 복사</button></div><a class="manual-link" href="manual.html?version=${version}&grade=${g}&type=${t.key}#codes">공유 링크가 안 열리면 코드 복사 방법 보기 →</a><div class="help" role="status"></div>`;
+ const btn=card.querySelector('.copy'),state=card.querySelector('.help');
+ btn.onclick=async()=>{const old=btn.textContent;btn.disabled=true;btn.textContent='불러오는 중…';try{const code=await loadCode(path);if(!await copyText(code))throw Error('copy');btn.textContent='✓ 복사 완료';state.textContent='HTML 전체 코드가 클립보드에 복사되었습니다.'}catch{btn.textContent='다시 시도';state.textContent='코드를 불러오거나 복사하지 못했습니다.'}finally{setTimeout(()=>{btn.disabled=false;btn.textContent=old},1700)}};
+ return card;
+}
+const popup=document.getElementById('recordGuidePopup'),confirm=document.getElementById('recordGuideConfirm');document.body.style.overflow='hidden';confirm.onclick=()=>{popup.hidden=true;document.body.style.overflow=''};popup.onclick=e=>{if(e.target===popup){popup.hidden=true;document.body.style.overflow=''}};
+renderTabs();setVersion(version);
 })();
 </script>
-</body>
-</html>
+</body></html>

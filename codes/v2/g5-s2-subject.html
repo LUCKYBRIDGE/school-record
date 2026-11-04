@@ -1,0 +1,1994 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>[5학년-2학기]놀퀴즈 교과 평어생성기</title>
+<style>:root{--bg:#f8fafc;--card:#ffffff;--line:#e2e8f0;--text:#0f172a;--muted:#64748b;--navy:#1e293b;--blue:#eff6ff;--shadow:0 4px 20px -2px rgba(15,23,42,0.05);--r:16px}*{box-sizing:border-box}body{margin:0;background-color:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans KR",sans-serif;-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;transition:all 0.15s ease-in-out}button:disabled{opacity:0.45;cursor:not-allowed}.app{width:min(1520px,calc(100% - 24px));margin:12px auto 40px}.top{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);color:#fff;padding:22px 24px;border-radius:20px 20px 0 0;box-shadow:0 4px 12px rgba(0,0,0,0.05)}.top h1{margin:0;font-size:24px;font-weight:800;tracking:-0.02em}.top p{margin:6px 0 0;font-size:13.5px;opacity:0.85;font-weight:400}.tabs{display:flex;gap:8px;background:#fff;padding:10px 16px;border:1px solid var(--line);border-top:0;position:sticky;top:0;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,0.02)}.tabs button{border:0;background:transparent;border-radius:10px;padding:10px 18px;font-weight:700;font-size:14px;color:#64748b}.tabs button.active{background:#f1f5f9;color:#0f172a}.view{display:block}.hide{display:none !important}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px;margin:16px 0}.card h2{font-size:17px;font-weight:700;margin:0 0 16px;color:#1e293b;display:flex;align-items:center;gap:8px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{min-width:0}.field label{display:block;font-size:12px;font-weight:700;color:#475569;margin:0 0 6px}.field input,.field select,textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;background:#fff;padding:10px 12px;font-size:13.5px;outline:none;transition:border-color 0.15s ease,box-shadow 0.15s ease}.field input:focus,.field select:focus,textarea:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.15)}textarea{min-height:96px;resize:vertical;line-height:1.6}.studentHead{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.studentHead button{white-space:nowrap;border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:700;color:#475569}.studentHead button.active{background:#f1f5f9;border-color:#94a3b8;color:#0f172a}.summary{white-space:nowrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;color:#334155;margin-left:auto}.studentNums{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px;margin-top:14px}.studentNums button{height:42px;border:1px solid #cbd5e1;background:#fff;border-radius:10px;font-weight:700;font-size:13.5px;color:#334155}.studentNums button:hover{background:#f8fafc}.studentNums button.selected{background:#2563eb;border-color:#2563eb;color:#ffffff}.studentNums button.saved:after{content:"•";color:#10b981;margin-left:3px;font-size:16px;line-height:0}.studentNums button.selected.saved:after{color:#6ee7b7}.noteHelp{margin:8px 0 10px;color:var(--muted);font-size:12px;line-height:1.5}.individualBox{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:12px}.individualItem{border:1px solid #e2e8f0;background:#f8fafc;border-radius:12px;padding:12px}.individualItem b{display:block;font-size:13px;margin-bottom:6px;color:#1e293b}.individualItem textarea{min-height:76px}.keywordTools{display:grid;grid-template-columns:240px minmax(200px,1fr) auto auto;gap:10px;align-items:end;margin-bottom:14px}.countBadge{align-self:end;border:1px solid #cbd5e1;background:#f8fafc;border-radius:10px;padding:9.5px 14px;font-size:13px;font-weight:700;white-space:nowrap;color:#334155}.keywordUnit{border-top:1px solid #f1f5f9;padding-top:14px;margin-top:14px}.keywordUnit:first-child{border-top:0;margin-top:0;padding-top:0}.keywordUnit h3{font-size:14.5px;font-weight:700;margin:0 0 10px;color:#0f172a}.unitMeta{font-size:11.5px;color:#64748b;font-weight:500;margin-left:8px}.keywordList{display:flex;flex-wrap:wrap;gap:8px}.kw{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:7px 11px;display:inline-flex;gap:8px;align-items:center;max-width:100%;text-align:left;transition:all 0.15s ease}.kw:hover{border-color:#94a3b8}.kw .txt{font-size:12.5px;line-height:1.4;font-weight:500}.kw .cat{font-size:10px;border-radius:999px;padding:2px 7px;background:#f1f5f9;color:#475569;white-space:nowrap;font-weight:600}.kw .level{font-size:10.5px;font-weight:800;white-space:nowrap}.kw.lv1{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}.kw.lv2{background:#f0fdf4;border-color:#bbf7d0;color:#166534}.kw.lv3{background:#fefce8;border-color:#fef08a;color:#854d0e}.kw.lv4{background:#fff7ed;border-color:#fed7aa;color:#9a3412}.kw.lv5{background:#fef2f2;border-color:#fecaca;color:#991b1b}.subjectKeywordGroup{display:inline-flex;flex-direction:column;gap:7px;max-width:100%;align-items:flex-start}.subjectKeywordGroup.open{flex-basis:100%;width:100%;padding:9px 10px 11px;border:1px solid #e2e8f0;border-radius:12px;background:#fbfdff}.subjectSubPanel{width:100%;display:grid;gap:8px}.subjectSubGroup{border-radius:10px;background:#fff;padding:8px 9px}.subjectSubGroup.knowledge{border-left:4px solid #3b82f6}.subjectSubGroup.process{border-left:4px solid #10b981}.subjectSubGroup.value{border-left:4px solid #8b5cf6}.subjectSubGroupHead{display:flex;align-items:center;gap:7px;margin-bottom:7px;font-size:11px;font-weight:850;color:#334155}.subjectCatDot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.subjectCatDot.knowledge{background:#3b82f6}.subjectCatDot.process{background:#10b981}.subjectCatDot.value{background:#8b5cf6}.subjectSubList{display:flex;flex-wrap:wrap;gap:6px}.subjectSubkw{border:2px solid #cbd5e1;background:#fff;border-radius:999px;padding:5px 9px;font-size:11.5px;line-height:1.25;color:#334155;cursor:pointer;transition:background .12s ease,color .12s ease,box-shadow .12s ease}.subjectSubkw.cat-knowledge{border-color:#60a5fa}.subjectSubkw.cat-process{border-color:#34d399}.subjectSubkw.cat-value{border-color:#a78bfa}.subjectSubkw:hover{box-shadow:0 0 0 2px rgba(148,163,184,.12)}.subjectSubkw.lv1{background:#dcfce7;color:#14532d}.subjectSubkw.lv2{background:#ecfdf5;color:#166534}.subjectSubkw.lv3{background:#fef9c3;color:#854d0e}.subjectSubkw.lv4{background:#fff7ed;color:#9a3412}.subjectSubkw.lv5{background:#fef2f2;color:#991b1b}.subjectLegend{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:0 0 10px;font-size:11px;color:#64748b}.subjectLegendItem{display:inline-flex;align-items:center;gap:5px;border:2px solid;border-radius:999px;padding:3px 8px;background:#fff;font-weight:750}.subjectLegendItem.knowledge{border-color:#60a5fa;color:#1d4ed8}.subjectLegendItem.process{border-color:#34d399;color:#047857}.subjectLegendItem.value{border-color:#a78bfa;color:#6d28d9}.usedCount{font-size:11px;font-weight:800;color:#2563eb;margin-left:2px}.levelUsageCount{display:inline-flex;align-items:center;margin-left:4px;padding:1px 5px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:10.5px;font-weight:850;vertical-align:middle;white-space:nowrap}.subjectSubkw .levelUsageCount{margin-left:3px;background:rgba(255,255,255,.72);color:#334155;border:1px solid rgba(148,163,184,.25)}.subjectSubkw.lv1 .levelUsageCount,.subjectSubkw.lv2 .levelUsageCount,.subjectSubkw.lv3 .levelUsageCount,.subjectSubkw.lv4 .levelUsageCount,.subjectSubkw.lv5 .levelUsageCount{background:rgba(255,255,255,.62)}.unitActivity{margin-top:10px;border:1px dashed #cbd5e1;border-radius:10px;background:#fafafa;padding:0 12px}.unitActivity summary{cursor:pointer;padding:10px 0;font-size:12.5px;font-weight:700;color:#475569}.unitActivityBody{display:flex;gap:8px;align-items:center;padding:0 0 12px}.unitActivityBody input{flex:1;min-width:0;border:1px solid #cbd5e1;border-radius:8px;padding:8px 11px;background:#fff;font-size:13px}.unitActivityBody button{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;white-space:nowrap}.teacherNoteBlock{margin-top:20px;padding-top:16px;border-top:1px solid #e2e8f0}.teacherNoteBlock h3{margin:0 0 10px;font-size:15px;font-weight:700;color:#1e293b}.eduRef{margin-top:14px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;padding:10px 14px}.eduRef summary{cursor:pointer;font-size:12.5px;font-weight:700;color:#334155}.eduRefContent{font-size:12px;color:#475569;line-height:1.6;margin-top:8px;white-space:pre-wrap}.settingsRow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.actions,.bulk,.footerActions,.rowActions{display:flex;gap:8px;flex-wrap:wrap}.actions{margin-top:16px}.actions button,.bulk button,.footerActions button,.rowActions button,#toggleIndividual{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:700;color:#334155}.actions button:hover,.bulk button:hover,.footerActions button:hover{background:#f8fafc}.actions .primary{background:#2563eb;color:#fff;border-color:#2563eb}.actions .primary:hover{background:#1d4ed8}.currentSetting{margin:16px 0 10px;font-size:13px;font-weight:700;color:#1e293b}.resultGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}.resultCard{border:1px solid #e2e8f0;border-radius:14px;padding:14px;background:#ffffff;box-shadow:0 2px 6px rgba(0,0,0,0.02)}.cardHead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.cardHead h3{margin:0;font-size:14.5px;font-weight:700;color:#0f172a}.cardHead span,.pill{font-size:11.5px;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:3px 10px;font-weight:700}.resultCard textarea{min-height:110px;font-size:13.5px}.resultSave{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.resultSave button{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:8px 10px;font-size:12px;font-weight:700}.promptBox{margin-top:10px}.promptBox summary{cursor:pointer;font-size:11.5px;color:#64748b;font-weight:600}.promptBox textarea{min-height:160px;font-size:11.5px;background:#f8fafc;margin-top:6px;font-family:monospace}.savedPreview{margin-top:10px;border:1px solid #e2e8f0;border-radius:10px;background:#fff}.savedPreview summary{cursor:pointer;padding:9px 12px;font-size:12px;font-weight:700;color:#334155}.savedPreviewBody{padding:0 12px 12px}.savedPreviewSentence{padding:8px 10px;margin-top:6px;border-radius:8px;background:#f8fafc;border:1px solid #f1f5f9;font-size:12.5px;line-height:1.5;color:#334155}.savedPreviewEmpty{font-size:12px;color:#94a3b8;padding:6px 0}.savedPreviewActions{margin-top:8px}.quality{font-size:12px;margin-top:6px;font-weight:600}.quality.ok{color:#059669}.quality.warn{color:#d97706}.bulk{margin-top:14px}.status{margin:12px 0 0;padding:10px 14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;font-size:13px;color:#065f46;font-weight:600}.status.warn{background:#fffbebf1;border-color:#fde68a;color:#92400e}.libraryHeader{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.libraryHeader .sub{font-size:12.5px;color:#64748b}.libraryDuplicateTools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0 12px}.libraryDuplicateTools button{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:800;color:#334155}.libraryDuplicateTools button:hover{background:#f8fafc}.libraryDuplicateInfo{font-size:12px;color:#64748b;line-height:1.5}.libraryDuplicateInfo.ok{color:#047857}.libraryDuplicateInfo.warn{color:#b45309}.librarySaveBar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc}.librarySaveHint{font-size:12px;color:#64748b;line-height:1.5}.saveAllLibraryChanges{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:850;color:#334155}.saveAllLibraryChanges.dirty{background:#dc2626;border-color:#dc2626;color:#fff;box-shadow:0 0 0 3px rgba(220,38,38,.10)}.saveAllLibraryChanges.dirty:hover{background:#b91c1c}.rowActions .dirtySave{background:#dc2626!important;border-color:#dc2626!important;color:#fff!important;box-shadow:0 0 0 2px rgba(220,38,38,.10)}.rowActions .dirtySave:hover{background:#b91c1c!important}.recordStats,.resultMetrics{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;font-size:11.5px;font-weight:750;color:#64748b}.recordStats.dirty{color:#b91c1c}.statBadge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:11px;font-weight:800}.recordStats.dirty .statBadge{background:#fef2f2;color:#b91c1c}.resultMetrics .statBadge{background:#eff6ff;color:#1d4ed8}.libraryTable .manage{width:390px}.aiReduce{border-color:#bfdbfe!important;color:#1d4ed8!important;background:#eff6ff!important}.aiReduce:hover{background:#dbeafe!important}.tableWrap{overflow-x:auto;border:1px solid #e2e8f0;border-radius:12px;background:#fff}.libraryTable{width:100%;border-collapse:collapse;min-width:800px}.libraryTable th,.libraryTable td{border-bottom:1px solid #f1f5f9;padding:10px 12px;vertical-align:top}.libraryTable th{font-size:12.5px;font-weight:700;text-align:left;background:#f8fafc;color:#475569;position:sticky;top:0}.libraryTable .no{width:70px;font-weight:800;color:#1e293b;text-align:center}.libraryTable .record textarea{min-height:80px;font-size:13px}.libraryTable .manage{width:390px}.small{font-size:11.5px !important;padding:6px 10px !important}.danger{color:#dc2626 !important;border-color:#fca5a5 !important}.danger:hover{background:#fef2f2 !important}.sentencePanel{margin-top:10px;border:1px solid #e2e8f0;border-radius:10px;background:#f8fafc;padding:10px}.sentenceRow{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:start;padding:8px 0;border-bottom:1px dashed #e2e8f0}.sentenceRow:last-child{border-bottom:0}.sentenceNo{font-size:12px;font-weight:800;color:#64748b;padding-top:8px;text-align:center}.sentenceRow textarea{min-height:60px;font-size:12.5px}.sentenceAI{margin:8px 0 0 36px;padding:10px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:8px}.sentenceAI textarea{min-height:80px;font-size:11.5px}.fatal{display:none;background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;margin:12px 0;white-space:pre-wrap;font-size:13px;font-weight:500}.nojs{padding:12px 16px;background:#fffbe3;border:1px solid #fef08a;border-radius:10px;margin:12px 0;font-size:13px;color:#713f12}.headerQuickBar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px}.siteLinksWrap{display:flex;flex-direction:column;gap:6px;min-width:0}.siteLinksLabel{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.68);font-size:10.5px;font-weight:700;letter-spacing:.01em}.siteLinksLabel::before{content:"🔗";font-size:10px}.siteLinks{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:0}.siteLink{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.08);color:#fff;border-radius:8px;padding:7px 10px;font-size:12px;font-weight:750;line-height:1;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}.siteLink::after{content:"↗";font-size:12px;font-weight:900;opacity:.8;transform:translateY(-1px)}.siteLink:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.68);text-decoration:underline;text-underline-offset:3px}.siteLink:focus-visible{outline:3px solid rgba(255,255,255,.45);outline-offset:2px}.topActions{display:flex;gap:7px;justify-content:flex-end;align-items:center;margin:0;flex-wrap:wrap}.topActions button{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);color:#fff;border-radius:8px;padding:7px 11px;font-size:12px;font-weight:650}.topActions button:hover{background:rgba(255,255,255,.17);border-color:rgba(255,255,255,.45)}.topActions .loadBtn{background:#dbeafe;color:#1e3a8a;border-color:#bfdbfe;font-weight:850}.topActions .loadBtn:hover{background:#eff6ff;border-color:#dbeafe}.topActions .loadBtn::before{content:"↥";margin-right:5px;font-weight:900}.topActions .tipsBtn{background:#ffffff;color:#0f172a;border-color:#ffffff;font-weight:800}.topActions .tipsBtn:hover{background:#f1f5f9}.attachmentBox{margin-top:16px;border:1px solid #e2e8f0;border-radius:14px;background:#f8fafc;padding:14px}.attachmentHead{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}.attachmentHead strong{font-size:13.5px;font-weight:700;color:#1e293b}.attachmentHead .sub{font-size:12px;color:#64748b}.attachButton{display:inline-flex;align-items:center;gap:6px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;color:#334155}.attachButton:hover{background:#f1f5f9}.attachmentList{display:grid;gap:10px;margin-top:12px}.attachmentItem{border:1px solid #e2e8f0;border-radius:10px;background:#fff;padding:12px}.attachmentItemTop{display:flex;align-items:center;justify-content:space-between;gap:8px}.attachmentName{font-size:13px;font-weight:700;color:#0f172a;word-break:break-all}.attachmentMeta{font-size:11px;color:#64748b;margin-top:2px}.attachmentGuide{margin-top:8px}.attachmentGuide label{display:block;font-size:11.5px;font-weight:700;color:#475569;margin-bottom:4px}.attachmentGuide textarea{min-height:64px;font-size:12px}.attachmentEmpty{font-size:12px;color:#94a3b8;padding:4px 0}.removeAttach{border:1px solid #e2e8f0;background:#fff;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:700;color:#64748b}.removeAttach:hover{color:#dc2626;border-color:#fca5a5}.tipOverlay{position:fixed;inset:0;background:rgba(15,23,42,0.6);backdrop-filter:blur(2px);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}.tipOverlay.show{display:flex}.tipDialog{width:min(760px,100%);max-height:85vh;overflow-y:auto;background:#fff;border-radius:20px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);padding:24px}.tipDialog h2{margin:0 0 8px;font-size:20px;font-weight:800;color:#0f172a}.tipDialog h3{margin:18px 0 8px;font-size:15px;font-weight:700;color:#1e293b}.tipDialog p,.tipDialog li{font-size:13px;line-height:1.65;color:#334155}.tipDialog ul{padding-left:20px;margin:8px 0}.tipDialog .tipCloseRow{display:flex;justify-content:flex-end;margin-top:20px}.tipDialog .tipCloseRow button{border:0;background:#2563eb;color:#fff;border-radius:10px;padding:10px 18px;font-weight:700;font-size:13.5px}#clearKeywords{border:1px solid #cbd5e1;background:#fff;color:#334155;font-weight:700;padding:9px 12px;border-radius:10px;font-size:12px}#clearKeywords:hover{background:#f8fafc}.libraryControls{display:grid;grid-template-columns:minmax(220px,1fr) minmax(180px,1fr) minmax(220px,1.4fr);gap:10px;align-items:end;margin:0 0 14px;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc}.libraryControls .currentLibraryInfo{align-self:end;min-height:39px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}.exportPanel{margin-top:16px;padding:14px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc}.exportPanel h3{margin:0 0 5px;font-size:14px;color:#1e293b}.exportPanel .exportHelp{margin:0 0 10px;font-size:12px;line-height:1.55;color:#64748b}.exportActions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.exportActions button{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:10px 12px;font-size:12.5px;font-weight:700;color:#334155}.exportActions button:hover{background:#f1f5f9}.exportActions .primaryExport{background:#2563eb;border-color:#2563eb;color:#fff}.exportActions .primaryExport:hover{background:#1d4ed8}.exportSubActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;padding-top:9px;border-top:1px dashed #dbe3ed}.exportSubActions button{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;font-size:11.5px;font-weight:700;color:#475569}#loadingOverlay{position:fixed;inset:0;background:rgba(15,23,42,.60);backdrop-filter:blur(2px);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px}#loadingOverlay.flex{display:flex!important}.hidden{display:none!important}.loadingBox{background:#fff;border-radius:18px;padding:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,.28);display:flex;flex-direction:column;align-items:center;max-width:380px;width:min(380px,calc(100% - 24px))}.loadingSpinner{width:48px;height:48px;border-radius:50%;border:4px solid #e2e8f0;border-top-color:#2563eb;margin-bottom:14px;animation:knolSpin .85s linear infinite}.loadingTitle{font-size:18px;font-weight:800;color:#0f172a;margin:0 0 7px}.loadingText{font-size:13px;color:#64748b;text-align:center;margin:0}@keyframes knolSpin{to{transform:rotate(360deg)}}@media (max-width:800px){.app{width:calc(100% - 16px);margin:8px auto 24px}.top{padding:16px;border-radius:16px 16px 0 0}.card{padding:14px;margin:10px 0}.grid-3{grid-template-columns:1fr}.keywordTools{grid-template-columns:1fr 1fr}.keywordTools .search{grid-column:1 / -1}.settingsRow{grid-template-columns:1fr}.resultGrid{grid-template-columns:1fr}.resultSave{grid-template-columns:1fr}.tabs{overflow-x:auto}.libraryTable{min-width:700px}.libraryControls{grid-template-columns:1fr}.exportActions{grid-template-columns:1fr}}
+/* v20 · 내 평어함 이동 확인 / 덮어쓰기 보호 */
+.resultSave .replaceBtn,.resultSave .appendBtn,.bulk .replaceBtn,.bulk .appendBtn{color:#fff!important;font-weight:850!important}
+.resultSave .replaceBtn,.bulk .replaceBtn{background:#EA580C!important;border-color:#EA580C!important}.resultSave .replaceBtn:hover,.bulk .replaceBtn:hover{background:#C2410C!important;border-color:#C2410C!important}
+.resultSave .appendBtn,.bulk .appendBtn{background:#059669!important;border-color:#059669!important}.resultSave .appendBtn:hover,.bulk .appendBtn:hover{background:#047857!important;border-color:#047857!important}
+.saveSafetyOverlay{position:fixed;inset:0;z-index:10050;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(15,23,42,.62);backdrop-filter:blur(4px)}
+.saveSafetyOverlay.show{display:flex}.saveSafetyDialog{width:min(720px,100%);max-height:84vh;overflow:auto;background:#fff;border-radius:22px;padding:24px;box-shadow:0 30px 80px rgba(15,23,42,.34);outline:none}
+.saveSafetyHeader{display:flex;align-items:flex-start;gap:12px}.saveSafetyIcon{flex:0 0 38px;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:950}.saveSafetyDialog.success .saveSafetyIcon{background:#dcfce7;color:#047857}.saveSafetyDialog.warning .saveSafetyIcon{background:#ffedd5;color:#c2410c}
+.saveSafetyTitle{margin:0;font-size:20px;line-height:1.35;letter-spacing:-.02em}.saveSafetyDialog.success .saveSafetyTitle{color:#047857}.saveSafetyDialog.warning .saveSafetyTitle{color:#c2410c}.saveSafetyDesc{margin:6px 0 0;color:#64748b;font-size:13px;line-height:1.65}
+.saveSafetyMeta{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.saveSafetyMeta span{padding:5px 9px;border-radius:999px;background:#f8fafc;border:1px solid #e2e8f0;color:#334155;font-size:11.5px;font-weight:800}
+.saveSafetyCompare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.saveSafetyPane{border-radius:14px;padding:13px;border:1px solid}.saveSafetyPane.old{background:#fff7ed;border-color:#fed7aa}.saveSafetyPane.new{background:#f0fdf4;border-color:#bbf7d0}.saveSafetyPane h4{margin:0 0 7px;font-size:12px}.saveSafetyPane.old h4{color:#c2410c}.saveSafetyPane.new h4{color:#047857}.saveSafetyText{white-space:pre-wrap;word-break:break-word;font-size:12.5px;line-height:1.65;color:#334155;max-height:190px;overflow:auto}
+.saveSafetyList{display:grid;gap:11px;margin-top:14px}.saveSafetyItem{border:1px solid #e2e8f0;border-radius:15px;padding:12px}.saveSafetyStudent{font-size:12px;font-weight:900;color:#0f172a;margin-bottom:7px}.saveSafetyFinal{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:11px;white-space:pre-wrap;word-break:break-word;font-size:12.5px;line-height:1.65;color:#14532d}
+.saveSafetyNotice{margin-top:14px;padding:11px 12px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12px;line-height:1.6;font-weight:750}.saveSafetyActions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:18px}.saveSafetyActions button{border:1px solid #cbd5e1;background:#fff;color:#334155;border-radius:10px;padding:10px 14px;font-size:12px;font-weight:850}.saveSafetyActions .confirmReplace{background:#EA580C;border-color:#EA580C;color:#fff}.saveSafetyActions .confirmReplace:hover{background:#C2410C;border-color:#C2410C}.saveSafetyActions .goLibrary{background:#059669;border-color:#059669;color:#fff}.saveSafetyActions .goLibrary:hover{background:#047857;border-color:#047857}
+.libraryTable tr.justSaved td{animation:saveGlow 2.2s ease}@keyframes saveGlow{0%,45%{background:#dcfce7}100%{background:transparent}}
+@media(max-width:650px){.saveSafetyDialog{padding:18px;border-radius:18px}.saveSafetyCompare{grid-template-columns:1fr}.saveSafetyActions{display:grid;grid-template-columns:1fr}.saveSafetyActions button{width:100%}.bulk .replaceBtn,.bulk .appendBtn{width:100%}}
+
+</style>
+<style>.restoreHelp{font-size:11.5px;color:#64748b;line-height:1.55;margin-top:8px}.restoreBtn{border-color:#a5b4fc!important;background:#eef2ff!important;color:#3730a3!important}.restoreBtn:hover{background:#e0e7ff!important}</style>
+<style>@media (max-width:720px){.headerQuickBar{align-items:stretch}.siteLinksWrap{width:100%}.topActions{width:100%;justify-content:flex-start}.topActions button{flex:0 0 auto}}</style>
+<style>
+.sourceNotice{margin:12px 0 0;padding:11px 13px;border:1px solid #cbd5e1;border-radius:12px;background:#f8fafc;color:#475569;font-size:12px;line-height:1.65}
+.sourceNotice strong{color:#1e293b}
+.kw,.subjectSubkw,.subkw{-webkit-user-select:none;user-select:none}
+</style>
+<style>
+.welcomeOverlay{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at top,rgba(59,130,246,.18),transparent 34%),rgba(15,23,42,.62);backdrop-filter:blur(10px)}
+.welcomeOverlay.show{display:flex}
+.welcomeDialog{width:min(980px,100%);max-height:calc(100dvh - 48px);overflow:auto;background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);border-radius:34px;padding:28px 34px 28px;box-shadow:0 30px 90px rgba(15,23,42,.26);border:1px solid rgba(226,232,240,.92)}
+.welcomeHero{padding:4px 4px 24px}
+.welcomeBadge{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#eef2ff;color:#1d4ed8;font-size:13px;font-weight:850;letter-spacing:-.01em;box-shadow:inset 0 0 0 1px rgba(99,102,241,.08)}
+.welcomeBadge::before{content:"✦";font-size:13px;line-height:1}
+.welcomeDialog h2{font-size:58px;line-height:1.1;letter-spacing:-.045em;color:#0f172a;margin:22px 0 18px;font-weight:900}
+.welcomeLead{color:#64748b;font-size:19px;line-height:1.75;margin:0;max-width:760px;word-break:keep-all}
+.welcomeDivider{height:1px;background:#dbe3f1;margin:30px -34px 0}
+.welcomeBody{padding:26px 4px 0}
+.welcomeSectionTitle{font-size:17px;font-weight:900;color:#64748b;margin:0 0 20px;letter-spacing:-.01em}
+.welcomeCardList{display:grid;gap:18px}
+.welcomeAction{display:grid;grid-template-columns:128px minmax(0,1fr);align-items:center;gap:26px;padding:24px 26px;border:1px solid #d9e2ee;border-radius:26px;background:#ffffff;box-shadow:0 8px 24px rgba(15,23,42,.035)}
+.welcomeMouse{display:flex;align-items:center;justify-content:center;min-height:84px;text-align:center;font-size:18px;font-weight:900;padding:10px 12px;border-radius:20px;background:#dfe7ff;color:#2f50de;letter-spacing:-.02em}
+.welcomeMouse.right{background:#f7dfdf;color:#d13a34}
+.welcomeMouse.tip{background:#f6ebcb;color:#a96c0b}
+.welcomeAction strong{display:block;font-size:21px;line-height:1.3;color:#0f172a;letter-spacing:-.02em}
+.welcomeAction p{font-size:16px;color:#64748b;margin:7px 0 0;line-height:1.68;word-break:keep-all}
+.welcomeSource{margin-top:28px;border-top:1px solid #dbe3f1;padding-top:20px}
+.welcomeSource details{border-radius:18px;background:#f8fafc;border:1px solid #e2e8f0;padding:0 18px}
+.welcomeSource summary{cursor:pointer;list-style:none;padding:16px 0;font-size:17px;font-weight:850;color:#64748b;display:flex;align-items:center;gap:8px}
+.welcomeSource summary::-webkit-details-marker{display:none}
+.welcomeSource summary::before{content:"▸";font-size:13px;transition:transform .15s ease;color:#64748b}
+.welcomeSource details[open] summary::before{transform:rotate(90deg)}
+.welcomeSourceBody{padding:0 0 16px;font-size:14px;line-height:1.8;color:#64748b;word-break:keep-all}
+.welcomeBottom{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:26px}
+.welcomeBottomNote{font-size:14px;line-height:1.6;color:#94a3b8;padding-top:6px}
+.welcomeFoot{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;margin-top:0}
+.welcomeFoot button{border:1px solid #cbd5e1;border-radius:18px;padding:18px 26px;background:#fff;color:#334155;font-size:17px;font-weight:850;cursor:pointer;box-shadow:0 2px 6px rgba(15,23,42,.03)}
+.welcomeFoot .welcomePrimary{background:#2563eb;border-color:#2563eb;color:#fff;box-shadow:0 16px 30px rgba(37,99,235,.25)}
+.welcomeFoot button:hover{transform:translateY(-1px);filter:brightness(.99)}
+.welcomeFoot .welcomePrimary:hover{filter:brightness(.98)}
+.topActions .welcomeOpen{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.24)}
+@media (max-width:800px){.welcomeOverlay{padding:12px}.welcomeDialog{width:min(100%,100%);max-height:calc(100dvh - 24px);padding:20px 20px 22px;border-radius:24px}.welcomeHero{padding:2px 2px 18px}.welcomeDialog h2{font-size:28px;margin:16px 0 12px}.welcomeLead{font-size:16px;line-height:1.7}.welcomeDivider{margin:22px -20px 0}.welcomeBody{padding:18px 2px 0}.welcomeSectionTitle{font-size:15px;margin-bottom:14px}.welcomeCardList{gap:12px}.welcomeAction{grid-template-columns:1fr;gap:12px;padding:16px 16px 18px;border-radius:20px}.welcomeMouse{min-height:auto;padding:14px 10px;border-radius:16px;font-size:17px}.welcomeAction strong{font-size:18px}.welcomeAction p{font-size:14px;line-height:1.6}.welcomeSource{margin-top:20px;padding-top:16px}.welcomeSource details{padding:0 14px;border-radius:16px}.welcomeSource summary{font-size:15px;padding:14px 0}.welcomeSourceBody{font-size:13px;line-height:1.7}.welcomeBottom{margin-top:20px;align-items:stretch}.welcomeBottomNote{width:100%;font-size:12.5px;padding-top:0}.welcomeFoot{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}.welcomeFoot button{padding:15px 16px;border-radius:14px;font-size:15px}}
+</style>
+<style id="guideUpgradeV28">
+/* 6-2 v28 공통 안내 UI 규격: 기능/데이터와 분리된 안내 전용 스타일 */
+.welcomeOverlay{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(15,23,42,.64);backdrop-filter:blur(7px)}
+.welcomeOverlay.show{display:flex}
+.welcomeDialog{width:min(548px,100%);max-height:calc(100dvh - 36px);overflow:auto;background:#fff;border-radius:24px;padding:23px 24px 22px;box-shadow:0 28px 80px rgba(15,23,42,.3);border:1px solid rgba(226,232,240,.92)}
+.welcomeHero{padding:0 2px 17px}.welcomeBadge{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:#eef2ff;color:#1d4ed8;font-size:12px;font-weight:850}.welcomeBadge::before{content:"✦";font-size:11px}
+.welcomeDialog h2{font-size:25px;line-height:1.2;letter-spacing:-.035em;color:#0f172a;margin:13px 0 8px;font-weight:900}.welcomeLead{color:#64748b;font-size:13.5px;line-height:1.65;margin:0;word-break:keep-all}
+.welcomeSection{border-top:1px solid #e2e8f0;padding-top:17px;margin-top:1px}.welcomeSectionTitle{font-size:13px;font-weight:900;color:#475569;margin:0 0 9px}
+.welcomeFlow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:15px}.welcomeStep{min-width:0;text-align:center;border:1px solid #dbe3ed;background:#f8fafc;border-radius:11px;padding:9px 3px 8px}.welcomeStep b{display:block;color:#2563eb;font-size:11px;margin-bottom:3px}.welcomeStep span{display:block;font-size:10.8px;font-weight:800;color:#334155;white-space:nowrap}
+.welcomeActionList{display:grid;gap:8px}.welcomeAction{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:12px;padding:11px 12px;border:1px solid #e2e8f0;border-radius:14px;background:#fff}.welcomeMouse{display:flex;align-items:center;justify-content:center;min-height:47px;border-radius:11px;background:#e0e7ff;color:#3730a3;font-size:13px;font-weight:900}.welcomeMouse.right{background:#fee2e2;color:#b91c1c}.welcomeAction strong{display:block;font-size:13.5px;color:#0f172a;margin-bottom:3px}.welcomeAction p{font-size:12px;color:#64748b;line-height:1.55;margin:0;word-break:keep-all}
+.welcomeTipBox{margin-top:11px;padding:12px 13px;border-radius:14px;border:1px solid #f6d58b;background:#fffbeb}.welcomeTipBox strong{display:block;color:#92400e;font-size:13.5px;margin-bottom:4px}.welcomeTipBox p{margin:0;color:#78716c;font-size:12px;line-height:1.55;word-break:keep-all}
+.welcomeLatest{margin-top:10px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:13px 14px;border-radius:14px;border:1px solid #93c5fd;background:#eff6ff}.welcomeLatestText strong{display:block;color:#1d4ed8;font-size:13.5px;margin-bottom:4px}.welcomeLatestText p{margin:0;color:#475569;font-size:11.8px;line-height:1.55;word-break:keep-all}.welcomeLatestText b{color:#1d4ed8}.welcomeLatestLink{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;white-space:nowrap;border:1px solid #bfdbfe;background:#fff;color:#1d4ed8;border-radius:10px;padding:9px 11px;font-size:11.5px;font-weight:850;box-shadow:0 2px 6px rgba(37,99,235,.06)}.welcomeLatestLink:hover{background:#f8fbff;border-color:#93c5fd}
+.welcomeSource{margin-top:11px}.welcomeSource details{border:1px solid #e2e8f0;border-radius:13px;background:#f8fafc;padding:0 13px}.welcomeSource summary{cursor:pointer;list-style:none;padding:11px 0;font-size:12.5px;font-weight:850;color:#475569;display:flex;align-items:center;gap:6px}.welcomeSource summary::-webkit-details-marker{display:none}.welcomeSource summary::before{content:"▸";font-size:10px;transition:transform .15s ease}.welcomeSource details[open] summary::before{transform:rotate(90deg)}.welcomeSourceBody{padding:0 0 12px;color:#64748b;font-size:11.5px;line-height:1.65;white-space:pre-line;word-break:keep-all}
+.welcomeBottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:15px}.welcomeBottomNote{font-size:11px;color:#94a3b8}.welcomeFoot{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin:0}.welcomeFoot button{border:1px solid #93c5fd;border-radius:11px;padding:10px 13px;background:#eff6ff;color:#1d4ed8;font-size:12.5px;font-weight:850;cursor:pointer}.welcomeFoot button:hover{background:#dbeafe}.welcomeFoot .welcomePrimary{background:#2563eb;border-color:#2563eb;color:#fff;box-shadow:0 7px 18px rgba(37,99,235,.2)}.welcomeFoot .welcomePrimary:hover{background:#1d4ed8}
+
+.tipOverlay{position:fixed;inset:0;background:rgba(15,23,42,.64);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}.tipOverlay.show{display:flex}
+.tipDialog{width:min(900px,100%);max-height:calc(100dvh - 36px);overflow:hidden;background:#fff;border-radius:24px;box-shadow:0 28px 80px rgba(15,23,42,.3);padding:0;display:flex;flex-direction:column;border:1px solid rgba(226,232,240,.92)}
+.tipHeader{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:21px 24px 12px}.tipHeaderText h2{margin:0 0 5px;font-size:22px;font-weight:900;color:#0f172a;letter-spacing:-.025em}.tipHeaderText p{margin:0;color:#64748b;font-size:12.5px;line-height:1.55}.tipCloseIcon{flex:0 0 auto;width:34px;height:34px;border:1px solid #e2e8f0;border-radius:10px;background:#fff;color:#64748b;font-size:18px;line-height:1;cursor:pointer}.tipCloseIcon:hover{background:#f8fafc;color:#0f172a}
+.tipDiversityNotice{margin:0 24px 13px;padding:13px 15px;border:1px solid #93c5fd;border-radius:14px;background:#eff6ff}.tipDiversityNotice strong{display:block;color:#1d4ed8;font-size:13.5px;margin-bottom:5px}.tipDiversityNotice p{margin:0;color:#475569;font-size:12px;line-height:1.65;word-break:keep-all}.tipDiversityNotice b{color:#1e3a8a}
+.tipTabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:0 24px 14px;border-bottom:1px solid #e2e8f0}.tipTab{border:1px solid #e2e8f0;background:#f8fafc;color:#64748b;border-radius:10px;padding:9px 7px;font-size:12px;font-weight:800;cursor:pointer}.tipTab:hover{border-color:#bfdbfe;background:#eff6ff;color:#1d4ed8}.tipTab.active{background:#2563eb;border-color:#2563eb;color:#fff}
+.tipPanels{overflow:auto;padding:18px 24px 20px;background:#fbfdff}.tipPanel{display:none}.tipPanel.active{display:block}.tipPanelTitle{font-size:17px;font-weight:900;color:#0f172a;margin:0 0 5px}.tipPanelLead{font-size:12.5px;line-height:1.6;color:#64748b;margin:0 0 13px;word-break:keep-all}.tipCardGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tipInfoCard{border:1px solid #e2e8f0;border-radius:14px;background:#fff;padding:13px 14px}.tipInfoCard h3{margin:0 0 6px;font-size:12.5px;font-weight:900;color:#1e293b;display:flex;align-items:center;gap:6px}.tipInfoCard h3::before{content:"";width:7px;height:7px;border-radius:50%;background:#93c5fd;flex:0 0 auto}.tipInfoCard.tipHow h3::before{background:#86efac}.tipInfoCard.tipExample h3::before{background:#facc15}.tipInfoCard.tipCaution h3::before{background:#fca5a5}.tipInfoCard p,.tipInfoCard li{font-size:12px;line-height:1.65;color:#475569;word-break:keep-all}.tipInfoCard p{margin:0}.tipInfoCard ul{margin:0;padding-left:18px}.tipInfoCard b{color:#1e293b}
+.tipCommonCard{margin:0 0 12px;padding:13px 15px;border-radius:14px;border:1px solid #bfdbfe;background:#f0f7ff}.tipCommonCard strong{display:block;color:#1d4ed8;font-size:13px;margin-bottom:5px}.tipCommonCard p{margin:0;color:#475569;font-size:12px;line-height:1.65;word-break:keep-all}.tipCommonCard b{color:#1e3a8a}
+.tipFooter{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 24px;border-top:1px solid #e2e8f0;background:#fff}.tipFooterNote{font-size:11px;color:#94a3b8}.tipFooter button{border:0;background:#2563eb;color:#fff;border-radius:10px;padding:9px 16px;font-weight:800;font-size:12.5px;cursor:pointer}.tipFooter button:hover{background:#1d4ed8}
+@media (max-width:720px){.welcomeOverlay,.tipOverlay{padding:10px}.welcomeDialog{max-height:calc(100dvh - 20px);padding:18px;border-radius:20px}.welcomeDialog h2{font-size:22px}.welcomeFlow{grid-template-columns:repeat(5,72px);overflow-x:auto;padding-bottom:4px}.welcomeAction{grid-template-columns:68px minmax(0,1fr);gap:10px;padding:11px}.welcomeLatest{grid-template-columns:1fr}.welcomeLatestLink{width:100%}.welcomeBottom{align-items:stretch}.welcomeBottomNote{width:100%}.welcomeFoot{width:100%;display:grid;grid-template-columns:1fr 1fr}.welcomeFoot button{padding:11px 8px}.tipDialog{max-height:calc(100dvh - 20px);border-radius:20px}.tipHeader{padding:18px 17px 10px}.tipDiversityNotice{margin:0 17px 12px}.tipTabs{display:flex;overflow-x:auto;padding:0 17px 12px}.tipTab{flex:0 0 auto;min-width:94px}.tipPanels{padding:14px 17px 17px}.tipCardGrid{grid-template-columns:1fr}.tipFooter{padding:12px 17px}.tipFooterNote{display:none}}
+</style>
+<style id="recordSwitcherStyle">
+.recordSwitcher{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:-4px 0 18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14)}
+.recordBrand{display:inline-flex;align-items:center;gap:9px;min-width:0;color:#fff;text-decoration:none;border-radius:11px;padding:3px 5px 3px 3px;transition:background .15s ease}
+.recordBrand:hover{background:rgba(255,255,255,.08)}
+.recordBrandLogo{width:30px;height:30px;flex:0 0 30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:#fff;color:#2563eb;font-size:15px;font-weight:900;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.recordBrandText{display:flex;flex-direction:column;min-width:0;line-height:1.15}
+.recordBrandName{font-size:13px;font-weight:850;letter-spacing:-.01em;color:#fff}
+.recordBrandUrl{margin-top:3px;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.62);white-space:nowrap}
+.recordSwitchLinks{display:grid;grid-template-columns:repeat(3,minmax(62px,auto));gap:4px;padding:4px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.08);backdrop-filter:blur(4px)}
+.recordSwitchLink{min-width:62px;padding:8px 13px;border-radius:8px;color:rgba(255,255,255,.76);text-decoration:none;text-align:center;font-size:12px;font-weight:800;line-height:1;transition:background .15s ease,color .15s ease,box-shadow .15s ease}
+.recordSwitchLink:hover{background:rgba(255,255,255,.12);color:#fff}
+.recordSwitchLink.active{background:#fff;color:#0f172a;box-shadow:0 3px 10px rgba(15,23,42,.16);pointer-events:none;cursor:default}
+.recordSwitchLink:focus-visible,.recordBrand:focus-visible{outline:3px solid rgba(255,255,255,.45);outline-offset:2px}
+@media (max-width:650px){.recordSwitcher{flex-direction:column;align-items:stretch;gap:10px;margin-top:-2px;padding-bottom:13px}.recordBrand{align-self:flex-start}.recordSwitchLinks{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}.recordSwitchLink{min-width:0;padding:9px 8px}}
+</style>
+</head>
+<body>
+<noscript>
+<div class="app"><div class="nojs">JavaScript가 꺼져 있어 편집 기능을 사용할 수 없습니다. 기본 문서 구조는 정상적으로 열렸습니다.</div></div>
+</noscript>
+<div class="app" id="app">
+<header class="top">
+<div class="recordSwitcher" aria-label="놀평어 생성기 전환">
+<a class="recordBrand" href="https://record.knolquiz.com" aria-label="놀평어 홈으로 이동">
+<span class="recordBrandLogo" aria-hidden="true">놀</span>
+<span class="recordBrandText"><span class="recordBrandName">놀평어</span><span class="recordBrandUrl">record.knolquiz.com</span></span>
+</a>
+<nav class="recordSwitchLinks" aria-label="5학년 2학기 생성기 선택"><a class="recordSwitchLink active" href="https://record.knolquiz.com/5-2-subject.html" aria-current="page" tabindex="-1">교과</a><a class="recordSwitchLink" href="https://record.knolquiz.com/5-2-creative.html">창체</a><a class="recordSwitchLink" href="https://record.knolquiz.com/5-2-behavior.html">행발</a></nav>
+</div>
+<h1>[5학년-2학기]놀퀴즈 교과 평어생성기</h1>
+<p>5학년 2학기 · 교과학습발달상황 · 학생별 평어 관리</p>
+<div class="headerQuickBar">
+<div class="siteLinksWrap">
+<span class="siteLinksLabel">놀퀴즈 서비스 바로가기</span>
+<div class="siteLinks" aria-label="놀퀴즈 서비스 바로가기">
+<a class="siteLink" href="https://knolquiz.com" target="_blank" rel="noopener noreferrer" title="놀퀴즈로 이동 (새 창)">놀퀴즈</a>
+<a class="siteLink" href="https://print.knolquiz.com" target="_blank" rel="noopener noreferrer" title="놀프린트로 이동 (새 창)">놀프린트</a>
+<a class="siteLink" href="https://art.knolquiz.com" target="_blank" rel="noopener noreferrer" title="놀아트로 이동 (새 창)">놀아트</a>
+</div>
+</div>
+<div class="topActions">
+<button id="quickImportBtn" class="loadBtn" type="button" title="JSON 백업 또는 Excel(.xlsx) 평어 파일 불러오기">불러오기</button>
+<input id="quickImportFile" class="hide" type="file" accept="application/json,.json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xlsx">
+<button id="welcomeOpenBtn" class="welcomeOpen" type="button">사용 안내</button>
+<button id="tipsBtn" class="tipsBtn" type="button">활용 팁</button>
+<button id="undoBtn" type="button">되돌리기</button>
+<button id="redoBtn" type="button">다시실행</button>
+</div>
+</div>
+</header>
+<div id="fatal" class="fatal"></div>
+<nav class="tabs">
+<button id="tabEdit" type="button" class="active">AI 평어 생성</button>
+<button id="tabLibrary" type="button">내 평어함</button>
+</nav>
+<main id="editView" class="view">
+<section class="card">
+<h2>기본 설정</h2>
+<div class="grid-3">
+<div class="field">
+<label for="areaSelect">기록 영역</label>
+<select id="areaSelect" disabled><option>교과학습발달상황</option></select>
+</div>
+<div class="field" id="subjectField">
+<label id="subjectLabel" for="subjectSelect">교과</label>
+<select id="subjectSelect"></select>
+</div>
+<div class="field">
+<label for="countInput">학생 수</label>
+<input id="countInput" type="number" min="1" max="30" value="25">
+</div>
+</div>
+</section>
+<div class="sourceNotice"><strong>자료 제작 안내</strong> · 단원명은 구분을 위해 아이스크림 교과서의 단원명을 참고했습니다. 교과서 본문·지도서·평가지를 첨부하거나 복제하여 만든 자료는 아닙니다. 과거 참고한 평어자료의 완성 문장을 문장은행으로 저장하지 않으며, 평가 요소는 키워드·하위 키워드 수준에서 재구성·보완하여 사용합니다.</div>
+<section class="card">
+<h2>학생 선택</h2>
+<div class="studentHead">
+<button id="singleBtn" type="button" class="active">한 학생</button>
+<button id="batchBtn" type="button">여러 학생 일괄</button>
+<span id="selectedSummary" class="summary">1번 학생</span>
+</div>
+<div id="studentNums" class="studentNums"></div>
+</section>
+<section id="keywordPanel" class="card">
+<h2 id="keywordPanelTitle">단원 기반 평가 키워드</h2>
+<div class="keywordTools">
+<div class="field">
+<label id="unitFilterLabel" for="unitFilter">단원 보기</label>
+<select id="unitFilter"><option value="all">전체 단원</option></select>
+</div>
+<div class="field search">
+<label for="keywordSearch">키워드 검색</label>
+<input id="keywordSearch" type="search" placeholder="예: 분수, 토의, 혼합물">
+</div>
+<div id="selectedKeywordCount" class="countBadge">선택 0개</div>
+<button id="clearKeywords" type="button" >선택 초기화</button>
+</div>
+<div id="keywords"><div class="noteHelp">평가 키워드를 불러오는 중입니다.</div></div>
+<div class="teacherNoteBlock">
+<h3>교사 자유 기술</h3>
+<textarea id="commonNote" placeholder="수업·평가 내용, 학생 관찰 사항, 강조하고 싶은 내용을 자유롭게 입력하세요."></textarea>
+<p id="commonNoteHelp" class="noteHelp">공통 내용은 현재 선택한 학생 모두에게 반영됩니다.</p>
+<button id="toggleIndividual" type="button" class="hide">학생별 추가 기술 펼치기</button>
+<div id="individualNotes" class="individualBox hide"></div>
+</div>
+<div class="attachmentBox">
+<div class="attachmentHead">
+<div>
+<strong>참고 문서 첨부 (선택)</strong>
+<div class="sub">문서마다 AI가 어떤 부분을 우선 참고할지 선택적으로 적을 수 있습니다.</div>
+</div>
+<label class="attachButton" for="attachmentInput">문서 선택</label>
+<input id="attachmentInput" class="hide" type="file" multiple accept=".pdf,.doc,.docx,.hwp,.hwpx,.txt,.md,.csv,.xls,.xlsx,.ppt,.pptx,image/*">
+</div>
+<div id="attachmentList" class="attachmentList">
+<div class="attachmentEmpty">첨부한 문서가 없습니다.</div>
+</div>
+<p class="noteHelp">파일 자체가 AI에 실제 제공되어 있어야 문서 내용을 참고할 수 있습니다. 이 생성기는 파일명과 문서별 참고 지침을 생성 지침에 함께 반영합니다.</p>
+</div>
+<details class="eduRef">
+<summary>교육과정 참고(자동)</summary>
+<div id="eduRefContent" class="eduRefContent">평가 키워드를 선택하면 관련 내용체계와 성취기준을 자동으로 참고합니다.</div>
+</details>
+<div class="settingsRow">
+<div class="field">
+<label for="toneSelect">문장 표현</label>
+<select id="toneSelect">
+<option value="normal">보통</option>
+<option value="concise">간결하게</option>
+<option value="specific">구체적으로</option>
+</select>
+</div>
+<div class="field">
+<label for="sentenceInput">학생당 평어 문장 수</label>
+<input id="sentenceInput" type="number" min="1" max="5" value="2">
+</div>
+</div>
+<div class="actions">
+<button id="makePrompts" class="primary" type="button">AI 평어 만들기</button>
+<button id="copyAllPrompts" type="button">생성 지침 전체 복사</button>
+</div>
+</section>
+<section class="card">
+<h2>학생별 평어 결과</h2>
+<div id="currentSetting" class="currentSetting">현재 기본설정: [국어 교과]</div>
+<div id="resultGrid" class="resultGrid"></div>
+<div class="bulk">
+<button id="bulkReplace" class="replaceBtn" type="button">선택 학생 모두 · [국어 교과] 기존 평어함 지우고 붙이기</button>
+<button id="bulkAppend" class="appendBtn" type="button">선택 학생 모두 · [국어 교과] 내 평어함 뒤에 이어붙이기</button>
+</div>
+</section>
+<div id="status" class="status">기본 화면을 준비했습니다.</div>
+</main>
+<main id="libraryView" class="view hide">
+<section class="card">
+<h2>내 평어함</h2>
+<div class="libraryControls">
+<div class="field">
+<label for="libraryAreaSelect">평어함 영역</label>
+<select id="libraryAreaSelect" disabled><option>교과학습발달상황</option></select>
+</div>
+<div class="field" id="librarySubjectField">
+<label id="librarySubjectLabel" for="librarySubjectSelect">교과</label>
+<select id="librarySubjectSelect"></select>
+</div>
+<div class="currentLibraryInfo">
+<span id="libraryArea" class="pill">현재 평어함</span>
+<span id="librarySubject" class="pill">[국어 교과]</span>
+<span class="sub">AI 평어 생성과 내 평어함은 같은 작업 영역을 함께 사용합니다.</span>
+</div>
+</div>
+<div class="librarySaveBar">
+<span id="librarySaveHint" class="librarySaveHint">현재 평어함에 저장 전 변경사항이 없습니다.</span>
+<button id="saveAllLibraryChanges" class="saveAllLibraryChanges" type="button" disabled>전체 수정 저장</button>
+</div>
+<div class="libraryDuplicateTools">
+<button id="fixExactDuplicates" type="button">같은 문장 검사·다르게 만들기</button>
+<span id="libraryDuplicateInfo" class="libraryDuplicateInfo">완전히 같은 문장만 검사합니다. 이미 다른 문장은 수정하지 않습니다.</span>
+</div>
+<div class="tableWrap">
+<table class="libraryTable">
+<thead>
+<tr>
+<th>학생</th>
+<th>평어 내용</th>
+<th>관리</th>
+</tr>
+</thead>
+<tbody id="libraryBody"></tbody>
+</table>
+</div>
+<div class="exportPanel">
+<h3>평어 저장</h3>
+<p class="exportHelp">Excel은 외부 라이브러리 없이 이 페이지에서 직접 생성합니다. ‘모든 평어’에는 5학년 2학기 10개 교과 평어가 포함됩니다.</p>
+<div class="exportActions">
+<button id="exportCurrentExcel" type="button">현재 평어함만 저장 (.xlsx)</button>
+<button id="exportAllExcel" class="primaryExport" type="button">모든 평어 한 파일로 저장 (.xlsx)</button>
+<button id="exportAllSeparate" type="button">모든 평어 따로 저장 (.zip)</button>
+</div>
+<div class="exportSubActions">
+<button id="exportCsv" type="button">현재 평어함 CSV</button>
+<button id="exportJson" type="button">전체 작업 JSON 백업</button>
+<button id="importJson" class="restoreBtn" type="button">JSON 복원</button>
+<button id="importExcel" class="restoreBtn" type="button">Excel 평어 복원 (.xlsx)</button>
+<input id="jsonFile" class="hide" type="file" accept="application/json,.json">
+<input id="excelFile" class="hide" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xlsx">
+</div>
+<p class="restoreHelp">JSON 백업은 교과의 기본 설정·키워드 선택·AI 생성 결과·내 평어함 저장본과 <b>수정 저장 전 초안</b>까지 복원합니다. Excel 복원은 이 도구에서 저장한 .xlsx의 평어 본문을 읽어 내 평어함에 복원합니다. Excel에는 생성 근거·키워드 선택 정보가 없으므로 평어 본문 중심 복원용입니다.</p>
+</div>
+</section>
+</main>
+</div>
+<div id="welcomeOverlay" class="welcomeOverlay" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDesc" aria-hidden="true">
+  <div class="welcomeDialog" tabindex="-1">
+    <div class="welcomeHero">
+      <span class="welcomeBadge">처음 사용 안내</span>
+      <h2 id="welcomeTitle">평어 생성기 사용 안내</h2>
+      <p id="welcomeDesc" class="welcomeLead">학생을 선택하고 키워드를 설정하면 AI가 평어 작성을 도와줍니다. 생성 결과를 확인한 뒤 내 평어함으로 옮겨 관리하세요.</p>
+    </div>
+    <div class="welcomeSection">
+      <h3 class="welcomeSectionTitle">기본 사용 방법</h3>
+      <div class="welcomeFlow" aria-label="기본 사용 순서">
+        <div class="welcomeStep"><b>①</b><span>학생 선택</span></div><div class="welcomeStep"><b>②</b><span>키워드 선택</span></div><div class="welcomeStep"><b>③</b><span>문장 수</span></div><div class="welcomeStep"><b>④</b><span>평어 생성</span></div><div class="welcomeStep"><b>⑤</b><span>내 평어함</span></div>
+      </div>
+      <h3 class="welcomeSectionTitle">키워드 조작</h3>
+      <div class="welcomeActionList">
+        <div class="welcomeAction"><span class="welcomeMouse">좌클릭</span><div><strong>선택 수준 변경</strong><p>클릭할 때마다 <b>매우 잘함 → 잘함 → 보통 → 못함 → 매우 못함 → 해제</b> 순으로 바뀝니다. 상위·하위 키워드 모두 같은 방식입니다.</p></div></div>
+        <div class="welcomeAction"><span class="welcomeMouse right">우클릭</span><div><strong>한 번에 선택 해제</strong><p>현재 수준과 관계없이 <b>즉시 해제</b>합니다. 상위 키워드를 우클릭하면 연결된 하위 키워드도 함께 해제됩니다.</p></div></div>
+      </div>
+      <div class="welcomeTipBox"><strong>활용 팁</strong><p>학생 선택, 키워드 선택, 문장 수, AI 생성, 내 평어함까지 단계별 사용법과 실제 활용 요령을 자세히 볼 수 있습니다.</p></div>
+      <div class="welcomeLatest"><div class="welcomeLatestText"><strong>최신 놀평어 버전도 확인해 보세요.</strong><p>더 나은 평어생성기 버전이나 새 기능이 필요할 때는 언제든 <b>record.knolquiz.com</b>에서 최신 업데이트를 확인할 수 있습니다.</p></div><a class="welcomeLatestLink" href="https://record.knolquiz.com" target="_blank" rel="noopener noreferrer">최신 버전 확인 ↗</a></div>
+      <div class="welcomeSource"><details><summary>자료 구성 및 출처 안내</summary><div class="welcomeSourceBody">성취기준, 내용 요소, 핵심 아이디어 등 교육부 자료를 참고하였고, AI를 활용해 평가요소와 세부 키워드를 재구성하였습니다.
+
+단원명은 아이스크림 교과서의 명칭을 참고하였으나, 교과서 본문·활동지·평가지 원문을 첨부하거나 전재하여 만든 자료는 아닙니다.
+
+실제 평어 작성 시에는 학교 교육과정과 교사의 관찰·평가 기록을 우선해 확인·수정해 주세요.</div></details></div>
+      <div class="welcomeBottom"><div class="welcomeBottomNote">안내는 첫 접속 시 자동 표시되며 상단 ‘사용 안내’에서 다시 열 수 있습니다.</div><div class="welcomeFoot"><button id="welcomeTipsBtn" type="button">활용 팁 자세히 보기</button><button id="welcomeCloseBtn" class="welcomePrimary" type="button">확인하고 시작</button></div></div>
+    </div>
+  </div>
+</div>
+<div id="tipOverlay" class="tipOverlay" role="dialog" aria-modal="true" aria-labelledby="tipTitle">
+  <div class="tipDialog">
+    <div class="tipHeader"><div class="tipHeaderText"><h2 id="tipTitle">5학년 2학기 교과 평어 활용 팁</h2><p>학생 선택부터 내 평어함까지 단계별 사용법과 실제 활용 요령을 확인할 수 있습니다.</p></div><button id="tipsCloseTopBtn" class="tipCloseIcon" type="button" aria-label="활용 팁 닫기">×</button></div>
+    <div class="tipDiversityNotice"><strong>같은 키워드라도 문장이 똑같이 반복되지 않도록 구성했습니다.</strong><p>동일한 키워드와 수준을 선택하더라도 학생별 평어가 가능한 한 서로 다른 문장으로 생성되도록 문장 구조·서술 순서·표현을 다양화하는 방식을 적용했습니다. 다만 AI 생성 결과가 항상 완벽하다고 보장할 수는 없으므로, <b>최종 사용 전에는 모든 문장을 한 번씩 읽어 사실관계·표현·중복 여부에 문제가 없는지 확인해 주세요.</b></p></div>
+    <div class="tipTabs" role="tablist" aria-label="활용 팁 단계"><button class="tipTab" type="button" role="tab" data-tip-tab="students" aria-selected="false">학생 선택</button><button class="tipTab" type="button" role="tab" data-tip-tab="keywords" aria-selected="false">키워드 선택</button><button class="tipTab" type="button" role="tab" data-tip-tab="sentences" aria-selected="false">문장 수</button><button class="tipTab" type="button" role="tab" data-tip-tab="ai" aria-selected="false">AI 평어 생성</button><button class="tipTab" type="button" role="tab" data-tip-tab="library" aria-selected="false">내 평어함</button></div>
+    <div class="tipPanels"><section class="tipPanel" data-tip-panel="students"><h3 class="tipPanelTitle">학생 선택</h3><p class="tipPanelLead">5학년 교과 수행은 같은 기준으로 보더라도 학생마다 드러난 설명·적용·문제 해결 과정이 다를 수 있습니다.</p><div class="tipCardGrid"><section class="tipInfoCard "><h3>기능 설명</h3><p><b>한 학생</b> 모드는 한 명씩 선택합니다. <b>여러 학생 일괄</b> 모드에서는 여러 번호를 동시에 선택할 수 있으며, 2명 이상 선택하면 ‘학생별 추가 기술’을 펼쳐 개별 기록을 입력할 수 있습니다.</p></section><section class="tipInfoCard tipHow"><h3>활용 요령</h3><p>같은 단원·키워드를 여러 학생에게 적용할 때 공통적인 수업·평가 맥락은 <b>교사 자유 기술</b>에, 학생마다 다른 수행은 <b>학생별 추가 기술</b>에 나누어 적으면 결과가 덜 획일적입니다.</p></section><section class="tipInfoCard tipExample"><h3>실제 예시</h3><p>예: 여러 학생에게 수학 <b>‘분수의 곱셈’</b> 관련 기준을 함께 선택하되, 한 학생은 풀이 과정을 설명한 모습, 다른 학생은 계산 과정을 스스로 점검한 모습을 학생별 기록으로 구분합니다.</p></section><section class="tipInfoCard tipCaution"><h3>주의사항</h3><p>일괄 생성에서도 실제 관찰이 다른 학생에게 똑같은 수행 근거를 복사하지 마세요. 번호만 다르고 근거가 같으면 결과도 비슷해질 수 있습니다.</p></section></div></section><section class="tipPanel" data-tip-panel="keywords"><h3 class="tipPanelTitle">키워드 선택</h3><p class="tipPanelLead">교과 키워드는 단원별 학습 수행을 고르고, 필요한 경우 하위 근거까지 좁혀 기록하는 구조입니다.</p><div class="tipCardGrid"><section class="tipInfoCard "><h3>기능 설명</h3><p>상위 키워드를 선택하면 관련 하위 키워드가 펼쳐집니다. 하위 키워드는 <b>지식·이해, 과정·기능, 가치·태도</b>로 구분됩니다. 좌클릭은 <b>매우 잘함 → 잘함 → 보통 → 못함 → 매우 못함 → 해제</b> 순입니다.</p></section><section class="tipInfoCard tipHow"><h3>활용 요령</h3><p>상위 키워드로 큰 수행을 잡고, 실제로 확인한 세부 근거가 있을 때만 하위 키워드를 1~2개 보완하는 방식이 좋습니다. 우클릭하면 즉시 해제되며, 상위 키워드 우클릭은 연결된 하위 선택도 함께 지웁니다.</p></section><section class="tipInfoCard tipExample"><h3>실제 예시</h3><p>예: 수학 <b>‘분수의 곱셈’</b> 단원에서 실제로 확인한 계산·설명 수행을 상위 키워드로 선택하고, 펼쳐지는 하위 항목 중 관찰 근거가 있는 지식·이해 또는 과정·기능만 추가합니다.</p></section><section class="tipInfoCard tipCaution"><h3>주의사항</h3><p>성취기준과 단원 정보는 배경 자료입니다. 선택했다고 해서 학생이 실제로 수행한 증거가 되는 것은 아닙니다. 서로 다른 수준을 억지로 평균내거나 낮은 수준을 과장된 부정 표현으로 바꾸지 마세요.</p></section></div></section><section class="tipPanel" data-tip-panel="sentences"><h3 class="tipPanelTitle">문장 수</h3><p class="tipPanelLead">문장 수는 선택한 키워드의 양보다 ‘서로 다른 의미의 수행이 몇 가지인지’를 기준으로 정하는 편이 자연스럽습니다.</p><div class="tipCardGrid"><section class="tipInfoCard "><h3>기능 설명</h3><p>학생당 <b>1~5문장</b>을 설정할 수 있습니다. 1문장은 핵심 수행 하나를 간결하게 기록할 때, 2~3문장은 개념 이해와 과정·기능처럼 성격이 다른 근거를 나눌 때 적합합니다.</p></section><section class="tipInfoCard tipHow"><h3>활용 요령</h3><p>키워드가 많아도 모든 항목을 한 문장에 넣지 마세요. 핵심 근거만 남기고, 내용이 다르면 문장을 나누는 것이 읽기 쉽습니다.</p></section><section class="tipInfoCard tipExample"><h3>실제 예시</h3><p>예: 국어에서 작품에 대한 의견을 말한 근거와 서평을 작성한 근거가 모두 있다면 한 문장에 나열하기보다 <b>의견 설명</b>과 <b>쓰기 수행</b>으로 나누어 2문장으로 정리할 수 있습니다.</p></section><section class="tipInfoCard tipCaution"><h3>주의사항</h3><p>문장 수를 늘린다고 새로운 성취가 생기는 것은 아닙니다. 근거가 하나뿐이면 1문장으로 충분하며, AI가 빈 내용을 보충해 새 수행을 만들지 않았는지 확인하세요.</p></section></div></section><section class="tipPanel" data-tip-panel="ai"><h3 class="tipPanelTitle">AI 평어 생성</h3><p class="tipPanelLead">5학년 교과 평어는 개념 이해뿐 아니라 설명·추론·적용·문제 해결 과정이 실제 수업에서 어떻게 드러났는지를 근거로 확인하는 것이 중요합니다.</p><div class="tipCommonCard"><strong>문장 다양화 기능</strong><p><b>같은 키워드를 여러 학생에게 사용해도 가능한 한 같은 문장을 그대로 반복하지 않도록 생성 과정에서 표현과 문장 구조를 달리하도록 구성되어 있습니다. 그래도 학생별 실제 관찰 근거가 다르면 학생별 추가 기술에 그 차이를 적어 주는 것이 가장 효과적입니다.</b></p></div><div class="tipCardGrid"><section class="tipInfoCard "><h3>기능 설명</h3><p><b>교사 자유 기술</b>, 일괄 모드의 <b>학생별 추가 기술</b>, 단원별 <b>실제 활동명</b>, 선택 키워드와 수준, 참고 문서의 파일명·문서별 참고 지침을 생성 지침에 반영해 Gemini API로 초안을 만듭니다.</p></section><section class="tipInfoCard tipHow"><h3>활용 요령</h3><p>‘풀이 과정을 친구에게 설명함’, ‘자료를 비교해 근거를 들어 의견을 말함’처럼 <b>직접 관찰한 수행</b>을 짧게 적는 것이 가장 효과적입니다. 단원별 ‘실제 활동명 추가’도 실제 수업 맥락을 구체화할 때 사용하세요.</p></section><section class="tipInfoCard tipExample"><h3>실제 예시</h3><p>예: ‘분수의 곱셈 문제를 해결한 뒤 계산 과정을 말로 설명하고 스스로 오류를 찾아 고침’처럼 확인한 장면을 자유 기술에 적고 관련 키워드를 선택해 초안을 생성합니다.</p></section><section class="tipInfoCard tipCaution"><h3>주의사항</h3><p><b>교사가 입력한 관찰·평가 기록이 가장 중요한 근거이며 AI 결과는 초안</b>입니다. 현재 직접 API 호출은 첨부 파일의 본문을 자동 전송하지 않고 <b>파일명과 문서별 참고 지침</b>을 텍스트 지침에 반영합니다. 문서 핵심 내용은 참고 지침이나 자유 기술에 직접 적고, 수행하지 않은 활동·확인되지 않은 성취·학생의 마음이나 의도를 AI가 만들어 내지 않았는지 반드시 검토하세요.</p></section></div></section><section class="tipPanel" data-tip-panel="library"><h3 class="tipPanelTitle">내 평어함</h3><p class="tipPanelLead">생성 결과를 바로 최종 기록으로 쓰기보다 내 평어함으로 옮긴 뒤 학생별 문장을 검토·수정하는 단계가 필요합니다.</p><div class="tipCommonCard"><strong>마지막으로 한 번 읽어보기</strong><p><b>자동 문장 다양화와 중복 확인 기능이 적용되어 있어도 최종 판단은 교사의 몫입니다. 내 평어함으로 옮긴 뒤 학생별 문장을 한 번씩 읽어 실제 관찰 내용과 맞는지, 지나치게 비슷한 문장이나 어색한 표현은 없는지 확인한 후 사용해 주세요.</b></p></div><div class="tipCommonCard"><strong>내 평어함 이동 확인</strong><p><b>평어를 옮기면 저장 완료 팝업에서 실제로 저장된 최종 내용을 바로 확인할 수 있습니다. ‘기존 평어함 지우고 붙이기’는 기존 내용이 있을 경우 먼저 기존 평어와 새 평어를 함께 보여 주며, 교체 여부를 확인한 뒤 실행됩니다.</b></p></div><div class="tipCardGrid"><section class="tipInfoCard "><h3>기능 설명</h3><p>생성 결과는 학생별로 <b>기존 평어함 지우고 붙이기</b> 또는 <b>평어함 뒤에 이어붙이기</b>가 가능합니다. 내 평어함에서는 직접 수정, 전체 평어 AI 재작성, 문장별 AI 재생성, 글자 수·문장 수 줄이기 기능을 사용할 수 있습니다.</p></section><section class="tipInfoCard tipHow"><h3>활용 요령</h3><p>초안을 옮긴 뒤 학생별 문장을 읽고 필요한 부분을 직접 고친 다음 <b>수정 저장/전체 수정 저장</b>으로 확정하세요. 마지막에 Excel로 내보내고, 작업 전체 보관이 필요하면 JSON 백업을 함께 사용하면 좋습니다.</p></section><section class="tipInfoCard tipExample"><h3>실제 예시</h3><p>예: 생성 결과를 ‘평어함 뒤에 이어붙이기’로 추가 → 표현 중복을 직접 수정 → 저장 전 변경 표시 확인 → 전체 수정 저장 → 교과 전체 Excel 저장 순으로 정리할 수 있습니다.</p></section><section class="tipInfoCard tipCaution"><h3>주의사항</h3><p>‘같은 문장 검사·다르게 만들기’는 <b>완전히 같은 문장</b>만 대상으로 하며 의미가 비슷한 문장을 모두 판별하는 기능은 아닙니다. JSON은 설정·생성 결과·평어함 등을 폭넓게 복원하고, Excel 복원은 평어 본문 중심입니다.</p></section></div></section></div>
+    <div class="tipFooter"><span class="tipFooterNote">자동 다양화와 중복 확인을 활용하되, 최종 사용 전 학생별 문장을 한 번 확인해 주세요.</span><button id="tipsCloseBtn" type="button">닫기</button></div>
+  </div>
+</div>
+
+<div id="saveSafetyOverlay" class="saveSafetyOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div id="saveSafetyDialog" class="saveSafetyDialog" tabindex="-1">
+    <div class="saveSafetyHeader"><div id="saveSafetyIcon" class="saveSafetyIcon">✓</div><div><h2 id="saveSafetyTitle" class="saveSafetyTitle">내 평어함 저장</h2><p id="saveSafetyDesc" class="saveSafetyDesc"></p></div></div>
+    <div id="saveSafetyMeta" class="saveSafetyMeta"></div>
+    <div id="saveSafetyBody"></div>
+    <div id="saveSafetyActions" class="saveSafetyActions"></div>
+  </div>
+</div>
+
+<div id="loadingOverlay" class="hidden" role="status" aria-live="polite" aria-busy="true">
+<div class="loadingBox">
+<div class="loadingSpinner" aria-hidden="true"></div>
+<h3 class="loadingTitle">AI 평어 생성 중...</h3>
+<p id="loadingStatus" class="loadingText">잠시만 기다려주세요.</p>
+</div>
+</div>
+<script>
+(function(){
+'use strict';
+var DATA={};
+/*
+* 교과 키워드 범주 보정
+* 참고자료에서 출발한 표현은 그대로 문장은행화하지 않고 재구성하며, 수행·표현 동사가 중심인 항목은 과정·기능으로 분류를 보정한다.
+* DATA JSON을 직접 반복 수정하지 않아도 되도록 초기화 시 한 번 적용한다.
+*/
+function applySubjectCategoryCorrections(){
+var corrections={
+'미술':{
+'자신의 특징을 미술적으로 표현하기':'과정·기능',
+'자신의 특징을 색·형태·이미지로 시각화하기':'과정·기능',
+'조형 원리를 활용한 평면 표현하기':'과정·기능',
+'조형 원리를 활용한 입체 표현하기':'과정·기능',
+'주제에 알맞은 조형 원리 선택하기':'과정·기능',
+'평면 구성에서 조형 원리를 효과적으로 활용하기':'과정·기능',
+'아이디어를 스케치와 설명으로 구체화하기':'과정·기능',
+'정물의 특징을 관찰하여 수묵 담채로 표현하기':'과정·기능',
+'작품의 특징이 잘 드러나는 홍보 문구 만들기':'과정·기능',
+'도형의 특징을 활용해 구조물 형태 구상하기':'과정·기능',
+'작품 설명문을 관람자가 이해하기 쉽게 작성하기':'과정·기능'
+},
+'음악':{
+'전래 노래의 특징을 살려 부르기':'과정·기능',
+'민요의 가락과 특징 살려 부르기':'과정·기능',
+'민요의 가락과 장단 특징을 살려 부르기':'과정·기능',
+'에델바이스의 음악적 특징 표현하기':'과정·기능'
+},
+'체육':{
+'태권도 기본 기능 이해·수행하기':'과정·기능',
+'강강술래의 특징 이해하고 표현하기':'과정·기능',
+'탈춤의 특징 이해하고 표현하기':'과정·기능',
+'탈춤의 특징을 살려 움직임 표현하기':'과정·기능'
+}
+};
+Object.keys(corrections).forEach(function(subject){
+(DATA[subject]||[]).forEach(function(unit){
+(unit.keywords||[]).forEach(function(k){
+if(corrections[subject][k.text]) k.category=corrections[subject][k.text];
+});
+});
+});
+}
+/* 교과 데이터 압축 해제 후 적용 */
+var SUBJECT_SYSTEM={
+"국어":"듣기·말하기, 읽기, 쓰기, 문법, 문학, 매체의 지식·이해와 과정·기능을 실제 언어 활동에 적용함.",
+"도덕":"자신·타인·사회공동체·자연과의 관계에서 도덕적 지식·이해, 가치 판단, 성찰과 실천을 연결함.",
+"사회":"역사 자료를 활용하여 시대의 생활 모습을 추론하고 변화와 지속성을 근거로 설명함.",
+"수학":"수와 연산, 도형과 측정, 자료와 가능성에서 개념 이해와 계산, 추론, 문제 해결, 의사소통을 연결함.",
+"과학":"관찰·측정·비교·분류·추리·자료 해석·설계 등 탐구 과정과 과학 개념을 실제 현상에 연결함.",
+"실과":"인간 발달, 생활자원, 기술적 문제 해결, 디지털·컴퓨팅 활동에서 지식·기능·가치와 태도를 실천에 연결함.",
+"체육":"운동·스포츠·표현 활동에서 기능 수행, 전략, 건강·안전, 협력과 공정한 참여를 함께 고려함.",
+"음악":"연주·감상·창작에서 음악 요소를 듣고 구별하며 표현하고, 음악 활동의 과정과 결과를 돌아봄.",
+"미술":"미적 체험·표현·감상에서 조형 요소·원리, 매체 활용, 발상·제작·분석·소통을 연결함.",
+"영어":"듣기·말하기·읽기·쓰기의 이해·표현 활동을 의사소통 목적과 상황에 맞게 활용함."
+};
+var SUBJECTS=Object.keys(DATA);
+var AREAS=['교과학습발달상황'];
+var CREATIVE_AREAS=[];
+var CREATIVE_LABELS={};
+var BEHAVIOR_DIRECTIONS=['','강점','변화·성장','지원 필요'];
+var BEHAVIOR_UNITS=[];
+var CREATIVE_UNITS={};
+var EMBEDDED_DATA_GZ='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';
+var EMBEDDED_CREATIVE_GZ='';
+async function gunzipJsonBase64(b64){
+if(typeof DecompressionStream==='undefined') throw new Error('이 브라우저는 압축된 교육과정 데이터를 열 수 없습니다. 최신 Chrome·Edge·Safari를 사용해 주세요.');
+var raw=atob(b64),bytes=new Uint8Array(raw.length);for(var i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+var stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+var text=await new Response(stream).text();return JSON.parse(text);
+}
+async function loadEmbeddedCurriculumData(){if(Object.keys(DATA).length)return;DATA=await gunzipJsonBase64(EMBEDDED_DATA_GZ)||{};applySubjectCategoryCorrections();SUBJECTS=Object.keys(DATA);}
+var LEVELS=['','매우 잘함','잘함','보통','못함','매우 못함'];
+var APP_TYPE='grade5_sem2_subject';
+var APP_VERSION='v13-source-reworked-rightclick-clear';
+var STORAGE_SCHEMA_VERSION=1;
+var BACKUP_SCHEMA_VERSION=1;
+// STORE의 v1과 JSON version 1은 앱 화면 버전이 아니라 저장/백업 데이터 구조(schema) 버전입니다.
+// v1·v2·v3 경량본 사이에서 작업을 이어받기 위해 schema가 바뀌지 않는 한 이 값과 저장소 키는 유지합니다.
+var STORE='knolquiz_grade5_sem2_subject_isolated_v1';
+var DRAFT_STORE='knolquiz_grade5_sem2_subject_isolated_v1_drafts';
+var LEGACY_DRAFT_STORES=[];
+var LEGACY_STORES=[];
+var state, undoStack=[], redoStack=[], currentTab='edit', saveTimer=null, draftSaveTimer=null, libraryDrafts={}, individualOpen=false, activityOpen={}, attachments=[], attachmentSeq=0;
+function allowedArea(a){return a==='교과학습발달상황';}
+function allowedScopeKey(k){return String(k||'').indexOf('교과학습발달상황||')===0;}
+function filterScopedMap(m){var out={};m=obj(m);Object.keys(m).forEach(function(k){if(allowedScopeKey(k))out[k]=m[k];});return out;}
+function $(id){ return document.getElementById(id); }
+function obj(x){ return x && typeof x==='object' && !Array.isArray(x) ? x : {}; }
+function clamp(v,a,b){ var n=parseInt(v,10); if(isNaN(n)) return a; return Math.max(a,Math.min(b,n)); }
+function def(){return {area:'교과학습발달상황',subject:'국어',libraryArea:'교과학습발달상황',librarySubject:'국어',count:25,mode:'single',selected:[1],commonNotes:{},individualNotes:{},unitActivities:{},scores:{},creativeSubs:{},subjectSubs:{},tone:'normal',sentences:2,resultDrafts:{},prompts:{},records:{},recordMeta:{},generationMeta:{}};}
+function sanitize(x){var s=Object.assign(def(),obj(x));if(s.area!=='교과학습발달상황')s.area='교과학습발달상황';if(SUBJECTS.indexOf(s.subject)<0)s.subject='국어';if(s.libraryArea!=='교과학습발달상황')s.libraryArea='교과학습발달상황';if(SUBJECTS.indexOf(s.librarySubject)<0)s.librarySubject=s.subject;s.count=clamp(s.count,1,30);s.mode=s.mode==='batch'?'batch':'single';if(!Array.isArray(s.selected))s.selected=[1];s.selected=s.selected.map(function(n){return clamp(n,1,s.count);}).filter(function(n,i,a){return a.indexOf(n)===i;});if(!s.selected.length)s.selected=[1];if(s.mode==='single')s.selected=[s.selected[0]];['commonNotes','individualNotes','unitActivities','scores','creativeSubs','subjectSubs','resultDrafts','prompts','records','recordMeta','generationMeta'].forEach(function(k){s[k]=filterScopedMap(s[k]);});s.tone=(['normal','concise','specific'].indexOf(s.tone)>=0?s.tone:'normal');s.sentences=clamp(s.sentences,1,5);return s;}
+function setStatus(msg,warn){ var e=$('status'); if(!e) return; e.textContent=msg; e.className='status'+(warn?' warn':''); }
+function fatal(msg){ var e=$('fatal'); if(!e) return; e.style.display='block'; e.textContent=msg; }
+function safeLoad(){
+try{if(!window.localStorage)return null;var r=localStorage.getItem(STORE);return r?sanitize(JSON.parse(r)):null;}catch(e){return null;}
+}
+function safeSave(now){
+function run(){
+saveTimer=null;
+try {
+if(window.localStorage) localStorage.setItem(STORE, JSON.stringify(state));
+} catch(e) {
+setStatus('저장 기능을 사용할 수 없지만 화면 편집은 계속할 수 있습니다.', true);
+}
+}
+if(now){ if(saveTimer) clearTimeout(saveTimer); run(); }
+else { if(saveTimer) clearTimeout(saveTimer); saveTimer=setTimeout(run, 160); }
+}
+function sanitizeLibraryDrafts(x){
+var out={}, src=obj(x);
+Object.keys(src).forEach(function(k){
+var n=scopedStudentNumber(k);
+if(allowedScopeKey(k) && n>=1 && n<=30 && typeof src[k]==='string') out[k]=src[k];
+});
+return out;
+}
+function loadLibraryDrafts(){
+try{if(!window.localStorage)return {};var raw=localStorage.getItem(DRAFT_STORE);return raw?sanitizeLibraryDrafts(JSON.parse(raw)):{};}catch(e){return {};}
+}
+function saveLibraryDrafts(now){
+function run(){
+draftSaveTimer=null;
+try{
+if(!window.localStorage) return;
+var dirty={};
+Object.keys(libraryDrafts).forEach(function(k){
+if(normalizedRecordText(libraryDrafts[k])!==normalizedRecordText(state.records[k]||'')) dirty[k]=String(libraryDrafts[k]||'');
+});
+libraryDrafts=dirty;
+if(Object.keys(dirty).length) localStorage.setItem(DRAFT_STORE,JSON.stringify(dirty));
+else localStorage.removeItem(DRAFT_STORE);
+}catch(e){setStatus('임시 초안 자동보관을 사용할 수 없지만 현재 화면 편집은 계속할 수 있습니다.',true);}
+}
+if(now){if(draftSaveTimer)clearTimeout(draftSaveTimer);run();}
+else{if(draftSaveTimer)clearTimeout(draftSaveTimer);draftSaveTimer=setTimeout(run,180);}
+}
+function allLibraryDirtyKeys(){
+return Object.keys(libraryDrafts).filter(function(k){var n=scopedStudentNumber(k);return n>=1&&n<=state.count&&isLibraryDirtyKey(k);});
+}
+function dirtyStudentCount(keys){
+var seen={};(keys||[]).forEach(function(k){var n=scopedStudentNumber(k);if(n)seen[n]=1;});
+return Object.keys(seen).length;
+}
+function snapshot(){ return JSON.stringify({state:state,libraryDrafts:libraryDrafts}); }
+function restoreSnapshot(raw){ var o=JSON.parse(raw); if(o&&o.state){state=sanitize(o.state);libraryDrafts=sanitizeLibraryDrafts(o.libraryDrafts||{});}else{state=sanitize(o);libraryDrafts={};} }
+function pushUndo(){ undoStack.push(snapshot()); if(undoStack.length>10) undoStack.shift(); redoStack=[]; buttonsUndo(); }
+function buttonsUndo(){ $('undoBtn').disabled=!undoStack.length; $('redoBtn').disabled=!redoStack.length; }
+function commit(fn){ pushUndo(); fn(); state=sanitize(state); safeSave(true); saveLibraryDrafts(true); renderAll(); }
+function undo(){ if(!undoStack.length) return; redoStack.push(snapshot()); restoreSnapshot(undoStack.pop()); safeSave(true); saveLibraryDrafts(true); renderAll(); buttonsUndo(); }
+function redo(){ if(!redoStack.length) return; undoStack.push(snapshot()); restoreSnapshot(redoStack.pop()); safeSave(true); saveLibraryDrafts(true); renderAll(); buttonsUndo(); }
+function isCreativeArea(){return false;}
+function uiAreaValue(){return '교과학습발달상황';}
+function creativeShort(){return '';}
+function syncLibraryContextToEditor(){state.area='교과학습발달상황';state.subject=state.librarySubject;resetEditorFilters();}
+function syncEditorContextToLibrary(){state.libraryArea='교과학습발달상황';state.librarySubject=state.subject;}
+function resetEditorFilters(){
+if($('unitFilter')) $('unitFilter').value='all';
+if($('keywordSearch')) $('keywordSearch').value='';
+}
+function scopeFor(area,subject){return '교과학습발달상황||'+(SUBJECTS.indexOf(subject)>=0?subject:'국어');}
+function scope(){ return scopeFor(state.area,state.subject); }
+function libraryScope(){ return scopeFor(state.libraryArea,state.librarySubject); }
+function skey(n){ return scope()+'||'+n; }
+function libraryKey(n){ return libraryScope()+'||'+n; }
+function selected(){ return state.selected.slice().sort(function(a,b){ return a-b; }); }
+function hasRecord(n){ return !!String(state.records[skey(n)]||'').trim(); }
+function scopedStudentNumber(key){
+var parts=String(key||'').split('||'), n=parseInt(parts[parts.length-1],10);
+return isNaN(n)?0:n;
+}
+function reducedStudentWorkSummary(newCount){
+var affected={}, saved=0, unsavedLibrary=0, generated=0;
+function mark(n){ if(n>newCount && n<=state.count) affected[n]=1; }
+Object.keys(state.records).forEach(function(k){
+var n=scopedStudentNumber(k);
+if(n>newCount && n<=state.count && String(state.records[k]||'').trim()){ saved++; mark(n); }
+});
+Object.keys(libraryDrafts).forEach(function(k){
+var n=scopedStudentNumber(k), draft=String(libraryDrafts[k]||'').trim(), savedText=String(state.records[k]||'').trim();
+if(n>newCount && n<=state.count && draft!==savedText){ unsavedLibrary++; mark(n); }
+});
+Object.keys(state.resultDrafts).forEach(function(k){
+var n=scopedStudentNumber(k);
+if(n>newCount && n<=state.count && String(state.resultDrafts[k]||'').trim()){ generated++; mark(n); }
+});
+return {
+students:Object.keys(affected).map(function(n){return parseInt(n,10);}).sort(function(a,b){return a-b;}),
+saved:saved, unsavedLibrary:unsavedLibrary, generated:generated
+};
+}
+function scoreMap(){ var m=obj(state.scores[scope()]); state.scores[scope()]=m; return m; }
+var SUBJECT_SUB_CATEGORY_ORDER=['지식·이해','과정·기능','가치·태도'];
+var SUBJECT_SUB_CACHE={};
+var SUBJECT_FALLBACKS={
+'국어':{
+'지식·이해':['핵심 내용과 표현 방법 이해하기','관련 개념과 원리 파악하기'],
+'과정·기능':['근거를 바탕으로 설명·표현하기','배운 내용을 실제 언어 활동에 적용하기'],
+'가치·태도':['다른 사람의 생각과 표현 존중하기','바르고 책임 있게 언어생활에 참여하기']
+},
+'도덕':{
+'지식·이해':['도덕적 가치의 의미 이해하기','상황에 담긴 도덕적 쟁점 파악하기'],
+'과정·기능':['여러 관점에서 상황 판단하기','생활 속 실천 방법 선택하기'],
+'가치·태도':['타인을 존중하고 배려하려는 태도','도덕적 가치를 생활 속에서 실천하려는 태도']
+},
+'사회':{
+'지식·이해':['관련 개념과 사회적 배경 이해하기','사건·현상의 원인과 관계 파악하기'],
+'과정·기능':['자료를 조사하고 근거를 찾아 해석하기','근거를 바탕으로 판단하고 설명하기'],
+'가치·태도':['다양한 관점과 문화를 존중하는 태도','공동체의 문제와 변화에 관심 갖기']
+},
+'수학':{
+'지식·이해':['수학적 개념과 원리 이해하기','수량·도형 사이의 관계 파악하기'],
+'과정·기능':['알맞은 방법을 선택해 문제 해결하기','풀이 과정과 결과를 점검하고 설명하기'],
+'가치·태도':['정확성을 확인하며 해결하려는 태도','쉽게 포기하지 않고 끝까지 해결하려는 태도']
+},
+'과학':{
+'지식·이해':['관련 과학 개념과 원리 이해하기','현상 사이의 관계와 까닭 파악하기'],
+'과정·기능':['관찰·측정 결과를 기록하고 해석하기','증거를 바탕으로 결과 설명하기'],
+'가치·태도':['안전수칙을 지키며 탐구하는 태도','궁금한 점을 스스로 탐구하려는 태도']
+},
+'실과':{
+'지식·이해':['생활·기술의 원리와 기준 이해하기','도구·재료·절차의 특징 파악하기'],
+'과정·기능':['절차에 따라 안전하게 수행하기','도구와 자료를 알맞게 활용하기'],
+'가치·태도':['안전하고 책임 있게 실천하는 태도','생활 속 문제 해결에 관심 갖기']
+},
+'체육':{
+'지식·이해':['활동 규칙과 운동 원리 이해하기','동작의 핵심 요소와 안전 기준 파악하기'],
+'과정·기능':['기본 기능을 상황에 맞게 적용하기','동작을 조절하며 정확하게 수행하기'],
+'가치·태도':['규칙과 안전수칙을 지키는 태도','친구와 협력하며 즐겁게 참여하는 태도']
+},
+'음악':{
+'지식·이해':['음악 요소와 곡의 특징 이해하기','소리·리듬·가락의 관계 파악하기'],
+'과정·기능':['소리와 리듬을 알맞게 표현하기','듣고 음악적 특징을 구분·설명하기'],
+'가치·태도':['다른 사람의 음악 표현을 존중하는 태도','함께 음악 활동에 적극적으로 참여하는 태도']
+},
+'미술':{
+'지식·이해':['조형 요소와 표현 방법 이해하기','재료·작품의 특징과 의미 파악하기'],
+'과정·기능':['재료와 방법을 선택해 표현하기','작품의 특징을 관찰하고 설명하기'],
+'가치·태도':['다양한 표현과 작품을 존중하는 태도','자신의 생각을 창의적으로 표현하려는 태도']
+},
+'영어':{
+'지식·이해':['낱말과 표현의 의미 이해하기','문장과 표현의 쓰임 파악하기'],
+'과정·기능':['듣고 핵심 정보를 파악하기','상황에 맞는 표현을 사용해 소통하기'],
+'가치·태도':['영어로 소통하려는 태도','틀리더라도 적극적으로 표현해 보려는 태도']
+}
+};
+function normalizeSubjectSubEntry(v){
+var out={}; v=obj(v);
+Object.keys(v).forEach(function(k){ var lv=parseInt(v[k],10)||0; if(k&&lv>=1&&lv<=5) out[k]=lv; });
+return out;
+}
+function subjectSubMap(){
+var m=obj(state.subjectSubs[scope()]);
+Object.keys(m).forEach(function(k){ m[k]=normalizeSubjectSubEntry(m[k]); if(!Object.keys(m[k]).length) delete m[k]; });
+state.subjectSubs[scope()]=m; return m;
+}
+function clearSubjectSubsFor(key){ var m=subjectSubMap(); if(m[key]) delete m[key]; }
+function subjectCategoryClass(cat){ return cat==='지식·이해'?'knowledge':(cat==='과정·기능'?'process':'value'); }
+function subjectTokenize(t){
+var stop={
+'하기':1,'알기':1,'이해하기':1,'설명하기':1,'활용하기':1,'적용하기':1,
+'말하기':1,'쓰기':1,'읽기':1,'보기':1,'과정':1,'내용':1,'방법':1,
+'표현':1,'활용':1,'적용':1,'수행':1,'활동':1,'확인':1,'파악':1,
+'생각':1,'정확히':1,'알맞게':1,'바르게':1,'자연스럽게':1
+};
+return String(t||'')
+.replace(/[·,()\-\/]/g,' ')
+.split(/\s+/)
+.map(function(x){
+return x
+.replace(/(하기|되기|알기|말하기|쓰기|읽기|보기|수행하기|설명하기)$/,'')
+.replace(/(은|는|이|가|을|를|의|에|에서|와|과|으로|로)$/,'');
+})
+.filter(function(x){ return x.length>=2 && !stop[x]; });
+}
+function subjectSiblingScore(a,b){
+var A=subjectTokenize(a), B=subjectTokenize(b), score=0;
+A.forEach(function(x){
+B.forEach(function(y){
+if(x===y) score+=5;
+else if(x.length>=3 && y.length>=3 && (x.indexOf(y)>=0 || y.indexOf(x)>=0)) score+=2;
+});
+});
+return score;
+}
+function pushSubjectChild(arr,text,cat,parent){
+text=String(text||'').trim(); if(!text||text===parent) return;
+if(SUBJECT_SUB_CATEGORY_ORDER.indexOf(cat)<0) return;
+if(arr.some(function(x){return x.text===text;})) return;
+arr.push({text:text,category:cat});
+}
+function addPatternChildren(arr,text,subject,parent){
+function add(t,c){ pushSubjectChild(arr,t,c,parent); }
+if(/비교|차이|공통점|구별|판별/.test(text)){
+add('비교 대상의 핵심 특징 이해하기','지식·이해');
+add('공통점과 차이점 파악하기','지식·이해');
+add('알맞은 기준에 따라 비교·구별하기','과정·기능');
+add('비교한 결과를 근거와 함께 설명하기','과정·기능');
+}
+if(subject==='국어'){
+var poetry=/(^|[\s·])(시|동시)(에|를|의|에서|가|는)?([\s]|$)|시 작품|시적 표현/.test(text);
+if(/설명|말하기|발표|의견|토의|토론/.test(text)){
+add('핵심 내용과 근거의 관계 이해하기','지식·이해');
+add('상황과 목적에 맞는 표현 방법 이해하기','지식·이해');
+add('근거를 들어 자신의 생각 설명하기','과정·기능');
+add('듣는 사람을 고려하여 알맞게 표현하기','과정·기능');
+add('다른 사람의 의견을 존중하며 듣기','가치·태도');
+}
+if(/작품|이야기|서평|감상|극본|인물|사건/.test(text) || poetry){
+add('작품의 내용과 표현의 의미 파악하기','지식·이해');
+add('인상적인 부분과 근거의 관계 이해하기','지식·이해');
+add('작품의 표현을 근거로 감상 설명하기','과정·기능');
+add('중심 내용과 인상적인 부분 찾기','과정·기능');
+add('다양한 감상 관점을 존중하기','가치·태도');
+}
+if(/책을|책 선택|책 정|독서|전자책|종이책|읽기 목적/.test(text) &&
+!(/작품|이야기|서평|감상|극본/.test(text) || poetry)){
+add('읽기 목적과 상황에 맞는 책의 특징 이해하기','지식·이해');
+add('책과 매체의 특징 파악하기','지식·이해');
+add('목적에 맞는 책을 탐색하고 선택하기','과정·기능');
+add('읽은 내용의 핵심 정보를 정리하기','과정·기능');
+add('스스로 읽을 책을 찾아 읽으려는 태도','가치·태도');
+}
+if(/문장|글쓰기|글 쓰기|글을 쓰|글로 쓰|고쳐쓰기|고쳐 쓰|맞춤법|호응|문장 성분|문장 간/.test(text)){
+add('문장과 글의 구성 원리 이해하기','지식·이해');
+add('표현과 문장 성분의 관계 파악하기','지식·이해');
+add('내용을 알맞은 순서로 조직하기','과정·기능');
+add('문장을 점검하고 자연스럽게 고쳐 쓰기','과정·기능');
+add('독자를 고려하여 표현을 다듬는 태도','가치·태도');
+}
+if(/추론|글쓴이|함축|문맥|명시적|의도/.test(text)){
+add('명시된 내용과 추론한 내용 구분하기','지식·이해');
+add('글의 내용과 글쓴이의 생각의 관계 파악하기','지식·이해');
+add('문맥과 표현을 단서로 내용 추론하기','과정·기능');
+add('자신의 추론 근거를 글에서 찾기','과정·기능');
+add('추론한 내용이 타당한지 다시 확인하기','가치·태도');
+}
+if(/매체|뉴스|허위|신뢰성|출처|작성자|게시 시점|관점|사실과 의견/.test(text)){
+add('매체 정보의 출처와 작성 맥락 이해하기','지식·이해');
+add('사실과 의견의 차이 이해하기','지식·이해');
+add('여러 자료를 비교하여 신뢰성 판단하기','과정·기능');
+add('출처와 근거를 확인하며 정보 살펴보기','과정·기능');
+add('정보를 비판적으로 받아들이는 태도','가치·태도');
+}
+if(/표준어|방언/.test(text)){
+add('표준어와 방언의 의미와 기능 이해하기','지식·이해');
+add('언어 사용과 지역 문화의 관계 파악하기','지식·이해');
+add('상황에 따라 표준어와 방언을 구분하여 사용하기','과정·기능');
+add('방언의 표현과 쓰임을 조사하기','과정·기능');
+add('다양한 언어생활과 지역 문화를 존중하기','가치·태도');
+}
+}
+if(subject==='수학'){
+if(/계산|곱셈|나눗셈|분수|소수/.test(text)){
+add('계산 원리와 수의 관계 이해하기','지식·이해');
+add('계산 방법이 성립하는 까닭 파악하기','지식·이해');
+add('알맞은 계산 방법을 선택하여 적용하기','과정·기능');
+add('계산 과정과 결과를 점검하기','과정·기능');
+add('계산 결과의 타당성을 확인하는 태도','가치·태도');
+}
+if(/이상|이하|초과|미만|수의 범위|수직선|어림|올림|버림|반올림/.test(text)){
+add('수의 범위와 경계의 의미 이해하기','지식·이해');
+add('조건에 맞는 수의 범위를 판단하기','과정·기능');
+add('수의 범위를 알맞은 방법으로 나타내기','과정·기능');
+add('상황에 알맞은 어림 방법 선택하기','과정·기능');
+add('결과가 조건에 맞는지 확인하는 태도','가치·태도');
+}
+if(/도형|합동|대칭|직육면체|정육면체|대응점|대응변|대응각|모서리|꼭짓점|전개도|겨냥도|대칭축|대칭 중심|평행한 면|수직인 면/.test(text)){
+add('도형의 성질과 구성 요소 이해하기','지식·이해');
+add('도형 사이의 관계 파악하기','지식·이해');
+add('도형의 성질을 이용하여 문제 해결하기','과정·기능');
+add('관찰한 관계를 정확하게 표현하기','과정·기능');
+add('도형의 관계를 꼼꼼하게 확인하는 태도','가치·태도');
+}
+if(/평균|가능성|자료|그래프|자료를 표|표로 나타|표에서|표와 그래프/.test(text)){
+add('자료와 수치가 나타내는 의미 이해하기','지식·이해');
+add('자료 사이의 관계 파악하기','지식·이해');
+add('자료를 정리하고 비교·해석하기','과정·기능');
+add('자료를 근거로 판단하고 설명하기','과정·기능');
+add('근거에 따라 합리적으로 판단하는 태도','가치·태도');
+}
+}
+if(subject==='과학'){
+add('관련 과학 개념과 원리 이해하기','지식·이해');
+add('현상 사이의 관계와 까닭 파악하기','지식·이해');
+if(/관찰|측정|실험|탐구|분리|비교|조사|시험|설계|제작/.test(text)){
+add('관찰·측정 결과를 정확하게 기록하기','과정·기능');
+add('관찰한 증거를 바탕으로 결과 설명하기','과정·기능');
+add('탐구 과정에서 안전수칙을 지키는 태도','가치·태도');
+} else {
+add('관련 현상을 관찰하고 특징 찾기','과정·기능');
+add('과학적 근거를 바탕으로 설명하기','과정·기능');
+}
+add('궁금한 점을 탐구하려는 태도','가치·태도');
+}
+if(subject==='사회'){
+add('관련 개념과 시대·사회적 배경 이해하기','지식·이해');
+if(/역사|시대|고조선|삼국|신라|발해|고려|조선|일제|광복|전쟁|유적|유물/.test(text)){
+add('사건과 변화의 원인·과정·결과 파악하기','지식·이해');
+}
+add('자료에서 필요한 정보를 찾아 해석하기','과정·기능');
+add('자료의 근거를 바탕으로 설명하기','과정·기능');
+add('다양한 사람과 시대의 관점을 존중하는 태도','가치·태도');
+}
+if(subject==='도덕'){
+add('관련 도덕적 가치의 의미 이해하기','지식·이해');
+add('상황에 담긴 도덕적 쟁점 파악하기','지식·이해');
+add('여러 관점에서 상황을 판단하기','과정·기능');
+add('생활 속에서 실천할 방법 찾기','과정·기능');
+add('타인의 입장을 존중하고 배려하는 태도','가치·태도');
+add('도덕적 가치를 생활 속에서 실천하려는 태도','가치·태도');
+}
+if(subject==='실과'){
+if(/발달|아동기|자기 관리|생활 습관/.test(text)){
+add('아동기의 발달 특징 이해하기','지식·이해');
+add('건강한 발달에 필요한 조건 파악하기','지식·이해');
+add('자신의 생활 습관을 점검하기','과정·기능');
+add('자기 관리 계획을 세우고 실천하기','과정·기능');
+add('자신과 다른 사람의 발달 차이를 존중하는 태도','가치·태도');
+} else if(/동물|사육|반려/.test(text)){
+add('동물의 특성과 돌봄 조건 이해하기','지식·이해');
+add('생명 존중과 책임 있는 돌봄의 의미 이해하기','지식·이해');
+add('동물의 특성에 맞는 돌봄 방법 조사하기','과정·기능');
+add('기르기 계획을 세우고 필요한 조건 점검하기','과정·기능');
+add('생명을 존중하고 책임 있게 돌보려는 태도','가치·태도');
+} else if(/식물|가꾸기|생육/.test(text)){
+add('식물의 생육 조건 이해하기','지식·이해');
+add('식물의 성장에 필요한 환경 파악하기','지식·이해');
+add('식물 가꾸기 계획을 세우고 기록하기','과정·기능');
+add('성장 상태를 관찰하고 관리 방법 조절하기','과정·기능');
+add('생명을 존중하며 꾸준히 돌보는 태도','가치·태도');
+} else if(/조리|식품|영양|식사|간식/.test(text)){
+add('식품과 영양의 기본 원리 이해하기','지식·이해');
+add('조리 과정과 위생·안전 기준 파악하기','지식·이해');
+add('순서와 분량을 고려하여 조리하기','과정·기능');
+add('조리 도구를 안전하게 사용하기','과정·기능');
+add('위생과 안전을 지키며 조리하는 태도','가치·태도');
+} else if(/코딩|프로그램|알고리즘|디지털|컴퓨터|컴퓨팅/.test(text)){
+add('프로그램과 알고리즘의 기본 원리 이해하기','지식·이해');
+add('문제를 단계적으로 해결하는 절차 이해하기','지식·이해');
+add('알고리즘을 구성하고 실행 결과 확인하기','과정·기능');
+add('오류를 찾아 수정하며 문제 해결하기','과정·기능');
+add('디지털 도구를 책임 있게 사용하는 태도','가치·태도');
+} else {
+add('활동에 필요한 원리와 기준 이해하기','지식·이해');
+add('도구·재료·절차의 특징 파악하기','지식·이해');
+add('절차에 따라 안전하게 수행하기','과정·기능');
+add('도구와 자료를 목적에 맞게 활용하기','과정·기능');
+add('안전하고 책임 있게 실천하는 태도','가치·태도');
+}
+}
+if(subject==='체육'){
+if(/체력|근력|근지구력|심폐|유연성|건강|성장/.test(text)){
+add('체력 요소와 건강의 관계 이해하기','지식·이해');
+add('운동 방법과 신체 변화의 원리 파악하기','지식·이해');
+add('자신에게 알맞은 운동 방법 선택하기','과정·기능');
+add('운동 수행 과정을 점검하기','과정·기능');
+add('꾸준히 운동하며 건강을 관리하려는 태도','가치·태도');
+} else {
+add('활동 규칙과 운동 원리 이해하기','지식·이해');
+add('동작의 핵심 요소와 안전 기준 파악하기','지식·이해');
+add('기본 기능을 상황에 맞게 적용하기','과정·기능');
+add('동작을 조절하며 정확하게 수행하기','과정·기능');
+add('규칙과 안전수칙을 지키는 태도','가치·태도');
+add('친구와 협력하며 참여하는 태도','가치·태도');
+}
+}
+if(subject==='음악'){
+add('음악 요소와 곡의 특징 이해하기','지식·이해');
+add('소리·리듬·가락의 관계 파악하기','지식·이해');
+add('음악 요소를 살려 표현하기','과정·기능');
+add('음악을 듣고 특징을 구분하여 설명하기','과정·기능');
+add('다른 사람의 음악 표현을 존중하는 태도','가치·태도');
+add('함께 음악 활동에 참여하는 태도','가치·태도');
+}
+if(subject==='미술'){
+add('조형 요소와 표현 방법 이해하기','지식·이해');
+add('재료와 작품의 특징·의미 파악하기','지식·이해');
+add('표현 의도에 맞는 재료와 방법 선택하기','과정·기능');
+add('작품의 특징을 관찰하고 설명하기','과정·기능');
+add('다양한 표현과 작품을 존중하는 태도','가치·태도');
+add('자신의 생각을 창의적으로 표현하려는 태도','가치·태도');
+}
+if(subject==='영어'){
+add('낱말과 표현의 의미 이해하기','지식·이해');
+add('문장과 표현의 쓰임 파악하기','지식·이해');
+add('듣고 필요한 정보를 파악하기','과정·기능');
+add('상황에 맞는 표현을 사용하여 소통하기','과정·기능');
+add('영어로 소통하려는 태도','가치·태도');
+add('틀리더라도 적극적으로 표현해 보려는 태도','가치·태도');
+}
+}
+function subjectChildren(u,k){
+var cacheKey=state.subject+'||'+unitId(u)+'||'+k.text;
+if(SUBJECT_SUB_CACHE[cacheKey]) return SUBJECT_SUB_CACHE[cacheKey];
+var arr=[], text=String(k.text||'');
+addPatternChildren(arr,text,state.subject,text);
+var siblings=(u.keywords||[]).filter(function(x){ return x!==k && x.text!==k.text; });
+SUBJECT_SUB_CATEGORY_ORDER.forEach(function(cat){
+var ranked=siblings
+.filter(function(x){ return x.category===cat; })
+.map(function(x){ return {x:x,s:subjectSiblingScore(text,x.text)}; })
+.sort(function(a,b){ return b.s-a.s; });
+var added=0;
+ranked.forEach(function(r){
+if(added<2 && r.s>=4){
+var before=arr.length;
+pushSubjectChild(arr,r.x.text,cat,text);
+if(arr.length>before) added++;
+}
+});
+});
+var fb=SUBJECT_FALLBACKS[state.subject]||SUBJECT_FALLBACKS['국어'];
+SUBJECT_SUB_CATEGORY_ORDER.forEach(function(cat){
+var count=arr.filter(function(x){ return x.category===cat; }).length;
+(fb[cat]||[]).forEach(function(t){
+if(count<2){
+var before=arr.length;
+pushSubjectChild(arr,t,cat,text);
+if(arr.length>before) count++;
+}
+});
+});
+var out=[];
+SUBJECT_SUB_CATEGORY_ORDER.forEach(function(cat){
+arr.filter(function(x){ return x.category===cat; }).slice(0,4).forEach(function(x){ out.push(x); });
+});
+SUBJECT_SUB_CACHE[cacheKey]=out;
+return out;
+}
+function subjectEvidenceText(x){
+var parent=x.keyword+(x.level?(' ['+LEVELS[x.level]+']'):'');
+var lm=obj(x.subkeywordLevels), cm=obj(x.subkeywordCategories), subs=Array.isArray(x.subkeywords)?x.subkeywords:[];
+if(!subs.length) return parent;
+var groups={}; SUBJECT_SUB_CATEGORY_ORDER.forEach(function(cat){groups[cat]=[];});
+subs.forEach(function(ch){ var cat=cm[ch]||'과정·기능'; groups[cat].push(ch+' ['+LEVELS[lm[ch]||1]+']'); });
+var parts=[]; SUBJECT_SUB_CATEGORY_ORDER.forEach(function(cat){ if(groups[cat].length) parts.push(cat+': '+groups[cat].join(', ')); });
+return parent+' → '+parts.join(' / ');
+}
+function settingLabelFor(area,subject){return (SUBJECTS.indexOf(subject)>=0?subject:'국어')+' 교과';}
+function currentSettingLabel(){ return settingLabelFor(state.area,state.subject); }
+function currentSetting(){ return '['+currentSettingLabel()+']'; }
+function librarySetting(){ return '['+settingLabelFor(state.libraryArea,state.librarySubject)+']'; }
+function getUnits(){return DATA[state.subject]||[];}
+function unitId(u){ return String(u.code||'')+'||'+String(u.name||''); }
+function unitActivityKey(u){ return scope()+'||'+unitId(u); }
+function getUnitActivity(u){ return String(state.unitActivities[unitActivityKey(u)]||'').trim(); }
+function currentUnitActivities(){
+var out=[];
+getUnits().forEach(function(u){
+var t=getUnitActivity(u);
+if(t) out.push({id:unitId(u), code:u.code, unit:u.name, activity:t});
+});
+return out;
+}
+function fillSubjectSelect(e,value){
+if(!e) return; e.innerHTML='';
+SUBJECTS.forEach(function(x){ var o=document.createElement('option'); o.value=x; o.textContent=x; e.appendChild(o); });
+e.value=SUBJECTS.indexOf(value)>=0?value:SUBJECTS[0];
+}
+function populateSubjects(){fillSubjectSelect($('subjectSelect'),state.subject);fillSubjectSelect($('librarySubjectSelect'),state.librarySubject);}
+function renderLibraryHeader(){if($('libraryAreaSelect'))$('libraryAreaSelect').value='교과학습발달상황';if($('librarySubjectSelect'))$('librarySubjectSelect').value=state.librarySubject;if($('librarySubjectField'))$('librarySubjectField').classList.remove('hide');if($('librarySubjectLabel'))$('librarySubjectLabel').textContent='교과';if($('libraryArea'))$('libraryArea').textContent='교과 평어함';if($('librarySubject'))$('librarySubject').textContent=librarySetting();}
+function renderHeader(){
+$('areaSelect').value='교과학습발달상황';$('subjectSelect').value=state.subject;$('countInput').value=state.count;$('toneSelect').value=state.tone;$('sentenceInput').value=state.sentences;
+$('subjectField').classList.remove('hide');if($('subjectLabel'))$('subjectLabel').textContent='교과';if($('unitFilterLabel'))$('unitFilterLabel').textContent='단원 보기';if($('keywordSearch'))$('keywordSearch').placeholder='예: 분수, 토의, 혼합물';
+if($('keywordPanelTitle'))$('keywordPanelTitle').textContent='단원 기반 평가 키워드';if($('commonNoteHelp'))$('commonNoteHelp').textContent='공통 내용은 현재 선택한 학생 모두에게 반영됩니다. 단원별 활동명은 각 단원의 활동명 입력을 펼쳐 추가할 수 있습니다.';
+renderLibraryHeader();var tag=currentSetting();$('currentSetting').textContent='현재 기본설정: '+tag;$('bulkReplace').textContent='선택 학생 모두 · '+tag+' 기존 평어함 지우고 붙이기';$('bulkAppend').textContent='선택 학생 모두 · '+tag+' 평어함 뒤에 이어붙이기';
+}
+function renderStudents(){
+$('singleBtn').classList.toggle('active', state.mode==='single');
+$('batchBtn').classList.toggle('active', state.mode==='batch');
+var xs=selected();
+$('selectedSummary').textContent=state.mode==='single' ? (xs[0]+'번 학생') : (xs.join(', ')+'번 학생 ('+xs.length+'명)');
+var box=$('studentNums'); box.innerHTML='';
+for(var i=1; i<=state.count; i++){
+(function(n){
+var b=document.createElement('button');
+b.type='button'; b.textContent=n;
+b.className=(state.selected.indexOf(n)>=0?'selected ':'')+(hasRecord(n)?'saved':'');
+b.addEventListener('click', function(){
+commit(function(){
+if(state.mode==='single'){ state.selected=[n]; }
+else {
+var p=state.selected.indexOf(n);
+if(p>=0){ if(state.selected.length>1) state.selected.splice(p,1); }
+else state.selected.push(n);
+}
+});
+});
+box.appendChild(b);
+})(i);
+}
+$('toggleIndividual').classList.toggle('hide', state.mode!=='batch' || xs.length<2);
+if(state.mode!=='batch') individualOpen=false;
+}
+function renderIndividual(){
+var box=$('individualNotes'); box.innerHTML='';
+var show=state.mode==='batch' && selected().length>1 && individualOpen;
+box.classList.toggle('hide', !show);
+$('toggleIndividual').textContent=individualOpen ? '학생별 추가 기술 접기' : '학생별 추가 기술 펼치기';
+if(!show) return;
+selected().forEach(function(n){
+var d=document.createElement('div'); d.className='individualItem';
+var b=document.createElement('b'); b.textContent=n+'번 학생';
+var ta=document.createElement('textarea');
+ta.placeholder=n+'번 학생에게만 반영할 관찰·평가 내용을 입력하세요.';
+ta.value=state.individualNotes[skey(n)]||'';
+ta.addEventListener('input', function(){
+state.individualNotes[skey(n)]=ta.value;
+safeSave(false);
+});
+d.appendChild(b); d.appendChild(ta); box.appendChild(d);
+});
+}
+function renderUnit(){var e=$('unitFilter'),old=e.value;e.innerHTML='<option value="all">전체 단원</option>';getUnits().forEach(function(u){var o=document.createElement('option');o.value=unitId(u);o.textContent=u.code+' '+u.name;e.appendChild(o);});e.value=[].slice.call(e.options).some(function(o){return o.value===old;})?old:'all';}
+function keywordKey(u,k){ return u.code+'||'+k.text; }
+function selectedKeywords(){var sm=scoreMap(),ssm=subjectSubMap(),out=[];getUnits().forEach(function(u){u.keywords.forEach(function(k){var key=keywordKey(u,k),lv=parseInt(sm[key],10)||0;if(!lv)return;var childObjs=subjectChildren(u,k),valid={},subs=[],subLevels={},subCats={};childObjs.forEach(function(ch){valid[ch.text]=ch.category;});var saved=normalizeSubjectSubEntry(ssm[key]);Object.keys(saved).forEach(function(ch){if(valid[ch]){subs.push(ch);subLevels[ch]=saved[ch];subCats[ch]=valid[ch];}});if(subs.length)ssm[key]=subLevels;else delete ssm[key];out.push({key:key,unitId:unitId(u),unit:u.name,code:u.code,strand:u.strand,keyword:k.text,category:k.category,level:lv,supportOnly:false,standards:u.standards||[],subkeywords:subs,subkeywordLevels:subLevels,subkeywordCategories:subCats});});});return out;}
+function usageFromMeta(meta){
+var out={}, m=obj(meta), ku=obj(m.keywordUsage), has=false;
+Object.keys(ku).forEach(function(k){ var n=parseInt(ku[k],10)||0; if(n>0){ out[k]=n; has=true; } });
+if(has) return out;
+(Array.isArray(m.selectedKeywords)?m.selectedKeywords:[]).forEach(function(x){
+var k=x&&x.key?x.key:(x&&x.code&&x.keyword?x.code+'||'+x.keyword:'');
+if(k) out[k]=(out[k]||0)+1;
+});
+return out;
+}
+function keywordUsageCounts(){
+var out={}, pre=scope()+'||';
+Object.keys(state.records).forEach(function(rk){
+if(rk.indexOf(pre)!==0 || !String(state.records[rk]||'').trim()) return;
+var u=usageFromMeta(state.recordMeta[rk]);
+Object.keys(u).forEach(function(k){ out[k]=(out[k]||0)+u[k]; });
+});
+return out;
+}
+function subjectSubStatKey(parentKey, childText){ return String(parentKey||'')+'||SUB||'+String(childText||''); }
+function emptyLevelStat(){ return {total:0,levels:{1:0,2:0,3:0,4:0,5:0}}; }
+function addFlatCounts(target, source){
+source=obj(source); Object.keys(source).forEach(function(k){ var n=parseInt(source[k],10)||0; if(n>0) target[k]=(target[k]||0)+n; }); return target;
+}
+function addNestedLevelCounts(target, source){
+source=obj(source); Object.keys(source).forEach(function(k){
+var levels=obj(source[k]); if(!target[k]) target[k]={1:0,2:0,3:0,4:0,5:0};
+for(var lv=1;lv<=5;lv++){ var n=parseInt(levels[lv]||levels[String(lv)],10)||0; if(n>0) target[k][lv]=(target[k][lv]||0)+n; }
+}); return target;
+}
+function subjectSavedStats(){
+var stats={parents:{},subs:{}}, pre=scope()+'||';
+if(state.area!=='교과학습발달상황') return stats;
+Object.keys(state.records).forEach(function(rk){
+if(rk.indexOf(pre)!==0 || !String(state.records[rk]||'').trim()) return;
+var meta=obj(state.recordMeta[rk]), selected=Array.isArray(meta.selectedKeywords)?meta.selectedKeywords:[];
+var parentUsage=usageFromMeta(meta), parentLevels=obj(meta.keywordLevelUsage), subUsage=obj(meta.subkeywordUsage), subLevels=obj(meta.subkeywordLevelUsage);
+/* 최신 저장 데이터: 실제 저장된 생성 회수(이어붙이기 포함)를 정확히 합산 */
+Object.keys(parentUsage).forEach(function(pk){
+var total=parseInt(parentUsage[pk],10)||0; if(total<=0) return;
+if(!stats.parents[pk]) stats.parents[pk]=emptyLevelStat(); stats.parents[pk].total+=total;
+var lm=obj(parentLevels[pk]); for(var lv=1;lv<=5;lv++) stats.parents[pk].levels[lv]+=parseInt(lm[lv]||lm[String(lv)],10)||0;
+});
+Object.keys(subUsage).forEach(function(sk){
+var total=parseInt(subUsage[sk],10)||0; if(total<=0) return;
+if(!stats.subs[sk]) stats.subs[sk]=emptyLevelStat(); stats.subs[sk].total+=total;
+var lm=obj(subLevels[sk]); for(var lv=1;lv<=5;lv++) stats.subs[sk].levels[lv]+=parseInt(lm[lv]||lm[String(lv)],10)||0;
+});
+/* 기존 데이터 호환: 수준별/하위 사용 통계가 없으면 selectedKeywords에서 최소 1회씩 복원 */
+selected.forEach(function(x){
+if(!x) return; var pk=x.key||(x.code&&x.keyword?x.code+'||'+x.keyword:''); if(!pk) return;
+if(!parentUsage[pk]){ if(!stats.parents[pk]) stats.parents[pk]=emptyLevelStat(); stats.parents[pk].total++; }
+var plv=parseInt(x.level,10)||0;
+if(plv>=1&&plv<=5){
+if(!stats.parents[pk]) stats.parents[pk]=emptyLevelStat();
+var known=0, plm=obj(parentLevels[pk]); for(var pli=1;pli<=5;pli++) known+=parseInt(plm[pli]||plm[String(pli)],10)||0;
+var expected=parseInt(parentUsage[pk],10)||1, missing=Math.max(0,expected-known);
+if(missing>0) stats.parents[pk].levels[plv]+=missing;
+}
+var subs=Array.isArray(x.subkeywords)?x.subkeywords:[], lm=obj(x.subkeywordLevels);
+subs.forEach(function(ch){ if(!ch) return; var sk=subjectSubStatKey(pk,ch);
+if(!subUsage[sk]){ if(!stats.subs[sk]) stats.subs[sk]=emptyLevelStat(); stats.subs[sk].total++; }
+if(!subLevels[sk]){ var slv=parseInt(lm[ch],10)||0; if(slv>=1&&slv<=5){ if(!stats.subs[sk]) stats.subs[sk]=emptyLevelStat(); stats.subs[sk].levels[slv]++; } }
+});
+});
+});
+return stats;
+}
+function levelUsageLabel(stat, level){
+stat=stat||emptyLevelStat(); level=parseInt(level,10)||0;
+if(!stat.total) return '';
+if(level>=1&&level<=5) return '('+(parseInt(stat.levels[level],10)||0)+'/'+stat.total+')';
+return '(저장 '+stat.total+')';
+}
+function renderKeywords(){
+var box=$('keywords'),filter=$('unitFilter').value||'all',q=($('keywordSearch').value||'').trim().toLowerCase(),sm=scoreMap(),stats=subjectSavedStats(),ssm=subjectSubMap();box.innerHTML='';
+var intro=document.createElement('div');intro.className='noteHelp';intro.style.marginBottom='7px';intro.textContent='상위 키워드를 선택하면 관련 하위 키워드가 펼쳐집니다. 하위 키워드는 지식·이해, 과정·기능, 가치·태도로 구분됩니다. 좌클릭하면 매우 잘함 → 잘함 → 보통 → 못함 → 매우 못함 → 해제 순으로 바뀌며, 우클릭하면 현재 수준과 관계없이 즉시 해제됩니다.';box.appendChild(intro);
+var legend=document.createElement('div');legend.className='subjectLegend';[['knowledge','지식·이해'],['process','과정·기능'],['value','가치·태도']].forEach(function(a){var x=document.createElement('span');x.className='subjectLegendItem '+a[0];x.textContent=a[1]+' 테두리';legend.appendChild(x);});box.appendChild(legend);
+getUnits().forEach(function(u){if(filter!=='all'&&unitId(u)!==filter)return;var list=u.keywords.filter(function(k){if(!q)return true;var children=subjectChildren(u,k);return k.text.toLowerCase().indexOf(q)>=0||String(k.category||'').toLowerCase().indexOf(q)>=0||String(u.name||'').toLowerCase().indexOf(q)>=0||children.some(function(ch){return ch.text.toLowerCase().indexOf(q)>=0||String(ch.category||'').toLowerCase().indexOf(q)>=0;});});if(!list.length&&q)return;
+var sec=document.createElement('div');sec.className='keywordUnit';var h=document.createElement('h3');h.textContent=u.code+' · '+u.name;var meta=document.createElement('span');meta.className='unitMeta';meta.textContent=u.strand||'';h.appendChild(meta);sec.appendChild(h);var row=document.createElement('div');row.className='keywordList';
+list.forEach(function(k){var key=keywordKey(u,k),lv=parseInt(sm[key],10)||0,children=subjectChildren(u,k),levels=normalizeSubjectSubEntry(ssm[key]),valid={};children.forEach(function(ch){valid[ch.text]=ch.category;});var selectedSubs=Object.keys(levels).filter(function(ch){return valid[ch]&&levels[ch]>=1&&levels[ch]<=5;});var b=document.createElement('button');b.type='button';b.className='kw'+(lv?' lv'+lv:'');var tx=document.createElement('span');tx.className='txt';tx.textContent=k.text;var pst=stats.parents[key]||emptyLevelStat(),plabel=levelUsageLabel(pst,lv);if(plabel){var puc=document.createElement('span');puc.className='levelUsageCount';puc.textContent=plabel;tx.appendChild(document.createTextNode(' '));tx.appendChild(puc);}var cat=document.createElement('span');cat.className='cat';cat.textContent='상위 키워드';var lev=document.createElement('span');lev.className='level';lev.textContent=lv?(LEVELS[lv]+(selectedSubs.length?' · 하위 '+selectedSubs.length:'')):'선택';b.appendChild(tx);b.appendChild(cat);b.appendChild(lev);
+b.addEventListener('click',function(){var cur=parseInt(scoreMap()[key],10)||0,next=(cur+1)%6;if(next)scoreMap()[key]=next;else{delete scoreMap()[key];clearSubjectSubsFor(key);}safeSave(true);renderKeywords();renderEduRef();renderResults();});
+b.addEventListener('contextmenu',function(ev){ev.preventDefault();ev.stopPropagation();if(scoreMap()[key]||subjectSubMap()[key]){delete scoreMap()[key];clearSubjectSubsFor(key);safeSave(true);renderKeywords();renderEduRef();renderResults();}});
+var holder=document.createElement('div');holder.className='subjectKeywordGroup'+(lv&&children.length?' open':'');holder.appendChild(b);if(lv&&children.length){var panel=document.createElement('div');panel.className='subjectSubPanel';SUBJECT_SUB_CATEGORY_ORDER.forEach(function(catName){var items=children.filter(function(ch){return ch.category===catName;});if(!items.length)return;var cg=document.createElement('div'),cc=subjectCategoryClass(catName);cg.className='subjectSubGroup '+cc;var gh=document.createElement('div');gh.className='subjectSubGroupHead';var dot=document.createElement('span');dot.className='subjectCatDot '+cc;var gt=document.createElement('span');gt.textContent=catName;gh.appendChild(dot);gh.appendChild(gt);cg.appendChild(gh);var gl=document.createElement('div');gl.className='subjectSubList';items.forEach(function(ch){var slv=parseInt(levels[ch.text],10)||0,sb=document.createElement('button');sb.type='button';sb.className='subjectSubkw cat-'+cc+(slv?' lv'+slv:'');var st=stats.subs[subjectSubStatKey(key,ch.text)]||emptyLevelStat(),scount=levelUsageLabel(st,slv);sb.textContent=ch.text+(slv?' · '+LEVELS[slv]:'');if(scount){var cnt=document.createElement('span');cnt.className='levelUsageCount';cnt.textContent=scount;sb.appendChild(document.createTextNode(' '));sb.appendChild(cnt);}sb.addEventListener('click',function(ev){ev.stopPropagation();var map=subjectSubMap(),ls=normalizeSubjectSubEntry(map[key]),cur=parseInt(ls[ch.text],10)||0,nxt=(cur+1)%6;if(nxt)ls[ch.text]=nxt;else delete ls[ch.text];if(Object.keys(ls).length)map[key]=ls;else delete map[key];safeSave(true);renderKeywords();renderEduRef();renderResults();});
+sb.addEventListener('contextmenu',function(ev){ev.preventDefault();ev.stopPropagation();var map=subjectSubMap(),ls=normalizeSubjectSubEntry(map[key]);if(ls[ch.text]){delete ls[ch.text];if(Object.keys(ls).length)map[key]=ls;else delete map[key];safeSave(true);renderKeywords();renderEduRef();renderResults();}});gl.appendChild(sb);});cg.appendChild(gl);panel.appendChild(cg);});holder.appendChild(panel);}row.appendChild(holder);});sec.appendChild(row);
+var det=document.createElement('details');det.className='unitActivity';if(activityOpen[unitId(u)])det.open=true;det.addEventListener('toggle',function(){activityOpen[unitId(u)]=det.open;});var sum=document.createElement('summary');sum.textContent='이 단원의 실제 활동명 추가';det.appendChild(sum);var body=document.createElement('div');body.className='unitActivityBody';var inp=document.createElement('input');inp.type='text';inp.placeholder='예: 우리 반 토의, 혼합물 분리 실험, 작품 발표회';inp.value=state.unitActivities[unitActivityKey(u)]||'';inp.addEventListener('input',function(){state.unitActivities[unitActivityKey(u)]=inp.value;safeSave(false);renderResults();});body.appendChild(inp);det.appendChild(body);sec.appendChild(det);box.appendChild(sec);});
+var chosen=selectedKeywords(),childCount=chosen.reduce(function(sum,x){return sum+(x.subkeywords||[]).length;},0);$('selectedKeywordCount').textContent='상위 '+chosen.length+'개'+(childCount?' · 하위 '+childCount+'개':'');renderEduRef();
+}
+function renderEduRef(){var sel=selectedKeywords(),e=$('eduRefContent');if(!sel.length){e.textContent='평가 키워드를 선택하면 관련 내용체계와 성취기준을 자동으로 참고합니다.';return;}var strands=[],std=[],evidence='선택한 교과 근거: '+sel.slice(0,12).map(subjectEvidenceText).join(' / ');sel.forEach(function(x){var st=x.strand+' · '+x.category;if(strands.indexOf(st)<0)strands.push(st);(x.standards||[]).forEach(function(a){var t=(a.code?'['+a.code+'] ':'')+a.text;if(std.indexOf(t)<0)std.push(t);});});var parts=[evidence,'내용체계: '+strands.slice(0,6).join(' / ')];if(std.length)parts.push('성취기준: '+std.slice(0,4).join(' · '));else parts.push('성취기준 코드는 확인된 경우에만 표시하며 현재 선택은 단원별 학습 요소와 내용체계를 중심으로 참고함.');e.textContent=parts.join('\n');}
+function toneText(){
+return state.tone==='concise'?'군더더기 없이 짧고 선명하게':state.tone==='specific'?'관찰 가능한 수행이 드러나도록 구체적으로':'자연스럽고 균형 있게';
+}
+function collectStandards(sel){
+var out=[];
+sel.forEach(function(x){
+(x.standards||[]).forEach(function(s){
+var t=(s.code?'['+s.code+'] ':'')+s.text;
+if(out.indexOf(t)<0) out.push(t);
+});
+});
+return out.slice(0,3);
+}
+function promptInputs(n,metaOverride){
+var meta=metaOverride||{}, sel=meta.selectedKeywords||selectedKeywords(),
+common=meta.commonNote!=null?meta.commonNote:String(state.commonNotes[scope()]||'').trim(),
+ind=meta.individualNote!=null?meta.individualNote:String(state.individualNotes[skey(n)]||'').trim(),
+acts=Array.isArray(meta.unitActivities)?meta.unitActivities:currentUnitActivities(),
+docs=Array.isArray(meta.attachments)?meta.attachments:attachmentPromptInfo();
+return {sel:sel, common:common, ind:ind, activities:acts, docs:docs};
+}
+function prettySize(n){
+n=Number(n)||0;
+if(n<1024) return n+' B';
+if(n<1024*1024) return Math.round(n/1024)+' KB';
+return (n/(1024*1024)).toFixed(1)+' MB';
+}
+function renderAttachments(){
+var box=$('attachmentList'); if(!box) return; box.innerHTML='';
+if(!attachments.length){
+var em=document.createElement('div'); em.className='attachmentEmpty'; em.textContent='첨부한 문서가 없습니다.'; box.appendChild(em); return;
+}
+attachments.forEach(function(a){
+var item=document.createElement('div'); item.className='attachmentItem';
+var top=document.createElement('div'); top.className='attachmentItemTop';
+var left=document.createElement('div');
+var nm=document.createElement('div'); nm.className='attachmentName'; nm.textContent=a.name;
+var mt=document.createElement('div'); mt.className='attachmentMeta'; mt.textContent=(a.type||'파일')+' · '+prettySize(a.size);
+left.appendChild(nm); left.appendChild(mt);
+var rm=document.createElement('button'); rm.type='button'; rm.className='removeAttach'; rm.textContent='제거';
+rm.addEventListener('click', function(){
+attachments=attachments.filter(function(x){ return x.id!==a.id; });
+renderAttachments();
+});
+top.appendChild(left); top.appendChild(rm);
+var gd=document.createElement('div'); gd.className='attachmentGuide';
+var lb=document.createElement('label'); lb.textContent='이 문서에서 우선 참고할 내용 (선택)';
+var ta=document.createElement('textarea');
+ta.placeholder='예: 2쪽 수행평가 결과 중심, 학생별 관찰표의 협력 관련 기록, 마지막 표의 A·B 항목을 우선 참고';
+ta.value=a.guide||'';
+ta.addEventListener('input', function(){ a.guide=ta.value; });
+gd.appendChild(lb); gd.appendChild(ta); item.appendChild(top); item.appendChild(gd); box.appendChild(item);
+});
+}
+function addAttachmentFiles(files){
+var arr=Array.prototype.slice.call(files||[]); if(!arr.length) return;
+if(attachments.length+arr.length>10){
+setStatus('참고 문서는 한 번에 최대 10개까지 선택할 수 있습니다.', true);
+arr=arr.slice(0, Math.max(0, 10-attachments.length));
+}
+arr.forEach(function(f){
+attachments.push({ id:'att_'+(++attachmentSeq)+'_'+Date.now(), name:f.name||'이름 없는 파일', type:f.type||'', size:f.size||0, guide:'', file:f });
+});
+renderAttachments();
+setStatus('참고 문서 '+arr.length+'개를 추가했습니다. 필요한 경우 문서별 참고 지침을 적어 주세요.');
+}
+function attachmentPromptInfo(){
+return attachments.map(function(a){ return {name:a.name, guide:String(a.guide||'').trim()}; });
+}
+function setTipTab(name){
+var o=$('tipOverlay');if(!o)return;
+var tabs=o.querySelectorAll('[data-tip-tab]'),panels=o.querySelectorAll('[data-tip-panel]');
+Array.prototype.forEach.call(tabs,function(b){var on=b.getAttribute('data-tip-tab')===name;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});
+Array.prototype.forEach.call(panels,function(p){p.classList.toggle('active',p.getAttribute('data-tip-panel')===name);});
+}
+function openTips(){
+var o=$('tipOverlay');if(!o)return;
+if(!o.getAttribute('data-tabs-bound')){
+  o.setAttribute('data-tabs-bound','1');
+  Array.prototype.forEach.call(o.querySelectorAll('[data-tip-tab]'),function(b){b.addEventListener('click',function(){setTipTab(b.getAttribute('data-tip-tab'));});});
+  var topClose=$('tipsCloseTopBtn');if(topClose)topClose.addEventListener('click',closeTips);
+}
+setTipTab('students');o.classList.add('show');
+}
+function closeTips(){ var o=$('tipOverlay'); if(o) o.classList.remove('show'); }
+function buildPrompt(n,existing,metaOverride,batchContext){
+var inp=promptInputs(n,metaOverride),sel=inp.sel,lines=[],standards=collectStandards(sel);
+lines.push('5학년 학교생활기록부 교과학습발달상황 평어를 작성한다. 결과만 출력한다.');
+lines.push('참고 평어·예시 문구가 있더라도 원문을 복사하거나 문장 구조를 그대로 재사용하지 않고, 선택한 근거를 바탕으로 새 문장으로 재구성한다.');
+lines.push('교과: '+state.subject+' / 학생 '+n+'번 / '+state.sentences+'문장');
+if(batchContext&&batchContext.total>1){
+lines.push('여러 학생 생성: 다른 학생에게 이미 사용된 문장과 한 문장이라도 완전히 같게 쓰지 않는다. 의미가 비슷한 것은 허용하며 차이를 만들려고 억지로 수식어·부사어·어순을 바꾸지 않는다.');
+if(batchContext.previousSentences&&batchContext.previousSentences.length)lines.push('이미 사용된 문장: '+batchContext.previousSentences.slice(-30).join(' | '));
+}
+if(inp.common)lines.push('교사 공통 기술: '+inp.common);
+if(inp.ind)lines.push('학생 개별 기술: '+inp.ind);
+if(inp.docs&&inp.docs.length){lines.push('참고 문서: '+inp.docs.map(function(d){return d.name+(d.guide?' / '+d.guide:'');}).join(' ; '));}
+if(inp.activities&&inp.activities.length)lines.push('관련 활동명: '+inp.activities.slice(0,8).map(function(a){return '['+a.unit+'] '+a.activity;}).join(' / '));
+if(existing)lines.push('현재 평어 수정 대상: '+existing);
+if(sel.length){var g={};sel.forEach(function(x){if(!g[x.unit])g[x.unit]=[];g[x.unit].push(subjectEvidenceText(x));});lines.push('선택한 평가 근거: '+Object.keys(g).map(function(k){return '['+k+'] '+g[k].join(' / ');}).join(' ; '));}
+if(standards.length)lines.push('관련 성취기준은 배경 참고용이며 학생 수행 증거로 간주하지 않는다: '+standards.join(' / '));
+lines.push('수준 해석: 선택 수준을 과장하거나 평균내지 않는다. 낮은 수준도 낙인찍지 말고 실제 가능한 수행과 필요한 안내를 사실적으로 표현한다.');
+lines.push('근거 우선순위: 교사의 학생별 관찰·평가 기록과 자유 기술을 가장 우선하고, 선택 키워드와 성취기준·예시자료는 보조 근거로 사용한다. 참고 문장이 어색하거나 실제 학생 근거와 맞지 않으면 문구를 따르지 않는다.');
+lines.push('어조: '+toneText());
+appendNaturalQualityRules(lines,state.sentences,state.area);return lines.join('\n');
+}
+function splitSentences(t){ return String(t||'').split('.').map(function(x){ return x.trim(); }).filter(Boolean); }
+function joinSentences(a){ return a.map(function(x){ x=String(x||'').trim().replace(/[.]+$/,''); return x?x+'.':''; }).filter(Boolean).join(' '); }
+function normalizedRecordText(t){ return String(t||'').trim(); }
+function textStats(t){
+var text=normalizedRecordText(t);
+return {sentences:splitSentences(text).length, chars:text.length};
+}
+function libraryWorkingText(k){
+return Object.prototype.hasOwnProperty.call(libraryDrafts,k)?String(libraryDrafts[k]||''):String(state.records[k]||'');
+}
+function isLibraryDirtyKey(k){
+if(!Object.prototype.hasOwnProperty.call(libraryDrafts,k)) return false;
+return normalizedRecordText(libraryDrafts[k])!==normalizedRecordText(state.records[k]||'');
+}
+function currentLibraryDirtyKeys(){
+var out=[];
+for(var n=1;n<=state.count;n++){ var k=libraryKey(n); if(isLibraryDirtyKey(k)) out.push(k); }
+return out;
+}
+function updateLibrarySaveBar(){
+var btn=$('saveAllLibraryChanges'), hint=$('librarySaveHint');
+if(!btn||!hint) return;
+var current=currentLibraryDirtyKeys(), all=allLibraryDirtyKeys(), students=dirtyStudentCount(all), other=Math.max(0,all.length-current.length);
+btn.disabled=!all.length;
+btn.className='saveAllLibraryChanges'+(all.length?' dirty':'');
+btn.textContent=all.length?('전체 수정 저장 ('+students+'명 · '+all.length+'건)'):'전체 수정 저장';
+if(all.length){
+hint.textContent='저장 전 변경사항 '+all.length+'건이 있습니다'+(other?' (현재 평어함 '+current.length+'건 · 다른 평어함 '+other+'건)':' (현재 평어함 '+current.length+'건)')+'. 빨간 버튼으로 한 번에 확정 저장할 수 있습니다.';
+}else hint.textContent='전체 평어함에 저장 전 변경사항이 없습니다.';
+}
+function saveAllLibraryChanges(){
+var keys=allLibraryDirtyKeys();
+if(!keys.length){ setStatus('저장할 변경사항이 없습니다.'); updateLibrarySaveBar(); return; }
+pushUndo();
+keys.forEach(function(k){ state.records[k]=normalizedRecordText(libraryDrafts[k]); delete libraryDrafts[k]; });
+safeSave(true); saveLibraryDrafts(true); renderLibrary(); renderStudents(); renderKeywords();
+setStatus(keys.length+'건의 내 평어함 수정 내용을 한 번에 저장했습니다.');
+}
+function qualityCheck(t){
+var a=splitSentences(t),badEnd=0,okEnd=/(함|임|음|됨|보임|씀|봄|만듦|감|있음)$/;
+a.forEach(function(s){if(!okEnd.test(s))badEnd++;});
+return {count:a.length,badEnd:badEnd};
+}
+function renderResults(){
+var box=$('resultGrid'); box.innerHTML='';
+selected().forEach(function(n){
+var k=skey(n), c=document.createElement('div'); c.className='resultCard';
+var hd=document.createElement('div'); hd.className='cardHead';
+var h=document.createElement('h3'); h.textContent=n+'번 학생';
+var tag=document.createElement('span'); tag.textContent=currentSetting();
+hd.appendChild(h); hd.appendChild(tag); c.appendChild(hd);
+var ta=document.createElement('textarea');
+ta.placeholder=n+'번 학생의 평어 결과를 붙여넣거나 직접 작성하세요.';
+ta.value=state.resultDrafts[k]||'';
+var metrics=document.createElement('div'); metrics.className='resultMetrics';
+var metricBadge=document.createElement('span'); metricBadge.className='statBadge'; metricBadge.title='공백과 문장부호를 포함한 글자 수입니다.'; metrics.appendChild(metricBadge);
+var q=document.createElement('div'); q.className='quality';
+function check(){
+state.resultDrafts[k]=ta.value; safeSave(false);
+var x=qualityCheck(ta.value), st=textStats(ta.value);
+metricBadge.textContent=st.sentences+'문장 · '+st.chars+'자';
+if(!ta.value.trim()){ q.textContent=''; q.className='quality'; return; }
+var msgs=[];
+if(x.count!==state.sentences) msgs.push('문장 수 '+x.count+'개');
+if(x.badEnd) msgs.push('명사형 종결 확인 '+x.badEnd+'문장');
+if(msgs.length){ q.textContent='검토: '+msgs.join(' · '); q.className='quality warn'; }
+else { q.textContent='문장 수와 종결 표현이 설정에 맞습니다.'; q.className='quality ok'; }
+}
+ta.addEventListener('input', check);
+c.appendChild(ta); c.appendChild(metrics); c.appendChild(q); check();
+var ra=document.createElement('div'); ra.className='resultSave';
+var rep=document.createElement('button'); rep.type='button'; rep.className='replaceBtn'; rep.textContent='기존 평어함 지우고 붙이기';
+rep.addEventListener('click', function(){ saveOne(n,'replace'); });
+var app=document.createElement('button'); app.type='button'; app.className='appendBtn'; app.textContent='내 평어함 뒤에 이어붙이기';
+app.addEventListener('click', function(){ saveOne(n,'append'); });
+ra.appendChild(rep); ra.appendChild(app); c.appendChild(ra);
+var pv=document.createElement('details'); pv.className='savedPreview';
+var psm=document.createElement('summary'); psm.textContent=currentSetting()+' 내 평어함 평어 살펴보기';
+var pbody=document.createElement('div'); pbody.className='savedPreviewBody';
+var saved=String(state.records[k]||'').trim();
+if(saved){
+splitSentences(saved).forEach(function(sentence, idx){
+var item=document.createElement('div'); item.className='savedPreviewSentence';
+item.textContent=(idx+1)+'. '+sentence+'.';
+pbody.appendChild(item);
+});
+} else {
+var empty=document.createElement('div'); empty.className='savedPreviewEmpty';
+empty.textContent='현재 '+currentSetting()+' 평어함에 저장된 평어가 없습니다.';
+pbody.appendChild(empty);
+}
+var pa=document.createElement('div'); pa.className='savedPreviewActions';
+var openLib=document.createElement('button'); openLib.type='button'; openLib.className='small';
+openLib.textContent='내 평어함에서 수정하기';
+openLib.addEventListener('click', function(){
+state.libraryArea=state.area;
+if(state.area==='교과학습발달상황') state.librarySubject=state.subject;
+safeSave(true);
+populateSubjects();
+showTab('library');
+setTimeout(function(){
+var row=document.querySelector('tr[data-student="'+n+'"]');
+if(row) row.scrollIntoView({behavior:'smooth', block:'center'});
+},0);
+});
+pa.appendChild(openLib); pbody.appendChild(pa); pv.appendChild(psm); pv.appendChild(pbody); c.appendChild(pv);
+var d=document.createElement('details'); d.className='promptBox';
+var sm=document.createElement('summary'); sm.textContent='AI 생성 지침 보기';
+var pt=document.createElement('textarea'); pt.readOnly=true; pt.value=state.prompts[k]||buildPrompt(n,'');
+var cp=document.createElement('button'); cp.type='button'; cp.className='small'; cp.textContent='이 학생 생성 지침 복사';
+cp.addEventListener('click', function(){ copyText(pt.value); });
+d.appendChild(sm); d.appendChild(pt); d.appendChild(cp); c.appendChild(d); box.appendChild(c);
+});
+}
+function captureMeta(n){var sel=selectedKeywords(),usage={},levelUsage={},subUsage={},subLevelUsage={};sel.forEach(function(x){usage[x.key]=(usage[x.key]||0)+1;var lv=parseInt(x.level,10)||0;if(!levelUsage[x.key])levelUsage[x.key]={};if(lv>=1&&lv<=5)levelUsage[x.key][lv]=(levelUsage[x.key][lv]||0)+1;(x.subkeywords||[]).forEach(function(ch){var sk=subjectSubStatKey(x.key,ch),slv=parseInt(obj(x.subkeywordLevels)[ch],10)||0;subUsage[sk]=(subUsage[sk]||0)+1;if(!subLevelUsage[sk])subLevelUsage[sk]={};if(slv>=1&&slv<=5)subLevelUsage[sk][slv]=(subLevelUsage[sk][slv]||0)+1;});});return {setting:currentSetting(),commonNote:String(state.commonNotes[scope()]||'').trim(),individualNote:String(state.individualNotes[skey(n)]||'').trim(),unitActivities:currentUnitActivities(),attachments:attachmentPromptInfo(),selectedKeywords:sel,keywordUsage:usage,keywordLevelUsage:levelUsage,subkeywordUsage:subUsage,subkeywordLevelUsage:subLevelUsage,sentences:state.sentences,tone:state.tone,subject:state.subject,area:'교과학습발달상황'};}
+function combineMeta(oldMeta, newMeta, mode){
+if(mode!=='append' || !oldMeta) return newMeta;
+var out=Object.assign({}, newMeta), byKey={}, merged=[];
+(Array.isArray(oldMeta.selectedKeywords)?oldMeta.selectedKeywords:[]).concat(Array.isArray(newMeta.selectedKeywords)?newMeta.selectedKeywords:[]).forEach(function(x){
+if(!x) return;
+var k=x.key||(x.code&&x.keyword?x.code+'||'+x.keyword:'');
+if(!k) return;
+if(!byKey[k]){
+var y=Object.assign({}, x); y.key=k;
+y.subkeywords=Array.isArray(x.subkeywords)?x.subkeywords.slice():[];
+y.subkeywordLevels=Object.assign({}, obj(x.subkeywordLevels)); y.subkeywordCategories=Object.assign({}, obj(x.subkeywordCategories));
+y.subkeywords.forEach(function(ch){ if(!y.subkeywordLevels[ch]) y.subkeywordLevels[ch]=1; });
+byKey[k]=y; merged.push(y);
+} else {
+var tgt=byKey[k], subs=(Array.isArray(tgt.subkeywords)?tgt.subkeywords:[]).concat(Array.isArray(x.subkeywords)?x.subkeywords:[]);
+tgt.subkeywords=subs.filter(function(v,i,a){ return v && a.indexOf(v)===i; });
+tgt.subkeywordLevels=Object.assign({}, obj(tgt.subkeywordLevels)); tgt.subkeywordCategories=Object.assign({}, obj(tgt.subkeywordCategories));
+var incoming=obj(x.subkeywordLevels), incomingCats=obj(x.subkeywordCategories);
+tgt.subkeywords.forEach(function(ch){
+var a=parseInt(tgt.subkeywordLevels[ch],10)||1, b=parseInt(incoming[ch],10)||0;
+tgt.subkeywordLevels[ch]=Math.max(a,b||1); if(incomingCats[ch]) tgt.subkeywordCategories[ch]=incomingCats[ch];
+});
+}
+});
+out.selectedKeywords=merged;
+var usage=usageFromMeta(oldMeta), nu=usageFromMeta(newMeta);
+Object.keys(nu).forEach(function(k){ usage[k]=(usage[k]||0)+nu[k]; });
+out.keywordUsage=usage;
+var klu={}; addNestedLevelCounts(klu,obj(oldMeta.keywordLevelUsage)); addNestedLevelCounts(klu,obj(newMeta.keywordLevelUsage)); out.keywordLevelUsage=klu;
+var su={}; addFlatCounts(su,obj(oldMeta.subkeywordUsage)); addFlatCounts(su,obj(newMeta.subkeywordUsage)); out.subkeywordUsage=su;
+var slu={}; addNestedLevelCounts(slu,obj(oldMeta.subkeywordLevelUsage)); addNestedLevelCounts(slu,obj(newMeta.subkeywordLevelUsage)); out.subkeywordLevelUsage=slu;
+var am={};
+(Array.isArray(oldMeta.unitActivities)?oldMeta.unitActivities:[]).concat(Array.isArray(newMeta.unitActivities)?newMeta.unitActivities:[]).forEach(function(a){
+if(a && a.id && a.activity) am[a.id]=a;
+});
+out.unitActivities=Object.keys(am).map(function(k){ return am[k]; });
+var dm={}, docs=[];
+(Array.isArray(oldMeta.attachments)?oldMeta.attachments:[]).concat(Array.isArray(newMeta.attachments)?newMeta.attachments:[]).forEach(function(d){
+if(!d || !d.name) return;
+var dk=d.name+'||'+String(d.guide||'');
+if(dm[dk]) return;
+dm[dk]=1; docs.push({name:String(d.name), guide:String(d.guide||'')});
+});
+out.attachments=docs;
+return out;
+}
+/* v7: 자연스러운 문장과 정확 중복 방지만 남긴 경량 품질 검사 */
+var FORBIDDEN_RECORD_SYMBOLS=/["'“”‘’:;\/&@#*·•]/;
+var AWKWARD_RECORD_PATTERNS=[
+[/행동\s*특성으로\s*확인됨/,'메타 표현'],
+[/모습이\s+[^.]{0,45}확인됨/,'추상적인 모습 확인 표현'],
+[/변화가\s+[^.]{0,45}확인됨/,'추상적인 변화 확인 표현'],
+[/안정적으로\s*나타나는\s*모습/,'상투적인 안정적 모습 표현'],
+[/학교생활에서[^.]{0,60}학교생활에서/,'학교생활에서 반복'],
+[/(?:활동|참여|수업)\s*과정에서[^.]{0,60}(?:활동|참여|수업)\s*과정에서/,'과정에서 반복']
+];
+function validateNaturalRecord(t,expected,area){
+var text=String(t||'').trim(),arr=splitSentences(text),seen={},bad=/["'“”‘’:;\/&@#*·•]/;
+if(arr.length!==expected)return '요청한 '+expected+'문장이 아니라 '+arr.length+'문장입니다.';
+if(bad.test(text))return '사용하지 않는 특수기호가 포함되어 있습니다.';
+for(var i=0;i<arr.length;i++){
+var s=arr[i],norm=normalizeExactStoredSentence(s);
+if(s.length>110)return (i+1)+'번째 문장이 지나치게 깁니다.';
+if((s.match(/,/g)||[]).length>2)return (i+1)+'번째 문장에 의미를 너무 많이 연결했습니다.';
+if((s.match(/(?:하며|하고|하여|하면서|이며|이고|또한|그리고|뿐만 아니라)/g)||[]).length>3)return (i+1)+'번째 문장에 연결 표현이 너무 많습니다.';
+if(/행동\s*특성으로\s*확인됨|안정적으로\s*나타나는\s*모습/.test(s))return (i+1)+'번째 문장에 추상적이고 상투적인 표현이 있습니다.';
+if(/학교생활에서[^.]{0,60}학교생활에서/.test(s))return (i+1)+'번째 문장에 같은 표현이 반복됩니다.';
+if(seen[norm])return '같은 결과 안에 완전히 동일한 문장이 반복되었습니다.';seen[norm]=1;
+}
+return '';
+}
+function appendNaturalQualityRules(lines,count,area){
+lines.push('최우선: 자연스럽고 정확한 한국어 문장이 키워드 사용량보다 중요하다. 선택 키워드는 후보 근거이며 모두 사용할 필요가 없다.');
+lines.push('구성: 한 문장은 중심 의미 하나를 우선한다. 서로 자연스럽게 이어지는 두 의미만 함께 쓰고 관련이 약한 요소를 억지로 합치지 않는다.');
+lines.push('다양성: 다른 문장처럼 보이게 하려고 부사어·형용사·목적어·수식어·접속 표현을 임의로 늘리거나 어순을 비틀지 않는다. 의미가 비슷한 문장은 허용하지만 완전히 같은 문장은 쓰지 않는다.');
+lines.push('문장 세트: 여러 문장은 서로 다른 핵심 정보를 맡게 하고 전체를 함께 읽어 불필요한 단어·구절 반복을 줄인다. 단, 교과 핵심어처럼 바꾸면 의미가 흐려지는 말은 억지로 치환하지 않는다.');
+lines.push('참고자료: 예시·참고문장은 정답 문장이 아니다. 어색한 문장 구조, 과도한 수식, 추상적 표현, 근거 없는 내면 추정은 따라 쓰지 않고 확인 가능한 근거만 참고한다. 문장을 그대로 복사하지 않는다.');
+lines.push('교과 평어는 교사가 확인한 학습 수행과 평가 근거만 서술한다. 성취기준·교과서 예시·참고자료에 있다는 이유만으로 학생이 실제로 수행했다고 만들지 않는다.');
+lines.push('표현: 학교생활기록부에 바로 넣을 수 있는 자연스러운 명사형 문장으로 쓰며 따옴표·콜론·세미콜론·슬래시·&, @, #, *, · 같은 특수기호를 쓰지 않는다.');
+lines.push('형식: 정확히 '+count+'문장만 출력하고 번호·불릿·제목·설명 없이 각 문장을 마침표로 끝낸다.');
+}
+/* v12: Gemini REST API 직접 연동. 외부 브리지 함수 없이 fetch로 호출한다. */
+var GEMINI_MODEL='gemini-3-flash-preview';
+var GEMINI_SYSTEM_INSTRUCTION='당신은 대한민국 초등학교 5학년 학교생활기록부 교과학습발달상황 평어를 작성하는 전문 AI입니다. 교사가 제공한 학생별 관찰·평가 기록을 가장 우선하고 선택한 교과 키워드와 성취기준·참고자료는 보조 근거로 사용합니다. 학생이 실제로 수행했다고 확인되지 않은 사실을 만들지 말고, 자연스럽고 정확한 한국어 문장으로 작성합니다. 모든 평어는 학교생활기록부에 바로 사용할 수 있는 명사형 종결로 작성합니다.';
+function cleanAIText(v){
+if(v==null)return '';
+if(typeof v==='string')return v.replace(/^```(?:text|json)?\s*/i,'').replace(/```\s*$/,'').replace(/^\s*(?:[-*•]|\d+[.)])\s*/gm,'').replace(/\s*\n\s*/g,' ').trim();
+if(typeof v.text==='string')return cleanAIText(v.text);
+if(typeof v.output==='string')return cleanAIText(v.output);
+if(typeof v.result==='string')return cleanAIText(v.result);
+return '';
+}
+function sleep(ms){return new Promise(function(resolve){setTimeout(resolve,ms);});}
+function geminiErrorMessage(status,detail){
+var base='Gemini API 요청 실패'+(status?' ('+status+')':'');
+return detail?base+': '+detail:base;
+}
+async function callGeminiAI(prompt,context){
+/* Gemini Canvas의 직접 API 실행 패턴에 맞춘다. 별도 사용자 API 키 입력 UI는 두지 않는다. */
+const apiKey='';
+const apiUrl='https://generativelanguage.googleapis.com/v1beta/models/'+GEMINI_MODEL+':generateContent?key='+encodeURIComponent(apiKey);
+const payload={
+contents:[{role:'user',parts:[{text:String(prompt||'')}]}],
+systemInstruction:{parts:[{text:GEMINI_SYSTEM_INSTRUCTION}]}
+};
+const retryable={408:1,429:1,500:1,502:1,503:1,504:1};
+let lastError=null;
+for(let attempt=0;attempt<3;attempt++){
+let controller=typeof AbortController!=='undefined'?new AbortController():null;
+let timer=controller?setTimeout(function(){controller.abort();},60000):null;
+try{
+const response=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller?controller.signal:undefined});
+if(timer)clearTimeout(timer);
+if(!response.ok){
+let detail='';
+try{const errBody=await response.json();detail=(errBody&&errBody.error&&errBody.error.message)||'';}catch(e){try{detail=await response.text();}catch(_e){}}
+const err=new Error(geminiErrorMessage(response.status,detail));err.status=response.status;
+if(!retryable[response.status])throw err;
+lastError=err;
+}else{
+const result=await response.json();
+const candidate=result&&Array.isArray(result.candidates)?result.candidates[0]:null;
+const parts=candidate&&candidate.content&&Array.isArray(candidate.content.parts)?candidate.content.parts:[];
+const rawText=parts.map(function(p){return p&&typeof p.text==='string'?p.text:'';}).filter(Boolean).join('\n');
+const text=cleanAIText(rawText);
+if(text)return text;
+const block=result&&result.promptFeedback&&result.promptFeedback.blockReason?String(result.promptFeedback.blockReason):'';
+const finish=candidate&&candidate.finishReason?String(candidate.finishReason):'';
+lastError=new Error(block?('Gemini 요청이 차단되었습니다: '+block):(finish?('Gemini가 텍스트를 반환하지 않았습니다. 종료 사유: '+finish):'Gemini가 빈 응답을 반환했습니다.'));
+}
+}catch(e){
+if(timer)clearTimeout(timer);
+if(e&&e.status&&!retryable[e.status])throw e;
+if(e&&e.name==='AbortError')lastError=new Error('Gemini API 요청 시간이 초과되었습니다.');
+else lastError=e instanceof Error?e:new Error(String(e));
+}
+if(attempt<2)await sleep(1000*Math.pow(2,attempt));
+}
+throw lastError||new Error('Gemini API 요청에 실패했습니다.');
+}
+function requestGeminiText(prompt,context,validator,maxAttempts){
+var limit=Math.max(1,maxAttempts||3);
+function run(i,extra){
+return callGeminiAI(prompt+extra,context).then(function(t){
+var reason=validator?validator(t):'';
+if(!reason)return t;
+if(i+1>=limit)throw new Error('Gemini 응답을 '+limit+'회 확인했지만 조건을 충족하지 못했습니다: '+reason);
+return run(i+1,'\n\n재요청: 이전 응답은 다음 이유로 사용할 수 없습니다: '+reason+' 원래 근거와 요구 형식을 지키되 억지로 표현을 바꾸지 말고 자연스러운 한국어 문장으로 다시 작성하세요. 완전히 같은 문장이 문제라면 해당 문장을 새 문장으로 다시 서술하세요.');
+});
+}
+return run(0,'');
+}
+function stripPeriodText(t){ return String(t||'').trim().replace(/[.]+$/,''); }
+function makePrompts(){
+var overlay = $('loadingOverlay');
+var statusText = $('loadingStatus');
+overlay.classList.remove('hidden');
+overlay.classList.add('flex');
+var students = selected();
+var seenSentences=[];
+function processStudent(index) {
+if(index >= students.length) {
+safeSave(true);
+renderResults();
+overlay.classList.add('hidden');
+overlay.classList.remove('flex');
+setStatus(students.length+'명의 AI 평어 생성을 완료했습니다. 완전히 같은 문장은 자동 재요청합니다.');
+return;
+}
+var n = students[index];
+statusText.textContent = n + '번 학생 평어 생성 중... (' + (index+1) + '/' + students.length + ')';
+var k = skey(n), meta = captureMeta(n);
+var batchContext={index:index,total:students.length,previousSentences:seenSentences.slice(-30),seenSentences:seenSentences};
+state.generationMeta[k] = meta;
+state.prompts[k] = buildPrompt(n,'',meta,batchContext);
+statusText.textContent = n + '번 학생 개별 AI 요청 중... (' + (index+1) + '/' + students.length + ')';
+generateStudentRequest(n, meta, state.prompts[k], batchContext).then(function(aiResult) {
+state.resultDrafts[k] = aiResult;
+splitSentences(aiResult).forEach(function(s){ seenSentences.push(s+'.'); });
+renderResults();
+processStudent(index + 1);
+},function(err){
+overlay.classList.add('hidden');
+overlay.classList.remove('flex');
+setStatus(n+'번 학생 평어 생성 중 오류가 발생했습니다: '+(err&&err.message?err.message:String(err)),true);
+});
+}
+processStudent(0);
+}
+function generateStudentRequest(n,meta,prompt,batchContext){
+var expected=parseInt(meta.sentences,10)||state.sentences||2;
+return requestGeminiText(prompt,{task:'record',student:n,area:meta.area,subject:meta.subject||'',expectedSentences:expected},function(t){
+var arr=splitSentences(t),quality=validateNaturalRecord(t,expected,meta.area||state.area);if(quality)return quality;
+if(batchContext&&batchContext.total>1){var used={},seen=batchContext.seenSentences||[];seen.forEach(function(s){used[normalizeExactStoredSentence(s)]=1;});for(var i=0;i<arr.length;i++){var norm=normalizeExactStoredSentence(arr[i]);if(used[norm])return '다른 학생에게 이미 사용된 문장과 완전히 같습니다: '+arr[i]+'.';}}
+return '';
+},3);
+}
+function copyText(t){
+t=String(t||'');
+if(navigator.clipboard && navigator.clipboard.writeText){
+navigator.clipboard.writeText(t).then(function(){ setStatus('복사했습니다.'); }, function(){ fallbackCopy(t); });
+} else fallbackCopy(t);
+}
+function fallbackCopy(t){
+var a=document.createElement('textarea'); a.value=t; a.style.position='fixed'; a.style.left='-9999px';
+document.body.appendChild(a); a.select();
+try { document.execCommand('copy'); setStatus('복사했습니다.'); }
+catch(e) { setStatus('자동 복사가 차단되었습니다. 직접 선택해 복사하세요.', true); }
+document.body.removeChild(a);
+}
+
+/* v20 · 내 평어함 이동 확인 / 덮어쓰기 보호 */
+var pendingReplaceItems=null,lastSavedItems=[];
+function saveSafetyEl(id){return document.getElementById(id)}
+function closeSaveSafety(){var o=saveSafetyEl('saveSafetyOverlay');if(!o)return;o.classList.remove('show');o.setAttribute('aria-hidden','true');pendingReplaceItems=null}
+function safetyItemFor(n){var k=skey(n),txt=String(state.resultDrafts[k]||'').trim();if(!txt)return null;return {n:n,key:k,newText:txt,oldText:String(state.records[k]||'').trim(),area:state.area,subject:state.subject||'',setting:currentSetting(),meta:state.generationMeta[k]||captureMeta(n)}}
+function safetyItemsForStudents(nums){return (nums||[]).map(safetyItemFor).filter(Boolean)}
+function safetyMetaLabel(x){var bits=['5학년','2학기'];if(x.setting)bits.push(String(x.setting).replace(/^\[|\]$/g,''));bits.push(x.n+'번 학생');return bits.join(' · ')}
+function showSaveSuccess(items,mode){lastSavedItems=(items||[]).slice();var o=saveSafetyEl('saveSafetyOverlay'),d=saveSafetyEl('saveSafetyDialog'),body=saveSafetyEl('saveSafetyBody'),actions=saveSafetyEl('saveSafetyActions'),meta=saveSafetyEl('saveSafetyMeta');d.className='saveSafetyDialog success';saveSafetyEl('saveSafetyIcon').textContent='✓';saveSafetyEl('saveSafetyTitle').textContent='✓ 내 평어함에 잘 옮겨졌습니다';saveSafetyEl('saveSafetyDesc').textContent=mode==='append'?'기존 평어는 유지하고 새 평어를 뒤에 이어붙였습니다. 저장된 최종 내용을 확인해 주세요.':'새 평어가 내 평어함에 저장되었습니다. 저장된 최종 내용을 확인해 주세요.';meta.innerHTML='';var count=document.createElement('span');count.textContent=items.length+'명 저장 완료';meta.appendChild(count);if(items.length===1){var m=document.createElement('span');m.textContent=safetyMetaLabel(items[0]);meta.appendChild(m)}body.innerHTML='';var list=document.createElement('div');list.className='saveSafetyList';items.forEach(function(x){var item=document.createElement('section');item.className='saveSafetyItem';var h=document.createElement('div');h.className='saveSafetyStudent';h.textContent=safetyMetaLabel(x);var final=document.createElement('div');final.className='saveSafetyFinal';final.textContent=String(state.records[x.key]||'').trim()||'(저장된 평어 없음)';item.append(h,final);list.appendChild(item)});body.appendChild(list);actions.innerHTML='';var keep=document.createElement('button');keep.type='button';keep.textContent='계속 작업';keep.onclick=closeSaveSafety;var go=document.createElement('button');go.type='button';go.className='goLibrary';go.textContent='내 평어함에서 확인';go.onclick=function(){var first=lastSavedItems[0];closeSaveSafety();if(first)goToSavedLibrary(first)};actions.append(keep,go);o.classList.add('show');o.setAttribute('aria-hidden','false');setTimeout(function(){d.focus()},0)}
+function showReplaceConfirm(items){var existing=items.filter(function(x){return String(x.oldText||'').trim()});if(!existing.length){performSafeRecordSave(items,'replace');return}pendingReplaceItems=items.slice();var o=saveSafetyEl('saveSafetyOverlay'),d=saveSafetyEl('saveSafetyDialog'),body=saveSafetyEl('saveSafetyBody'),actions=saveSafetyEl('saveSafetyActions'),meta=saveSafetyEl('saveSafetyMeta');d.className='saveSafetyDialog warning';saveSafetyEl('saveSafetyIcon').textContent='!';saveSafetyEl('saveSafetyTitle').textContent='기존 평어를 지우고 새 평어로 바꿀까요?';saveSafetyEl('saveSafetyDesc').textContent='현재 내 평어함의 내용을 먼저 확인한 뒤 교체 여부를 결정해 주세요.';meta.innerHTML='';var c=document.createElement('span');c.textContent=existing.length+'명의 기존 평어 확인 필요';meta.appendChild(c);body.innerHTML='';var list=document.createElement('div');list.className='saveSafetyList';existing.forEach(function(x){var item=document.createElement('section');item.className='saveSafetyItem';var h=document.createElement('div');h.className='saveSafetyStudent';h.textContent=safetyMetaLabel(x);var cmp=document.createElement('div');cmp.className='saveSafetyCompare';var oldP=document.createElement('section');oldP.className='saveSafetyPane old';oldP.innerHTML='<h4>현재 내 평어함</h4>';var oldT=document.createElement('div');oldT.className='saveSafetyText';oldT.textContent=x.oldText;oldP.appendChild(oldT);var newP=document.createElement('section');newP.className='saveSafetyPane new';newP.innerHTML='<h4>교체할 새 평어</h4>';var newT=document.createElement('div');newT.className='saveSafetyText';newT.textContent=x.newText;newP.appendChild(newT);cmp.append(oldP,newP);item.append(h,cmp);list.appendChild(item)});body.appendChild(list);var note=document.createElement('div');note.className='saveSafetyNotice';note.textContent='주황색의 ‘기존 평어함 지우고 붙이기’를 실행하면 아래의 기존 평어가 새 평어로 교체됩니다. 내용을 확인한 뒤 진행해 주세요.';body.appendChild(note);actions.innerHTML='';var cancel=document.createElement('button');cancel.type='button';cancel.textContent='취소';cancel.onclick=closeSaveSafety;var ok=document.createElement('button');ok.type='button';ok.className='confirmReplace';ok.textContent='기존 평어 지우고 붙이기';ok.onclick=function(){var x=pendingReplaceItems?pendingReplaceItems.slice():[];closeSaveSafety();performSafeRecordSave(x,'replace')};actions.append(cancel,ok);o.classList.add('show');o.setAttribute('aria-hidden','false');setTimeout(function(){d.focus()},0)}
+function performSafeRecordSave(items,mode){if(!items.length){setStatus('저장할 학생별 평어 결과가 없습니다.',true);return}pushUndo();items.forEach(function(x){var old=String(state.records[x.key]||'').trim();state.records[x.key]=(mode==='append'&&old)?joinSentences(splitSentences(old).concat(splitSentences(x.newText))):x.newText;state.recordMeta[x.key]=combineMeta(state.recordMeta[x.key],x.meta,mode);delete libraryDrafts[x.key]});safeSave(true);saveLibraryDrafts(true);renderStudents();renderKeywords();renderResults();if(currentTab==='library')renderLibrary();setStatus(items.length+'명의 평어를 '+currentSetting()+' 평어함에 '+(mode==='append'?'이어붙였습니다.':'새 내용으로 저장했습니다.'));showSaveSuccess(items,mode)}
+function requestSafeRecordSave(items,mode){if(!items.length){setStatus('저장할 학생별 평어 결과가 없습니다.',true);return}if(mode==='replace'&&items.some(function(x){return String(x.oldText||'').trim()})){showReplaceConfirm(items);return}performSafeRecordSave(items,mode)}
+function goToSavedLibrary(item){state.libraryArea=item.area;if(item.area==='교과학습발달상황')state.librarySubject=item.subject;else state.librarySubject='';safeSave(true);populateSubjects();showTab('library');setTimeout(function(){var row=document.querySelector('#libraryBody tr[data-student="'+item.n+'"]');if(row){row.classList.add('justSaved');row.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){row.classList.remove('justSaved')},2400)}},60)}
+
+var saveSafetyOverlayNode=$('saveSafetyOverlay');
+if(saveSafetyOverlayNode){saveSafetyOverlayNode.addEventListener('click',function(e){if(e.target===saveSafetyOverlayNode)closeSaveSafety();});}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&saveSafetyOverlayNode&&saveSafetyOverlayNode.classList.contains('show')){e.preventDefault();closeSaveSafety();}});
+function saveOne(n, mode){
+var item=safetyItemFor(n);
+if(!item){ setStatus(n+'번 학생 결과가 비어 있습니다.', true); return; }
+requestSafeRecordSave([item],mode);
+}
+function bulk(mode){ requestSafeRecordSave(safetyItemsForStudents(selected()),mode); }
+function sentencePrompt(n,index,sentence,all,keyOverride,metaOverride){
+var k=keyOverride||skey(n),meta=metaOverride||state.recordMeta[k]||captureMeta(n),other=all.filter(function(x,i){return i!==index;}),area=meta.area||state.area,lines=[];
+lines.push('학교생활기록부 평어 한 문장만 다시 작성한다. 새 문장 1개만 출력한다.');
+lines.push('바꿀 문장: '+sentence+'.');
+if(other.length)lines.push('같이 쓰이는 다른 문장: '+other.join('. ')+'.');
+if(meta.individualNote)lines.push('학생 개별 기술: '+meta.individualNote);
+if(meta.selectedKeywords&&meta.selectedKeywords.length)lines.push('관련 평가 근거: '+meta.selectedKeywords.slice(0,12).map(subjectEvidenceText).join(' / '));
+lines.push('요구: 원래 문장이 담당한 핵심 학습 수행과 성취수준을 유지하고 새로운 수행 사실은 만들지 않는다. 문장 전체를 자연스럽게 다시 서술한다.');
+lines.push('다른 문장과 완전히 같게 쓰지 않는다. 의미가 비슷한 것은 괜찮으며 차이를 만들려고 부사어·수식어·어순을 억지로 바꾸지 않는다. 같은 평어 안의 단어와 구절도 불필요하게 반복하지 않는다.');
+appendNaturalQualityRules(lines,1,area);return lines.join('\n');
+}
+function renderSentencePanel(n, ta, host, keyOverride, metaOverride){
+var k=keyOverride||skey(n), meta=metaOverride||state.recordMeta[k]||null, text=ta.value.trim(), arr=splitSentences(text);
+host.innerHTML='';
+if(!arr.length){ host.textContent='마침표로 구분된 평어 문장이 없습니다.'; return; }
+arr.forEach(function(s, idx){
+var row=document.createElement('div'); row.className='sentenceRow';
+var no=document.createElement('div'); no.className='sentenceNo'; no.textContent=(idx+1);
+var ed=document.createElement('textarea'); ed.value=s+'.';
+ed.addEventListener('input', function(){
+arr[idx]=ed.value.trim().replace(/[.]+$/,'');
+ta.value=joinSentences(arr);
+libraryDrafts[k]=ta.value;
+ta.dispatchEvent(new Event('input',{bubbles:true}));
+});
+var b=document.createElement('button'); b.type='button'; b.className='small'; b.textContent='이 문장 AI로 다시 만들기';
+b.addEventListener('click', function(){
+var overlay = $('loadingOverlay');
+var statusText = $('loadingStatus');
+overlay.classList.remove('hidden');
+overlay.classList.add('flex');
+statusText.textContent = n + '번 학생 ' + (idx+1) + '번째 문장 재생성 중...';
+var activeMeta=libraryMetaForRecord(k,n,ta.value), p=sentencePrompt(n,idx,arr[idx],arr,k,activeMeta),existingSentences=[];
+for(var sn=1;sn<=state.count;sn++)splitSentences(state.records[scopeFor(activeMeta.area,activeMeta.subject)+'||'+sn]||'').forEach(function(x){existingSentences.push(x+'.');});
+generateSentenceRequest(n,activeMeta,p,arr[idx],existingSentences,idx).then(function(newSentence){
+arr[idx]=stripPeriodText(newSentence);
+ta.value=joinSentences(arr);libraryDrafts[k]=ta.value;ta.dispatchEvent(new Event('input',{bubbles:true}));
+overlay.classList.add('hidden');overlay.classList.remove('flex');setStatus(n+'번 학생의 '+(idx+1)+'번째 문장을 새로 만들었습니다. 변경 내용을 확인한 뒤 빨간 수정 저장 버튼을 눌러 주세요.');renderSentencePanel(n,ta,host,k,meta);
+},function(err){overlay.classList.add('hidden');overlay.classList.remove('flex');setStatus('문장 재생성 중 오류가 발생했습니다: '+(err&&err.message?err.message:String(err)),true);});
+});
+row.appendChild(no); row.appendChild(ed); row.appendChild(b);
+host.appendChild(row);
+});
+}
+function normalizeExactStoredSentence(t){
+return String(t||'').trim().replace(/[.!?。]+$/,'').replace(/[\s\u00a0]+/g,' ').trim();
+}
+function collectExactLibraryDuplicates(){
+var groups={}, occurrences=[];
+for(var n=1;n<=state.count;n++){
+var k=libraryKey(n), text=normalizedRecordText(libraryWorkingText(k));
+if(!text) continue;
+splitSentences(text).forEach(function(sentence,idx){
+var norm=normalizeExactStoredSentence(sentence);
+if(!norm) return;
+var occ={student:n,key:k,index:idx,sentence:sentence,norm:norm};
+occurrences.push(occ);
+if(!groups[norm]) groups[norm]=[];
+groups[norm].push(occ);
+});
+}
+var duplicateGroups=Object.keys(groups).map(function(k){return groups[k];}).filter(function(g){return g.length>1;});
+var targets=[];
+duplicateGroups.forEach(function(g){for(var i=1;i<g.length;i++)targets.push(g[i]);});
+return {groups:duplicateGroups,targets:targets,occurrences:occurrences};
+}
+function updateLibraryDuplicateInfo(){
+var dupInfo=$('libraryDuplicateInfo');if(!dupInfo)return;
+var dr=collectExactLibraryDuplicates();
+dupInfo.textContent=dr.groups.length?('완전히 같은 문장 '+dr.groups.length+'그룹이 있습니다. 저장 전 편집 내용도 포함하여 검사하며, 각 그룹의 첫 문장은 유지하고 이후 동일 문장만 수정합니다.'):'완전히 같은 문장이 없습니다. 저장 전 편집 내용까지 검사했으며 이미 다른 문장은 수정하지 않습니다.';
+dupInfo.className='libraryDuplicateInfo '+(dr.groups.length?'warn':'ok');
+}
+function generateSentenceRequest(n,meta,prompt,original,existingSentences,attempt){
+var used=(existingSentences||[]).map(normalizeExactStoredSentence),orig=normalizeExactStoredSentence(original);
+return requestGeminiText(prompt,{task:'sentence_regenerate',student:n,area:meta.area,subject:meta.subject||''},function(t){
+var arr=splitSentences(t),quality=validateNaturalRecord(t,1,meta.area||state.area);
+if(quality)return quality;
+var norm=normalizeExactStoredSentence(arr[0]);
+if(!norm)return '빈 문장입니다.';
+if(norm===orig)return '원래 문장과 완전히 같습니다.';
+if(used.indexOf(norm)>=0)return '다른 학생 또는 현재 평어의 기존 문장과 완전히 같습니다.';
+return '';
+},3).then(function(t){return joinSentences([splitSentences(t)[0]]);});
+}
+function fixExactLibraryDuplicates(){
+var report=collectExactLibraryDuplicates(),info=$('libraryDuplicateInfo');
+if(!report.groups.length){
+if(info){info.textContent='완전히 같은 문장이 없습니다. 기존 평어는 변경하지 않았습니다.';info.className='libraryDuplicateInfo ok';}
+setStatus(librarySetting()+' 평어함에 완전히 같은 문장이 없습니다.');
+return;
+}
+var targets=report.targets.slice(), overlay=$('loadingOverlay'),statusText=$('loadingStatus'),existing=report.occurrences.map(function(o){return o.sentence+'.';});
+if(info){info.textContent='동일 문장 '+report.groups.length+'그룹 · 수정 대상 '+targets.length+'문장. 각 그룹의 첫 문장은 유지하고 이후 동일 문장만 바꿉니다.';info.className='libraryDuplicateInfo warn';}
+overlay.classList.remove('hidden');overlay.classList.add('flex');
+var changed=0;
+function next(i){
+if(i>=targets.length){
+saveLibraryDrafts(true);renderLibrary();overlay.classList.add('hidden');overlay.classList.remove('flex');
+var after=collectExactLibraryDuplicates();
+if(info){info.textContent=after.groups.length?'수정 후에도 동일 문장 '+after.groups.length+'그룹이 남아 있습니다.':'동일 문장 '+changed+'개를 다르게 만들었습니다. 저장 전 변경 상태이므로 확인 후 수정 저장해 주세요.';info.className=after.groups.length?'libraryDuplicateInfo warn':'libraryDuplicateInfo ok';}
+setStatus('완전히 같았던 문장 '+changed+'개만 다르게 만들었습니다. 원래부터 다른 문장은 유지했습니다. 빨간 수정 저장 또는 전체 수정 저장을 눌러 확정해 주세요.');
+return;
+}
+var t=targets[i],k=t.key,all=splitSentences(libraryWorkingText(k)),meta=libraryMetaForRecord(k,t.student,libraryWorkingText(k));
+if(normalizeExactStoredSentence(all[t.index]||'')!==t.norm){next(i+1);return;}
+statusText.textContent=t.student+'번 학생의 동일 문장만 수정 중... ('+(i+1)+'/'+targets.length+')';
+var p=sentencePrompt(t.student,t.index,t.sentence,all,k,meta)+'\n추가 요구: 현재 평어함의 다른 학생에게 이미 쓰인 문장과 완전히 같다. 원래 의미와 근거는 유지하되 문장 전체를 자연스럽게 다시 서술한다. 의미가 비슷한 것은 괜찮으며 차이를 만들려고 부사어·수식어·어순을 억지로 바꾸지 않는다. 현재 평어함의 어떤 문장과도 완전히 같은 문장은 출력하지 않는다.';
+generateSentenceRequest(t.student,meta,p,t.sentence,existing,i).then(function(newSentence){
+var ns=stripPeriodText(newSentence),newNorm=normalizeExactStoredSentence(ns),used={};existing.forEach(function(x){used[normalizeExactStoredSentence(x)]=1;});
+if(!ns||newNorm===t.norm||used[newNorm]){overlay.classList.add('hidden');overlay.classList.remove('flex');setStatus('Gemini가 중복 문장을 충분히 다르게 만들지 못했습니다. 다시 실행해 주세요.',true);return;}
+all[t.index]=ns;libraryDrafts[k]=joinSentences(all);saveLibraryDrafts(false);existing.push(ns+'.');changed++;next(i+1);
+},function(err){
+overlay.classList.add('hidden');overlay.classList.remove('flex');setStatus('동일 문장 수정 중 오류가 발생했습니다: '+(err&&err.message?err.message:String(err)),true);
+});
+}
+next(0);
+}
+function libraryMetaForRecord(k,n,text){var base=Object.assign({},obj(state.recordMeta[k]));base.area='교과학습발달상황';base.subject=state.librarySubject;if(!base.tone)base.tone=state.tone;if(!Array.isArray(base.selectedKeywords))base.selectedKeywords=[];if(!Array.isArray(base.unitActivities))base.unitActivities=[];if(!Array.isArray(base.attachments))base.attachments=[];base.sentences=clamp(parseInt(base.sentences,10)||splitSentences(text||'').length||state.sentences,1,5);return base;}
+function buildLibraryRegeneratePrompt(n,meta,existing){
+meta=meta||{};var area=meta.area||state.libraryArea,subject=meta.subject||state.librarySubject,count=clamp(meta.sentences||splitSentences(existing).length||state.sentences,1,5),lines=[],sel=Array.isArray(meta.selectedKeywords)?meta.selectedKeywords:[];
+lines.push('5학년 학교생활기록부 평어를 전체 다시 작성한다. 결과만 출력한다.');
+lines.push('학생 '+n+'번 / '+settingLabelFor(area,subject)+' / 정확히 '+count+'문장');
+if(existing)lines.push('현재 평어: '+existing);
+if(meta.individualNote)lines.push('학생 개별 기술: '+meta.individualNote);
+if(meta.unitActivities&&meta.unitActivities.length)lines.push('실제 활동명: '+meta.unitActivities.slice(0,8).map(function(a){return '['+a.unit+'] '+a.activity;}).join(' / '));
+if(sel.length)lines.push('평가 근거: '+sel.slice(0,18).map(subjectEvidenceText).join(' / '));
+lines.push('원래의 실제 학습 수행과 수준은 유지하고, 성취기준이나 예시에서 새로운 수행 사실을 만들지 않는다.');
+lines.push('현재 평어의 문장 틀을 단순 치환하지 말고 근거를 다시 읽어 자연스럽게 재구성한다. 예시 문장은 복사하지 않는다.');
+appendNaturalQualityRules(lines,count,area);return lines.join('\n');
+}
+function buildLibraryTransformPrompt(n,meta,existing,mode,target){
+var area=meta.area||state.libraryArea,subject=meta.subject||state.librarySubject,lines=[],count=splitSentences(existing).length||1;
+lines.push('학교생활기록부 평어를 사실과 의미를 유지하며 더 간결하게 다시 작성한다. 결과만 출력한다.');
+lines.push('현재 평어: '+existing);
+if(mode==='chars')lines.push('문장 수 '+count+'개를 유지하고 중복 표현과 불필요한 수식만 줄여 가능한 한 '+target+'자 이내로 쓴다.');
+else lines.push('핵심 근거를 우선해 정확히 '+target+'문장으로 줄인다. 단순 삭제보다 필요한 의미를 자연스럽게 통합하되 관련 없는 의미를 한 문장에 합치지 않는다.');
+lines.push('새로운 사실을 만들거나 학생의 내면을 추정하지 않는다.');
+appendNaturalQualityRules(lines,mode==='sentences'?target:count,area);return lines.join('\n');
+}
+function generateLibraryTransformRequest(n,meta,prompt,existing,mode,target){
+var before=textStats(existing),expected=mode==='sentences'?target:before.sentences;
+return requestGeminiText(prompt,{task:mode==='sentences'?'reduce_sentences':'reduce_chars',student:n,area:meta.area,subject:meta.subject||'',target:target,expectedSentences:expected},function(t){
+var st=textStats(t),quality=validateNaturalRecord(t,expected,meta.area||state.libraryArea);
+if(quality)return quality;
+if(mode==='chars'&&st.chars>=before.chars)return '기존 평어보다 글자 수가 줄지 않았습니다.';
+return '';
+},3);
+}
+function transformLibraryDraft(n,k,ta,mode){
+var existing=normalizedRecordText(ta.value);
+if(!existing){setStatus(n+'번 학생 평어가 비어 있어 줄일 내용이 없습니다.',true);return;}
+var st=textStats(existing), target;
+if(mode==='sentences'){
+if(st.sentences<=1){setStatus(n+'번 학생 평어는 이미 1문장이므로 더 줄일 수 없습니다.',true);return;}
+target=st.sentences-1;
+}else{
+if(st.chars<=20){setStatus(n+'번 학생 평어가 이미 매우 짧아 글자 수 줄이기를 실행하지 않았습니다.',true);return;}
+target=Math.max(20,Math.floor(st.chars*0.8));
+}
+var meta=libraryMetaForRecord(k,n,existing), prompt=buildLibraryTransformPrompt(n,meta,existing,mode,target), overlay=$('loadingOverlay'),statusText=$('loadingStatus');
+overlay.classList.remove('hidden');overlay.classList.add('flex');
+statusText.textContent=n+'번 학생 '+(mode==='sentences'?'문장 수':'글자 수')+' 줄이는 중...';
+generateLibraryTransformRequest(n,meta,prompt,existing,mode,target).then(function(result){
+result=normalizedRecordText(result);
+if(!result){throw new Error('빈 결과가 생성되었습니다.');}
+if(mode==='sentences'&&splitSentences(result).length!==target)throw new Error('Gemini 응답의 문장 수가 목표와 다릅니다.');
+if(mode==='chars' && result.length>=existing.length){
+setStatus(n+'번 학생 평어에서 의미를 유지하며 더 줄일 수 있는 표현을 찾지 못했습니다.',true);
+}else{
+ta.value=result;libraryDrafts[k]=result;ta.dispatchEvent(new Event('input',{bubbles:true}));
+setStatus(n+'번 학생 평어를 '+(mode==='sentences'?target+'문장으로':'더 짧게')+' 정리했습니다. 빨간 수정 저장 버튼을 눌러 확정해 주세요.');
+}
+overlay.classList.add('hidden');overlay.classList.remove('flex');
+}).catch(function(err){overlay.classList.add('hidden');overlay.classList.remove('flex');setStatus('AI 줄이기 중 오류가 발생했습니다: '+(err&&err.message?err.message:String(err)),true);});
+}
+function renderLibrary(){
+renderLibraryHeader();
+var body=$('libraryBody'); body.innerHTML='';
+for(var i=1;i<=state.count;i++){
+(function(n){
+var k=libraryKey(n), tr=document.createElement('tr'), td1=document.createElement('td'), td2=document.createElement('td'), td3=document.createElement('td');
+tr.setAttribute('data-student',String(n));
+td1.className='no'; td1.textContent=n+'번'; td2.className='record'; td3.className='manage';
+var ta=document.createElement('textarea');
+ta.value=libraryWorkingText(k);
+ta.placeholder='평어가 없습니다.';
+var stats=document.createElement('div');stats.className='recordStats';
+var statBadge=document.createElement('span');statBadge.className='statBadge';statBadge.title='공백과 문장부호를 포함한 글자 수입니다.';stats.appendChild(statBadge);
+var stateLabel=document.createElement('span');stats.appendChild(stateLabel);
+td2.appendChild(ta);td2.appendChild(stats);
+var row=document.createElement('div'); row.className='rowActions';
+var save=document.createElement('button'); save.type='button'; save.className='small'; save.textContent='수정 저장';
+var full=document.createElement('button'); full.type='button'; full.className='small'; full.textContent='전체 평어 AI로 다시 만들기';
+var sent=document.createElement('button'); sent.type='button'; sent.className='small'; sent.textContent='문장별 AI 재생성';
+var shortChars=document.createElement('button'); shortChars.type='button'; shortChars.className='small aiReduce'; shortChars.textContent='글자 수 줄이기 (AI)';
+var shortSent=document.createElement('button'); shortSent.type='button'; shortSent.className='small aiReduce'; shortSent.textContent='문장 수 줄이기 (AI)';
+var del=document.createElement('button'); del.type='button'; del.className='small danger'; del.textContent='삭제';
+function refreshRowState(){
+var st=textStats(ta.value),dirty=isLibraryDirtyKey(k);
+statBadge.textContent=st.sentences+'문장 · '+st.chars+'자';
+stats.className='recordStats'+(dirty?' dirty':'');
+stateLabel.textContent=dirty?'저장 전 변경 · 수정 저장 권장':'저장됨';
+save.className='small'+(dirty?' dirtySave':'');
+save.textContent=dirty?'수정 저장 필요':'수정 저장';
+save.title=dirty?'변경된 내용을 내 평어함의 확정 평어로 저장합니다.':'현재 저장본과 같습니다.';
+updateLibrarySaveBar();
+}
+ta.addEventListener('input',function(){libraryDrafts[k]=ta.value;saveLibraryDrafts(false);refreshRowState();updateLibraryDuplicateInfo();});
+save.addEventListener('click',function(){
+if(!isLibraryDirtyKey(k)){setStatus(n+'번 학생은 저장할 변경사항이 없습니다.');return;}
+pushUndo();state.records[k]=normalizedRecordText(ta.value);delete libraryDrafts[k];safeSave(true);saveLibraryDrafts(true);renderLibrary();renderStudents();renderKeywords();setStatus(n+'번 학생 '+librarySetting()+' 평어를 저장했습니다.');
+});
+full.addEventListener('click',function(){
+var overlay=$('loadingOverlay'),statusText=$('loadingStatus'),existing=normalizedRecordText(ta.value||state.records[k]||''),meta=libraryMetaForRecord(k,n,existing);
+var p=buildLibraryRegeneratePrompt(n,meta,existing),ctx={index:0,total:1,previousSentences:[],seenSentences:[]};
+overlay.classList.remove('hidden');overlay.classList.add('flex');statusText.textContent=n+'번 학생 '+librarySetting()+' 평어 전체 재생성 중...';
+generateStudentRequest(n,meta,p,ctx).then(function(aiResult){
+libraryDrafts[k]=aiResult;ta.value=aiResult;state.prompts[k]=p;ta.dispatchEvent(new Event('input',{bubbles:true}));
+overlay.classList.add('hidden');overlay.classList.remove('flex');
+setStatus(n+'번 학생 '+librarySetting()+' 전체 평어를 새로 만들었습니다. 내용을 확인한 뒤 빨간 수정 저장 버튼을 눌러 주세요.');
+}).catch(function(err){overlay.classList.add('hidden');overlay.classList.remove('flex');setStatus('AI 재생성 중 오류가 발생했습니다: '+(err&&err.message?err.message:String(err)),true);});
+});
+shortChars.addEventListener('click',function(){transformLibraryDraft(n,k,ta,'chars');});
+shortSent.addEventListener('click',function(){transformLibraryDraft(n,k,ta,'sentences');});
+del.addEventListener('click',function(){pushUndo();delete state.records[k];delete state.recordMeta[k];delete state.generationMeta[k];delete libraryDrafts[k];safeSave(true);saveLibraryDrafts(true);renderLibrary();renderStudents();renderKeywords();setStatus(n+'번 학생 '+librarySetting()+' 평어를 삭제했습니다.');});
+row.appendChild(save);row.appendChild(full);row.appendChild(sent);row.appendChild(shortChars);row.appendChild(shortSent);row.appendChild(del);td3.appendChild(row);
+var sp=document.createElement('div');sp.className='sentencePanel hide';
+sent.addEventListener('click',function(){sp.classList.toggle('hide');if(!sp.classList.contains('hide'))renderSentencePanel(n,ta,sp,k,state.recordMeta[k]||{area:state.libraryArea,subject:state.librarySubject});});
+td3.appendChild(sp);tr.appendChild(td1);tr.appendChild(td2);tr.appendChild(td3);body.appendChild(tr);
+refreshRowState();
+})(i);
+}
+updateLibraryDuplicateInfo();updateLibrarySaveBar();
+}
+function showTab(t){
+currentTab=t;
+$('editView').classList.toggle('hide', t!=='edit');
+$('libraryView').classList.toggle('hide', t!=='library');
+$('tabEdit').classList.toggle('active', t==='edit');
+$('tabLibrary').classList.toggle('active', t==='library');
+if(t==='library') renderLibrary();
+else { renderKeywords(); renderResults(); }
+}
+function renderAll(){
+populateSubjects(); renderHeader(); renderStudents();
+$('commonNote').value=state.commonNotes[scope()]||'';
+renderIndividual(); renderUnit(); renderKeywords(); renderAttachments(); renderResults();
+if(currentTab==='library') renderLibrary();
+buttonsUndo();
+}
+function csvCell(v){ return '"'+String(v==null?'':v).replace(/"/g,'""')+'"'; }
+function download(name,text,type){
+try{var blob=new Blob([text],{type:type||'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},600);}catch(e){setStatus('다운로드를 시작하지 못했습니다: '+e.message,true);}
+}
+function downloadBytes(name,bytes,type){
+try{var blob=new Blob([bytes],{type:type||'application/octet-stream'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},1000);}catch(e){setStatus('파일 저장을 시작하지 못했습니다: '+e.message,true);}
+}
+function compatibleBackupAppType(t){return t===APP_TYPE;}
+function exportJson(){safeSave(true);saveLibraryDrafts(true);download('[5학년-2학기]놀퀴즈_교과_평어_백업.json',JSON.stringify({version:BACKUP_SCHEMA_VERSION,backupSchemaVersion:BACKUP_SCHEMA_VERSION,storageSchemaVersion:STORAGE_SCHEMA_VERSION,appType:APP_TYPE,appVersion:APP_VERSION,state:state,libraryDrafts:libraryDrafts,backupNote:'state는 확정 데이터, libraryDrafts는 수정 저장 전 임시 초안'},null,2),'application/json;charset=utf-8');setStatus('현재 앱의 전체 작업을 JSON으로 백업했습니다. 수정 저장 전 초안도 포함됩니다.');}
+function importJson(file){
+if(!file)return;var r=new FileReader();r.onload=function(){try{
+var o=JSON.parse(r.result),candidate=o&&o.state?o.state:o;
+var backupSchema=parseInt(o&&(o.backupSchemaVersion!=null?o.backupSchemaVersion:o.version),10);
+if(!isNaN(backupSchema)&&backupSchema>BACKUP_SCHEMA_VERSION){setStatus('이 JSON 백업은 더 새로운 저장 형식('+backupSchema+')입니다. 최신 버전의 평어 생성기에서 불러와 주세요.',true);return;}
+if(!o||!o.appType||!compatibleBackupAppType(o.appType)){setStatus('현재 앱 전용 JSON 백업만 불러올 수 있습니다. 다른 영역 또는 구 통합본 JSON은 자동으로 섞어 가져오지 않습니다.',true);return;}
+var hasCurrent=Object.keys(state.records||{}).some(function(k){return normalizedRecordText(state.records[k]);}) || allLibraryDirtyKeys().length || Object.keys(state.resultDrafts||{}).some(function(k){return normalizedRecordText(state.resultDrafts[k]);});
+if(hasCurrent && !window.confirm('JSON 복원은 현재 앱의 작업을 백업 파일 내용으로 바꿉니다.\n현재 작업이 필요하면 먼저 JSON 백업 또는 Excel 저장을 해 주세요.\n\n계속 복원하시겠습니까?')){setStatus('JSON 복원을 취소했습니다.',true);return;}
+state=sanitize(candidate);
+libraryDrafts=sanitizeLibraryDrafts(o&&o.libraryDrafts?o.libraryDrafts:{});
+safeSave(true);saveLibraryDrafts(true);populateSubjects();renderAll();
+var dirty=allLibraryDirtyKeys();
+setStatus('JSON 백업을 복원했습니다.'+(dirty.length?' 수정 저장 전 초안 '+dirty.length+'건도 복구했습니다.':''));
+}catch(e){setStatus('JSON 복원 실패: '+e.message,true);}};r.onerror=function(){setStatus('파일을 읽지 못했습니다.',true);};r.readAsText(file,'utf-8');
+}
+function recordValueFor(area,subject,n){var k=scopeFor(area,subject)+'||'+n;return String(state.records[k]||'');}
+function scopeDescriptors(){var arr=[];SUBJECTS.forEach(function(x){arr.push({area:'교과학습발달상황',subject:x,label:x+' 교과',sheet:x});});return arr;}
+function rowsForScope(area,subject){var rows=[['학생 번호','기록 영역','교과/영역','평어']];for(var i=1;i<=state.count;i++)rows.push([i,'교과학습발달상황',subject,recordValueFor('교과학습발달상황',subject,i)]);return rows;}
+function importQuickFile(file){
+if(!file)return;
+var name=String(file.name||'').toLowerCase();
+var type=String(file.type||'').toLowerCase();
+if(name.endsWith('.json') || type.indexOf('json')>=0){ importJson(file); return; }
+if(name.endsWith('.xlsx') || type.indexOf('spreadsheetml')>=0){ importExcel(file); return; }
+alert('불러올 수 없는 파일입니다. JSON 백업 파일 또는 Excel(.xlsx) 평어 파일을 선택해주세요.');
+}
+function exportCsv(){var rows=rowsForScope(state.libraryArea,state.librarySubject),label=settingLabelFor(state.libraryArea,state.librarySubject);download('[5학년-2학기]놀퀴즈_'+safeFileName(label)+'_평어.csv','\ufeff'+rows.map(function(r){return r.map(csvCell).join(',');}).join('\r\n'),'text/csv;charset=utf-8');}
+function safeFileName(s){return String(s||'평어').replace(/[\\/:*?"<>|]+/g,'_').replace(/\s+/g,'_');}
+function xmlEscape(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');}
+function colName(n){var s='';while(n>0){n--;s=String.fromCharCode(65+n%26)+s;n=Math.floor(n/26);}return s;}
+function sheetXml(rows){
+var out=['<?xml version="1.0" encoding="UTF-8" standalone="yes"?>','<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"/></sheetViews><cols><col min="1" max="1" width="11" customWidth="1"/><col min="2" max="2" width="23" customWidth="1"/><col min="3" max="3" width="18" customWidth="1"/><col min="4" max="4" width="80" customWidth="1"/></cols><sheetData>'];
+rows.forEach(function(row,ri){out.push('<row r="'+(ri+1)+'"'+(ri===0?' ht="22" customHeight="1"':'')+'>');row.forEach(function(v,ci){var ref=colName(ci+1)+(ri+1),style=ri===0?1:0;if(typeof v==='number')out.push('<c r="'+ref+'" s="'+style+'"><v>'+v+'</v></c>');else out.push('<c r="'+ref+'" t="inlineStr" s="'+style+'"><is><t xml:space="preserve">'+xmlEscape(v)+'</t></is></c>');});out.push('</row>');});
+out.push('</sheetData><pageMargins left="0.3" right="0.3" top="0.5" bottom="0.5" header="0.3" footer="0.3"/></worksheet>');return out.join('');
+}
+function utf8Bytes(s){if(window.TextEncoder)return new TextEncoder().encode(s);var x=unescape(encodeURIComponent(s)),a=new Uint8Array(x.length);for(var i=0;i<x.length;i++)a[i]=x.charCodeAt(i);return a;}
+var CRC_TABLE=null;
+function crc32(bytes){if(!CRC_TABLE){CRC_TABLE=[];for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);CRC_TABLE[n]=c>>>0;}}var crc=0xFFFFFFFF;for(var i=0;i<bytes.length;i++)crc=CRC_TABLE[(crc^bytes[i])&255]^(crc>>>8);return (crc^0xFFFFFFFF)>>>0;}
+function u16(v){return [v&255,(v>>>8)&255];}function u32(v){return [v&255,(v>>>8)&255,(v>>>16)&255,(v>>>24)&255];}
+function joinByteArrays(parts){var len=0;parts.forEach(function(p){len+=p.length;});var out=new Uint8Array(len),off=0;parts.forEach(function(p){out.set(p,off);off+=p.length;});return out;}
+function zipStored(files){
+var locals=[],centrals=[],offset=0;
+files.forEach(function(f){var name=utf8Bytes(f.name),data=(f.data instanceof Uint8Array)?f.data:utf8Bytes(f.data),crc=crc32(data);var lh=new Uint8Array([].concat(u32(0x04034b50),u16(20),u16(0x0800),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0)));locals.push(lh,name,data);var ch=new Uint8Array([].concat(u32(0x02014b50),u16(20),u16(20),u16(0x0800),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(offset)));centrals.push(ch,name);offset+=lh.length+name.length+data.length;});
+var central=joinByteArrays(centrals),end=new Uint8Array([].concat(u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(central.length),u32(offset),u16(0)));return joinByteArrays(locals.concat([central,end]));
+}
+function safeSheetName(s,used){var base=String(s||'평어').replace(/[\\\/?*\[\]:]/g,' ').trim()||'평어';base=base.slice(0,31);var name=base,i=2;while(used[name]){var suffix=' '+i++;name=base.slice(0,31-suffix.length)+suffix;}used[name]=1;return name;}
+function buildXlsx(sheets){
+var used={},sheetDefs=sheets.map(function(s,i){return {name:safeSheetName(s.name,used),rows:s.rows,id:i+1};});
+var content=['<?xml version="1.0" encoding="UTF-8" standalone="yes"?>','<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>'];sheetDefs.forEach(function(s){content.push('<Override PartName="/xl/worksheets/sheet'+s.id+'.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>');});content.push('</Types>');
+var wb=['<?xml version="1.0" encoding="UTF-8" standalone="yes"?>','<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>'];sheetDefs.forEach(function(s){wb.push('<sheet name="'+xmlEscape(s.name)+'" sheetId="'+s.id+'" r:id="rId'+s.id+'"/>');});wb.push('</sheets></workbook>');
+var rel=['<?xml version="1.0" encoding="UTF-8" standalone="yes"?>','<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'];sheetDefs.forEach(function(s){rel.push('<Relationship Id="rId'+s.id+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet'+s.id+'.xml"/>');});rel.push('<Relationship Id="rId'+(sheetDefs.length+1)+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>');
+var rootRels='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>';
+var styles='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Arial"/></font><font><b/><color rgb="FFFFFFFF"/><sz val="11"/><name val="Arial"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF2563EB"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="2"><border/><border><left style="thin"><color rgb="FFD8E0EA"/></left><right style="thin"><color rgb="FFD8E0EA"/></right><top style="thin"><color rgb="FFD8E0EA"/></top><bottom style="thin"><color rgb="FFD8E0EA"/></bottom><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>';
+var files=[{name:'[Content_Types].xml',data:content.join('')},{name:'_rels/.rels',data:rootRels},{name:'xl/workbook.xml',data:wb.join('')},{name:'xl/_rels/workbook.xml.rels',data:rel.join('')},{name:'xl/styles.xml',data:styles}];
+sheetDefs.forEach(function(s){files.push({name:'xl/worksheets/sheet'+s.id+'.xml',data:sheetXml(s.rows)});});return zipStored(files);
+}
+function u16at(d,o){return d.getUint16(o,true);}function u32at(d,o){return d.getUint32(o,true);}
+function decodeUtf8(bytes){return new TextDecoder('utf-8').decode(bytes);}
+async function unzipXlsxEntries(buffer){
+var bytes=new Uint8Array(buffer),d=new DataView(buffer),eocd=-1;
+for(var i=Math.max(0,bytes.length-65557);i<=bytes.length-22;i++){
+if(u32at(d,i)===0x06054b50)eocd=i;
+}
+if(eocd<0)throw new Error('올바른 .xlsx ZIP 구조를 찾지 못했습니다.');
+var total=u16at(d,eocd+10),centralOffset=u32at(d,eocd+16),p=centralOffset,entries={};
+for(var n=0;n<total;n++){
+if(u32at(d,p)!==0x02014b50)throw new Error('Excel ZIP 중앙 디렉터리를 읽지 못했습니다.');
+var flags=u16at(d,p+8),method=u16at(d,p+10),csize=u32at(d,p+20),usize=u32at(d,p+24),nameLen=u16at(d,p+28),extraLen=u16at(d,p+30),commentLen=u16at(d,p+32),localOffset=u32at(d,p+42);
+var nameBytes=bytes.slice(p+46,p+46+nameLen),name=decodeUtf8(nameBytes);
+if(u32at(d,localOffset)!==0x04034b50)throw new Error('Excel ZIP 파일 항목을 읽지 못했습니다: '+name);
+var ln=u16at(d,localOffset+26),le=u16at(d,localOffset+28),dataStart=localOffset+30+ln+le,raw=bytes.slice(dataStart,dataStart+csize),out;
+if(method===0)out=raw;
+else if(method===8){
+if(typeof DecompressionStream==='undefined')throw new Error('이 브라우저에서는 압축된 Excel 복원을 지원하지 않습니다. 최신 Chrome/Edge를 사용해 주세요.');
+var stream=new Blob([raw]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+out=new Uint8Array(await new Response(stream).arrayBuffer());
+}else throw new Error('지원하지 않는 Excel 압축 방식('+method+')입니다.');
+if(usize && out.length!==usize){/* 일부 Excel은 크기 메타가 다를 수 있으므로 내용 파싱을 계속 시도 */}
+entries[name]=out;
+p+=46+nameLen+extraLen+commentLen;
+}
+return entries;
+}
+function xmlDoc(text,label){var doc=new DOMParser().parseFromString(text,'application/xml');if(doc.getElementsByTagName('parsererror').length)throw new Error(label+' XML을 읽지 못했습니다.');return doc;}
+function allByLocalName(root,name){return Array.prototype.filter.call(root.getElementsByTagName('*'),function(x){return x.localName===name;});}
+function parseSharedStrings(entries){
+if(!entries['xl/sharedStrings.xml'])return [];
+var doc=xmlDoc(decodeUtf8(entries['xl/sharedStrings.xml']),'sharedStrings');
+return allByLocalName(doc,'si').map(function(si){return allByLocalName(si,'t').map(function(t){return t.textContent||'';}).join('');});
+}
+function excelCellValue(c,shared){
+var type=c.getAttribute('t')||'',v=allByLocalName(c,'v')[0],is=allByLocalName(c,'is')[0];
+if(type==='s'){var idx=parseInt(v?v.textContent:'',10);return isNaN(idx)?'':String(shared[idx]||'');}
+if(type==='inlineStr')return is?allByLocalName(is,'t').map(function(t){return t.textContent||'';}).join(''):'';
+return v?String(v.textContent||''):c.textContent||'';
+}
+function columnIndexFromRef(ref){var m=String(ref||'').match(/^([A-Z]+)/i);if(!m)return 0;var x=0;for(var i=0;i<m[1].length;i++)x=x*26+(m[1].toUpperCase().charCodeAt(i)-64);return x-1;}
+function inferDescriptorFromSheetName(name){var n=String(name||'').trim();return SUBJECTS.indexOf(n)>=0?{area:'교과학습발달상황',subject:n}:null;}
+function normalizeImportedArea(area,label,sheetName){
+var a=String(area||'').trim(),l=String(label||'').trim(),fallback=inferDescriptorFromSheetName(sheetName);
+if(a==='교과학습발달상황'&&SUBJECTS.indexOf(l)>=0)return {area:'교과학습발달상황',subject:l};
+return fallback;
+}
+async function parseCommentWorkbook(file){
+var entries=await unzipXlsxEntries(await file.arrayBuffer());
+if(!entries['xl/workbook.xml'])throw new Error('Excel 통합문서 정보를 찾지 못했습니다.');
+var wb=xmlDoc(decodeUtf8(entries['xl/workbook.xml']),'workbook'),shared=parseSharedStrings(entries),relsMap={};
+if(entries['xl/_rels/workbook.xml.rels']){
+var rd=xmlDoc(decodeUtf8(entries['xl/_rels/workbook.xml.rels']),'workbook relationships');
+allByLocalName(rd,'Relationship').forEach(function(r){relsMap[r.getAttribute('Id')]=r.getAttribute('Target');});
+}
+var sheets=allByLocalName(wb,'sheet'),records=[],maxStudent=0;
+for(var si=0;si<sheets.length;si++){
+var sh=sheets[si],sheetName=sh.getAttribute('name')||('Sheet'+(si+1)),rid=sh.getAttribute('r:id')||sh.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships','id'),target=relsMap[rid]||('worksheets/sheet'+(si+1)+'.xml');
+target=String(target||'').replace(/^\//,'');if(target.indexOf('xl/')!==0)target='xl/'+target.replace(/^\.\//,'');
+var data=entries[target];if(!data)continue;
+var sd=xmlDoc(decodeUtf8(data),'worksheet '+sheetName),rows=allByLocalName(sd,'row');
+for(var ri=0;ri<rows.length;ri++){
+var cells=allByLocalName(rows[ri],'c'),vals=[];cells.forEach(function(c){vals[columnIndexFromRef(c.getAttribute('r'))]=excelCellValue(c,shared);});
+if(ri===0 && String(vals[0]||'').indexOf('학생')>=0)continue;
+var student=parseInt(vals[0],10);if(!(student>=1&&student<=30))continue;
+var desc=normalizeImportedArea(vals[1],vals[2],sheetName);if(!desc||!desc.subject&&desc.area==='교과학습발달상황')continue;
+var text=String(vals[3]||'').trim();
+records.push({student:student,area:desc.area,subject:desc.subject,text:text,sheet:sheetName});
+if(student>maxStudent)maxStudent=student;
+}
+}
+if(!records.length)throw new Error('복원 가능한 평어 행을 찾지 못했습니다. 이 도구에서 저장한 Excel 파일인지 확인해 주세요.');
+return {records:records,maxStudent:maxStudent,sheets:sheets.length};
+}
+async function importExcel(file){
+if(!file)return;
+var overlay=$('loadingOverlay'),statusText=$('loadingStatus');overlay.classList.remove('hidden');overlay.classList.add('flex');statusText.textContent='Excel 평어를 읽는 중...';
+try{
+var parsed=await parseCommentWorkbook(file),changes=[],conflicts=0,allowedRecords=parsed.records.filter(function(r){return allowedArea(r.area);});
+if(!allowedRecords.length)throw new Error('이 Excel 파일에는 현재 앱에서 복원할 수 있는 평어 영역이 없습니다. 다른 평어 생성기에서 저장한 파일인지 확인해 주세요.');
+allowedRecords.forEach(function(r){var k=scopeFor(r.area,r.subject)+'||'+r.student,old=String(state.records[k]||'').trim();if(old!==r.text){changes.push({key:k,row:r,old:old});if(old)conflicts++;}});
+if(!changes.length){setStatus('Excel의 평어가 현재 저장 내용과 같습니다. 변경할 내용이 없습니다.');return;}
+if(conflicts){
+var ok=window.confirm('Excel 복원 시 기존 평어 '+conflicts+'건이 다른 내용으로 덮어써지거나 비워질 수 있습니다.\n\n총 '+changes.length+'건의 평어를 복원하시겠습니까?');
+if(!ok){setStatus('Excel 복원을 취소했습니다.',true);return;}
+}
+pushUndo();
+changes.forEach(function(x){state.records[x.key]=x.row.text;delete state.recordMeta[x.key];delete state.generationMeta[x.key];delete libraryDrafts[x.key];});
+if(parsed.maxStudent>state.count)state.count=Math.min(30,parsed.maxStudent);
+state=sanitize(state);safeSave(true);saveLibraryDrafts(true);populateSubjects();renderAll();
+setStatus('Excel에서 평어 '+changes.length+'건을 복원했습니다. Excel은 평어 본문만 복구하므로 생성 근거·키워드 메타데이터는 복원되지 않습니다.');
+}catch(e){setStatus('Excel 복원 실패: '+(e&&e.message?e.message:String(e)),true);}
+finally{overlay.classList.add('hidden');overlay.classList.remove('flex');}
+}
+function currentDescriptor(){return {area:state.libraryArea,subject:state.librarySubject,label:settingLabelFor(state.libraryArea,state.librarySubject),sheet:settingLabelFor(state.libraryArea,state.librarySubject).replace(' 교과','')};}
+function exportCurrentExcel(){var d=currentDescriptor(),bytes=buildXlsx([{name:d.sheet,rows:rowsForScope(d.area,d.subject)}]);downloadBytes('[5학년-2학기]놀퀴즈_'+safeFileName(d.label)+'_평어.xlsx',bytes,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');setStatus(d.label+' 평어를 Excel로 저장했습니다.');}
+function exportAllExcel(){var sheets=scopeDescriptors().map(function(d){return {name:d.sheet,rows:rowsForScope(d.area,d.subject)};}),bytes=buildXlsx(sheets);downloadBytes('[5학년-2학기]놀퀴즈_교과_모든평어.xlsx',bytes,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');setStatus('5학년 2학기 10개 교과 전체 평어를 한 Excel 파일로 저장했습니다.');}
+function exportAllSeparate(){var files=scopeDescriptors().map(function(d){return {name:safeFileName(d.label)+'_평어.xlsx',data:buildXlsx([{name:d.sheet,rows:rowsForScope(d.area,d.subject)}])};}),zip=zipStored(files);downloadBytes('[5학년-2학기]놀퀴즈_교과_개별평어.zip',zip,'application/zip');setStatus('10개 교과 평어를 교과별 Excel 파일로 나누어 ZIP으로 저장했습니다.');}
+function bind(){
+$('tipsBtn').addEventListener('click',openTips);$('tipsCloseBtn').addEventListener('click',closeTips);$('tipOverlay').addEventListener('click',function(e){if(e.target===$('tipOverlay'))closeTips();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTips();});
+$('attachmentInput').addEventListener('change',function(){addAttachmentFiles(this.files);this.value='';});$('undoBtn').addEventListener('click',undo);$('redoBtn').addEventListener('click',redo);$('tabEdit').addEventListener('click',function(){showTab('edit');});$('tabLibrary').addEventListener('click',function(){showTab('library');});
+$('librarySubjectSelect').addEventListener('change',function(){resetEditorFilters();commit(function(){state.librarySubject=$('librarySubjectSelect').value;syncLibraryContextToEditor();});setStatus('교과를 '+librarySetting()+'으로 변경했습니다.');});
+$('subjectSelect').addEventListener('change',function(){resetEditorFilters();commit(function(){state.subject=$('subjectSelect').value;syncEditorContextToLibrary();});setStatus('교과를 '+currentSetting()+'으로 변경했습니다.');});
+$('countInput').addEventListener('change',function(){var input=$('countInput'),oldCount=state.count,newCount=clamp(input.value,1,30);input.value=newCount;if(newCount===oldCount)return;if(newCount<oldCount){var summary=reducedStudentWorkSummary(newCount);if(summary.students.length){var rangeText=summary.students.length<=10?summary.students.join(', ')+'번':(summary.students[0]+'~'+summary.students[summary.students.length-1]+'번 중 '+summary.students.length+'명'),detail=[];if(summary.saved)detail.push('내 평어함 저장 평어 '+summary.saved+'건');if(summary.unsavedLibrary)detail.push('아직 수정 저장하지 않은 평어 '+summary.unsavedLibrary+'건');if(summary.generated)detail.push('AI 생성 결과 '+summary.generated+'건');var msg='학생 수를 '+oldCount+'명에서 '+newCount+'명으로 줄이려고 합니다.\n\n'+rangeText+' 학생에게 '+detail.join(', ')+'이 있습니다.\n학생 수를 줄이면 해당 학생은 화면과 Excel/CSV 내보내기 대상에서 제외됩니다.\n\n데이터 자체는 삭제하지 않으므로 학생 수를 다시 늘리면 기존 내용이 다시 나타납니다. 계속하시겠습니까?';if(!window.confirm(msg)){input.value=oldCount;setStatus('학생 수 변경을 취소했습니다. 기존 '+oldCount+'명을 유지합니다.',true);return;}}}commit(function(){state.count=newCount;state.selected=state.selected.filter(function(n){return n<=state.count;});if(!state.selected.length)state.selected=[1];if(state.mode==='single')state.selected=[state.selected[0]];});});
+$('singleBtn').addEventListener('click',function(){commit(function(){state.mode='single';state.selected=[state.selected[0]||1];individualOpen=false;});});$('batchBtn').addEventListener('click',function(){commit(function(){state.mode='batch';});});$('toggleIndividual').addEventListener('click',function(){individualOpen=!individualOpen;renderIndividual();});$('commonNote').addEventListener('input',function(){state.commonNotes[scope()]=$('commonNote').value;safeSave(false);});
+$('unitFilter').addEventListener('change',renderKeywords);$('keywordSearch').addEventListener('input',renderKeywords);$('clearKeywords').addEventListener('click',function(){commit(function(){state.scores[scope()]={};state.subjectSubs[scope()]={};});});$('toneSelect').addEventListener('change',function(){state.tone=$('toneSelect').value;safeSave(false);renderResults();});$('sentenceInput').addEventListener('change',function(){state.sentences=clamp($('sentenceInput').value,1,5);$('sentenceInput').value=state.sentences;safeSave(false);renderResults();});
+$('makePrompts').addEventListener('click',makePrompts);$('copyAllPrompts').addEventListener('click',function(){var arr=selected().map(function(n){return '===== '+n+'번 학생 =====\n'+(state.prompts[skey(n)]||buildPrompt(n,''));});copyText(arr.join('\n\n'));});$('bulkReplace').addEventListener('click',function(){bulk('replace');});$('bulkAppend').addEventListener('click',function(){bulk('append');});
+$('quickImportBtn').addEventListener('click',function(){$('quickImportFile').click();});$('quickImportFile').addEventListener('change',function(){importQuickFile(this.files&&this.files[0]);this.value='';});$('exportJson').addEventListener('click',exportJson);$('importJson').addEventListener('click',function(){$('jsonFile').click();});$('jsonFile').addEventListener('change',function(){importJson(this.files&&this.files[0]);this.value='';});$('importExcel').addEventListener('click',function(){$('excelFile').click();});$('excelFile').addEventListener('change',function(){importExcel(this.files&&this.files[0]);this.value='';});$('exportCsv').addEventListener('click',exportCsv);$('saveAllLibraryChanges').addEventListener('click',saveAllLibraryChanges);$('fixExactDuplicates').addEventListener('click',fixExactLibraryDuplicates);$('exportCurrentExcel').addEventListener('click',exportCurrentExcel);$('exportAllExcel').addEventListener('click',exportAllExcel);$('exportAllSeparate').addEventListener('click',exportAllSeparate);
+}
+
+// 처음 방문 시 조작 안내. 저장된 학생 평어 데이터와 분리된 키를 사용한다.
+var WELCOME_STORE='knolpyeongeo_5sem2_'+APP_TYPE+'_welcome_v4';
+var welcomeReturnFocus=null;
+function openWelcome(){
+  welcomeReturnFocus=document.activeElement;
+  var o=$('welcomeOverlay');if(!o)return;
+  o.classList.add('show');o.setAttribute('aria-hidden','false');
+  var b=$('welcomeCloseBtn');if(b)b.focus();
+}
+function closeWelcome(){
+  var o=$('welcomeOverlay');if(!o)return;
+  o.classList.remove('show');o.setAttribute('aria-hidden','true');
+  try{localStorage.setItem(WELCOME_STORE,'seen');}catch(e){}
+  if(welcomeReturnFocus&&welcomeReturnFocus.isConnected&&welcomeReturnFocus!==document.body)welcomeReturnFocus.focus();
+}
+function bindWelcome(){
+  $('welcomeOpenBtn').addEventListener('click',openWelcome);
+  $('welcomeCloseBtn').addEventListener('click',closeWelcome);
+  $('welcomeTipsBtn').addEventListener('click',function(){closeWelcome();openTips();});
+  $('welcomeOverlay').addEventListener('click',function(e){if(e.target===$('welcomeOverlay'))closeWelcome();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('welcomeOverlay').classList.contains('show')){e.stopImmediatePropagation();closeWelcome();}},true);
+}
+function showWelcomeOnce(){
+  var seen=false;try{seen=localStorage.getItem(WELCOME_STORE)==='seen';}catch(e){}
+  if(!seen)openWelcome();
+}
+
+async function boot(){
+await loadEmbeddedCurriculumData();
+state=def();
+var loaded=safeLoad();
+if(loaded) state=loaded;
+libraryDrafts=loadLibraryDrafts();
+populateSubjects(); renderAll(); bind(); bindWelcome(); showTab('edit'); showWelcomeOnce();
+var dirty=allLibraryDirtyKeys();
+if(loaded) setStatus('저장된 작업을 불러왔습니다.'+(dirty.length?' 수정 저장 전 임시 초안 '+dirty.length+'건도 복구했습니다.':''));
+else setStatus('기본 화면이 정상 표시되었습니다.'+(dirty.length?' 수정 저장 전 임시 초안 '+dirty.length+'건을 복구했습니다.':''));
+}
+window.addEventListener('error', function(e){
+fatal('화면 기능 일부에서 오류가 발생했습니다. 기본 화면은 유지됩니다.\n'+(e.message||'알 수 없는 오류'));
+});
+boot().catch(function(e){
+fatal('초기화 오류: '+(e&&e.message?e.message:String(e)));
+setStatus('기본 HTML 화면은 표시됩니다. 오류 내용을 확인해 주세요.', true);
+});
+})();
+
+</script>
+</body>
+</html>
