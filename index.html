@@ -20,9 +20,61 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12px;color:#6a8078;line-height:1.8}
 @media(max-width:800px){.head{align-items:flex-start;flex-direction:column;padding:12px 0}.hero{padding:38px 0}.hero img{width:112px;border-radius:24px}.hero-row{gap:14px}.launch-grid,.how{grid-template-columns:1fr}.section{padding-top:45px}.launch-card{min-height:0}}
 @media(max-width:460px){.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.nav a{padding:7px 9px;font-size:11.5px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}.grade-tabs button:last-child{flex-basis:100%}.specialist-actions{grid-template-columns:1fr}}
+
+.noticePopup{position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.68);display:flex;align-items:center;justify-content:center;padding:18px}
+.noticePopup[hidden]{display:none}
+.noticeDialog{width:min(690px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 28px 90px rgba(15,23,42,.35)}
+.noticeTop{padding:24px 25px 18px;background:linear-gradient(135deg,#e8faf3,#f2f7ff);border-bottom:1px solid #dceae5}
+.noticeKicker{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:#0b8f7b;color:#fff;font-size:11px;font-weight:900}
+.noticeTop h2{margin:12px 0 8px;font-size:25px;line-height:1.35;letter-spacing:-.05em}
+.noticeTop h2 em{font-style:normal;color:#087463}
+.noticeTop p{margin:0;color:#506962;font-size:14px;line-height:1.7}
+.noticeBody{padding:20px 25px 24px}
+.noticeImportant{padding:15px 16px;border:1px solid #f2c9c9;background:#fff7f7;border-radius:14px;color:#693b3b;font-size:14px;line-height:1.75}
+.noticeImportant strong{color:#b4232f}
+.demoButtons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
+.demoButton{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:10px 11px;font-size:12px;font-weight:850;color:#334155;text-align:center}
+.noticeArrow{font-size:12px;color:#6b7e77;text-align:center;margin:6px 0}
+.noticeResult{padding:12px 14px;border-radius:12px;background:#edf9f5;border:1px solid #cdeade;color:#126556;font-size:13px;line-height:1.65;text-align:center;font-weight:750}
+.v2box{margin-top:15px;padding:15px 16px;border:1px solid #cdddf8;background:#f4f7ff;border-radius:14px;font-size:13px;line-height:1.7;color:#415774}
+.v2box b{color:#2454a3}
+.noticeActions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+.noticeConfirm{border:0;border-radius:11px;background:#0b8f7b;color:#fff;padding:11px 18px;font-weight:900}
+.noticeConfirm:hover{background:#087463}
+@media(max-width:560px){.noticeTop,.noticeBody{padding-left:17px;padding-right:17px}.noticeTop h2{font-size:21px}.demoButtons{grid-template-columns:1fr}.noticeActions{display:block}.noticeConfirm{width:100%}}
+
 </style>
 </head>
 <body>
+
+<div class="noticePopup" id="recordGuidePopup" role="dialog" aria-modal="true" aria-labelledby="recordGuideTitle">
+  <div class="noticeDialog">
+    <div class="noticeTop">
+      <span class="noticeKicker">먼저 확인해 주세요</span>
+      <h2 id="recordGuideTitle">아래 버튼은 <em>‘내 평어함에 붙이기’</em> 기능입니다.</h2>
+      <p>AI 평어를 생성한 것만으로는 내 평어함에 저장되지 않습니다. 생성 결과에서 아래 버튼 중 하나를 눌러야 내 평어함으로 들어갑니다.</p>
+    </div>
+    <div class="noticeBody">
+      <div class="noticeImportant">
+        <strong>중요</strong> · 학생별 결과 아래의 두 버튼은 평어를 삭제하는 버튼이 아니라, <b>생성한 평어를 ‘내 평어함’으로 보내는 버튼</b>입니다.
+        <div class="demoButtons" aria-label="내 평어함 붙이기 버튼 예시">
+          <div class="demoButton">[교과] 기존 평어함 지우고 붙이기</div>
+          <div class="demoButton">[교과] 평어함 뒤에 이어붙이기</div>
+        </div>
+        <div class="noticeArrow">버튼 클릭 ↓</div>
+        <div class="noticeResult">‘내 평어함’ 탭에서 학생별 평어를 확인·수정·저장할 수 있습니다.</div>
+      </div>
+      <div class="v2box">
+        <b>버전 2 업데이트 예정</b><br>
+        선생님이 실제로 ‘내 평어함에 붙이기’를 실행했는지 바로 알 수 있도록, 붙이기 완료 시 <b>팝업 알림으로 완료 여부를 확인하는 기능</b>을 추가해 배포할 예정입니다.
+      </div>
+      <div class="noticeActions">
+        <button class="noticeConfirm" id="recordGuideConfirm" type="button">확인하고 놀평어 사용하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <header><div class="wrap head">
 <a class="brand" href="./"><img src="assets/nolpyeongeo-logo.png" alt="놀평어 로고">놀평어</a>
 <nav class="nav" aria-label="놀퀴즈 서비스"><a href="https://knolquiz.com/" target="_blank" rel="noopener">놀퀴즈 ↗</a><a href="https://print.knolquiz.com/" target="_blank" rel="noopener">놀프린트 ↗</a><a href="https://art.knolquiz.com/" target="_blank" rel="noopener">놀아트 ↗</a></nav>
@@ -79,6 +131,23 @@ footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12p
 <script>
 (()=>{
 'use strict';
+
+const recordGuidePopup=document.getElementById('recordGuidePopup');
+const recordGuideConfirm=document.getElementById('recordGuideConfirm');
+if(recordGuidePopup&&recordGuideConfirm){
+ document.body.style.overflow='hidden';
+ recordGuideConfirm.addEventListener('click',()=>{
+   recordGuidePopup.hidden=true;
+   document.body.style.overflow='';
+ });
+ recordGuidePopup.addEventListener('click',e=>{
+   if(e.target===recordGuidePopup){
+     recordGuidePopup.hidden=true;
+     document.body.style.overflow='';
+   }
+ });
+}
+
 const links={
 1:{subject:'https://share.gemini.google/3fFMQop4KoYW',creative:'https://share.gemini.google/V0eqH6NKD7tb',behavior:'https://share.gemini.google/bfHGe8XftCuk'},
 2:{subject:'https://share.gemini.google/lyzASKFAwXK3',creative:'https://share.gemini.google/3PnsKTivR1km',behavior:'https://share.gemini.google/098rxJidyNht'},
