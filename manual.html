@@ -37,7 +37,7 @@ dialog{width:min(1000px,calc(100% - 32px));max-height:88vh;border:0;border-radiu
 <section class="section wrap" id="codes">
 <h2>1. 평어 코드 선택</h2>
 <p class="lead">학년을 선택한 뒤 교과·창체·행발 중 필요한 HTML 전체 코드를 복사하세요.</p>
-<div class="summary-bar"><strong>현재 제공 자료</strong> · 1~6학년 및 교과전담 · 2학기 · 교과/창체/행발 · URL의 version 값에 따라 버전 2 또는 버전 1 제공</div>
+<div class="summary-bar"><strong>현재 제공 자료</strong> · 1~6학년 및 교과전담 · 2학기 · 교과/창체/행발 · URL의 version 값에 따라 버전 3·버전 2·버전 1 제공<br><strong>버전 3 권장 설정</strong> · 선택한 키워드 수와 생성할 문장 수를 같게 맞추면 가장 안정적인 생성 성능을 얻을 수 있습니다. 교과전담은 현재 버전 2가 최신입니다.</div>
 <div class="grade-tabs" id="gradeTabs" role="tablist" aria-label="학년 선택"></div>
 <div class="code-grid" id="codeGrid" aria-live="polite"></div>
 </section>
@@ -79,16 +79,18 @@ const types=[
  {key:'behavior',label:'행발',desc:'행동특성 및 종합의견 생성을 위한 HTML 전체 코드입니다.'}
 ];
 const params=new URLSearchParams(location.search);
-const version=params.get('version')==='v1'?'v1':'v2';
+const requestedVersion=params.get('version');
+const version=requestedVersion==='v1'?'v1':(requestedVersion==='v2'?'v2':'v3');
 const requestedGrade=params.get('grade');
 const targetType=params.get('type');
 const entries=[];
 for(let grade=1;grade<=6;grade++) for(const t of types) entries.push({
  grade,semester:2,type:t.key,label:`[${grade}학년 2학기] ${t.label}`,
- desc:t.desc,version:version==='v2'?2:1,
- path:version==='v2'?`codes/v2/g${grade}-s2-${t.key}.html`:`codes/g${grade}-s2-${t.key}-v1.html`
+ desc:t.desc,version:version==='v3'?3:(version==='v2'?2:1),
+ path:version==='v3'?`codes/v3/g${grade}-s2-${t.key}.html`:(version==='v2'?`codes/v2/g${grade}-s2-${t.key}.html`:`codes/g${grade}-s2-${t.key}-v1.html`)
 });
-entries.push({grade:'specialist',semester:2,type:'subject',label:'교과전담 평어',desc:'교과전담 교사용 2학기 평어 생성기',version:version==='v2'?2:1,path:version==='v2'?'codes/v2/specialist-s2-subject.html':'codes/v1/specialist-s2-subject.html'});
+const specialistVersion=version==='v1'?1:2;
+entries.push({grade:'specialist',semester:2,type:'subject',label:'교과전담 평어',desc:'교과전담 교사용 2학기 평어 생성기',version:specialistVersion,path:specialistVersion===2?'codes/v2/specialist-s2-subject.html':'codes/v1/specialist-s2-subject.html'});
 const tabs=document.getElementById('gradeTabs'),grid=document.getElementById('codeGrid');
 const dialog=document.getElementById('codeDialog'),preview=document.getElementById('codePreview'),dialogTitle=document.getElementById('dialogTitle');
 let currentGrade=requestedGrade==='specialist'?'specialist':(/^[1-6]$/.test(requestedGrade)?Number(requestedGrade):1),currentCode='',currentLabel='';
