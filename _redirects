@@ -1,4 +1,4 @@
-# 놀평어 고정주소: 1~6학년 교과·창체·행발 기본은 최신 버전 3
+# 놀평어 고정주소: 교과·창체는 v3, 행발은 v3.1이 최신
 # 302 리디렉션: 공유 링크 변경 시 캐시 고착을 줄입니다.
 
 /1-2-subject.html https://share.gemini.google/TuxpvRsttLrl 302
@@ -17,8 +17,10 @@
 /v2/1-2-creative https://share.gemini.google/tr2O0rjvIlSI 302
 /v1/1-2-creative.html https://share.gemini.google/V0eqH6NKD7tb 302
 /v1/1-2-creative https://share.gemini.google/V0eqH6NKD7tb 302
-/1-2-behavior.html https://share.gemini.google/UkzTbqLyGIxH 302
-/1-2-behavior https://share.gemini.google/UkzTbqLyGIxH 302
+/1-2-behavior.html https://share.gemini.google/Y4XWTqAlApCO 302
+/1-2-behavior https://share.gemini.google/Y4XWTqAlApCO 302
+/v3.1/1-2-behavior.html https://share.gemini.google/Y4XWTqAlApCO 302
+/v3.1/1-2-behavior https://share.gemini.google/Y4XWTqAlApCO 302
 /v3/1-2-behavior.html https://share.gemini.google/UkzTbqLyGIxH 302
 /v3/1-2-behavior https://share.gemini.google/UkzTbqLyGIxH 302
 /v2/1-2-behavior.html https://share.gemini.google/CNzU02R5G1k2 302
@@ -41,8 +43,10 @@
 /v2/2-2-creative https://share.gemini.google/YU3n4QlJaN1p 302
 /v1/2-2-creative.html https://share.gemini.google/3PnsKTivR1km 302
 /v1/2-2-creative https://share.gemini.google/3PnsKTivR1km 302
-/2-2-behavior.html https://share.gemini.google/ZFZ0fe8WvA4r 302
-/2-2-behavior https://share.gemini.google/ZFZ0fe8WvA4r 302
+/2-2-behavior.html https://share.gemini.google/jfNFQ5krkw1r 302
+/2-2-behavior https://share.gemini.google/jfNFQ5krkw1r 302
+/v3.1/2-2-behavior.html https://share.gemini.google/jfNFQ5krkw1r 302
+/v3.1/2-2-behavior https://share.gemini.google/jfNFQ5krkw1r 302
 /v3/2-2-behavior.html https://share.gemini.google/ZFZ0fe8WvA4r 302
 /v3/2-2-behavior https://share.gemini.google/ZFZ0fe8WvA4r 302
 /v2/2-2-behavior.html https://share.gemini.google/UPpGM7lj8IGv 302
@@ -65,8 +69,10 @@
 /v2/3-2-creative https://share.gemini.google/NbvIPjqrYX6J 302
 /v1/3-2-creative.html https://share.gemini.google/lK2QanapAeLp 302
 /v1/3-2-creative https://share.gemini.google/lK2QanapAeLp 302
-/3-2-behavior.html https://share.gemini.google/n4YPSvITuSVJ 302
-/3-2-behavior https://share.gemini.google/n4YPSvITuSVJ 302
+/3-2-behavior.html https://share.gemini.google/jzW25FnG16zL 302
+/3-2-behavior https://share.gemini.google/jzW25FnG16zL 302
+/v3.1/3-2-behavior.html https://share.gemini.google/jzW25FnG16zL 302
+/v3.1/3-2-behavior https://share.gemini.google/jzW25FnG16zL 302
 /v3/3-2-behavior.html https://share.gemini.google/n4YPSvITuSVJ 302
 /v3/3-2-behavior https://share.gemini.google/n4YPSvITuSVJ 302
 /v2/3-2-behavior.html https://share.gemini.google/WJeG8kpz3q2m 302
@@ -89,8 +95,10 @@
 /v2/4-2-creative https://share.gemini.google/34iW76gezQpI 302
 /v1/4-2-creative.html https://share.gemini.google/sV61UQ50VUp8 302
 /v1/4-2-creative https://share.gemini.google/sV61UQ50VUp8 302
-/4-2-behavior.html https://share.gemini.google/YoPJItmZoU9I 302
-/4-2-behavior https://share.gemini.google/YoPJItmZoU9I 302
+/4-2-behavior.html https://share.gemini.google/9u3ua9fdpkDc 302
+/4-2-behavior https://share.gemini.google/9u3ua9fdpkDc 302
+/v3.1/4-2-behavior.html https://share.gemini.google/9u3ua9fdpkDc 302
+/v3.1/4-2-behavior https://share.gemini.google/9u3ua9fdpkDc 302
 /v3/4-2-behavior.html https://share.gemini.google/YoPJItmZoU9I 302
 /v3/4-2-behavior https://share.gemini.google/YoPJItmZoU9I 302
 /v2/4-2-behavior.html https://share.gemini.google/bratHhCUrPdx 302
@@ -113,8 +121,10 @@
 /v2/5-2-creative https://share.gemini.google/G95asM0gXAlI 302
 /v1/5-2-creative.html https://share.gemini.google/nd8mXf0Y01Uw 302
 /v1/5-2-creative https://share.gemini.google/nd8mXf0Y01Uw 302
-/5-2-behavior.html https://share.gemini.google/pU6W0RgEUmJo 302
-/5-2-behavior https://share.gemini.google/pU6W0RgEUmJo 302
+/5-2-behavior.html https://share.gemini.google/dXIaCICIAymC 302
+/5-2-behavior https://share.gemini.google/dXIaCICIAymC 302
+/v3.1/5-2-behavior.html https://share.gemini.google/dXIaCICIAymC 302
+/v3.1/5-2-behavior https://share.gemini.google/dXIaCICIAymC 302
 /v3/5-2-behavior.html https://share.gemini.google/pU6W0RgEUmJo 302
 /v3/5-2-behavior https://share.gemini.google/pU6W0RgEUmJo 302
 /v2/5-2-behavior.html https://share.gemini.google/58kjzv0uhFfd 302
@@ -137,8 +147,10 @@
 /v2/6-2-creative https://share.gemini.google/m7ZRQf9nwakn 302
 /v1/6-2-creative.html https://share.gemini.google/9kDYt955c4k9 302
 /v1/6-2-creative https://share.gemini.google/9kDYt955c4k9 302
-/6-2-behavior.html https://share.gemini.google/Bd6FjnPd2xGF 302
-/6-2-behavior https://share.gemini.google/Bd6FjnPd2xGF 302
+/6-2-behavior.html https://share.gemini.google/ySw8SJrcFcga 302
+/6-2-behavior https://share.gemini.google/ySw8SJrcFcga 302
+/v3.1/6-2-behavior.html https://share.gemini.google/ySw8SJrcFcga 302
+/v3.1/6-2-behavior https://share.gemini.google/ySw8SJrcFcga 302
 /v3/6-2-behavior.html https://share.gemini.google/Bd6FjnPd2xGF 302
 /v3/6-2-behavior https://share.gemini.google/Bd6FjnPd2xGF 302
 /v2/6-2-behavior.html https://share.gemini.google/C6R29UFNjquZ 302
