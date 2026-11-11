@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e9fcf5">
-<meta name="description" content="놀평어 버전 4. 1~6학년 2학기 교과·창체·행발을 Gemini에서 바로 실행하고 HTML을 복사·다운로드할 수 있습니다. 저장 후 다음 학생 작성 흐름을 개선했습니다.">
+<meta name="description" content="놀평어 버전 4. 1~6학년 2학기 교과·창체·행발을 Gemini에서 바로 실행하고 HTML을 복사·다운로드할 수 있습니다. 최대 9문장 지원, 다음 학생 작성 흐름, 행발 성장 중심 표현을 개선했습니다.">
 <link rel="canonical" href="https://record.knolquiz.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
@@ -46,7 +46,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
  <div class="noticeDialog">
   <div class="noticeTop">
    <span class="noticeKicker">놀평어 VERSION 4 업데이트</span>
-   <h2 id="recordGuideTitle">저장 후 바로 이어지는 <em>다음 학생 작성 흐름</em>을 개선했습니다.</h2>
+   <h2 id="recordGuideTitle">최대 9문장과 <em>더 자연스러운 기록 작성 흐름</em>을 지원합니다.</h2>
    <p>현재 1~6학년 2학기 교과·창체·행발의 기본 실행 버전은 버전 4입니다. 교과전담은 기존 최신 버전 3을 유지합니다.</p>
   </div>
   <div class="noticeBody">
@@ -55,8 +55,8 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
     <ul class="updateList">
      <li><strong>다음 학생 준비/작성 흐름 추가</strong><br>평어 저장을 마친 뒤 현재 작업용 키워드와 방금 생성한 결과를 정리하고 학생 선택 영역으로 바로 이동할 수 있습니다.</li>
      <li><strong>저장 전에도 빠르게 다음 학생으로 이동</strong><br>필요할 때 키워드 선택을 한 번에 정리하고 학생 선택 영역으로 이동할 수 있어 반복 작성 동선을 줄였습니다.</li>
-     <li><strong>교과·창체·행발 공통 적용</strong><br>1~6학년 세 영역 모두 같은 작업 흐름을 사용할 수 있도록 정리했습니다.</li>
-     <li><strong>기존 저장 보호 기능 유지</strong><br>내 평어함 저장 확인, 기존 내용 교체/이어붙이기 구분, 저장 결과 확인 등 기존 안전 기능은 유지됩니다.</li>
+     <li><strong>최대 9문장 지원</strong><br>교과·창체·행발에서 생성 문장 수를 최대 9문장까지 선택할 수 있도록 확대했습니다.</li>
+     <li><strong>행발 표현 자연스러움 개선</strong><br>부족한 점을 그대로 단정하기보다 보완 가능성과 성장 기대가 자연스럽게 이어지도록 표현 균형을 다듬었습니다.</li>\n     <li><strong>기존 저장 보호 기능 유지</strong><br>내 평어함 저장 확인, 기존 내용 교체/이어붙이기 구분, 저장 결과 확인 등 기존 안전 기능은 유지됩니다.</li>
     </ul>
    </div>
 
@@ -77,9 +77,9 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 
 <main>
 <section class="hero"><div class="wrap hero-row"><div>
-<div class="eyebrow">놀평어 VERSION 4 · 다음 학생 작성 흐름 개선</div>
+<div class="eyebrow">놀평어 VERSION 4 · 최대 9문장 · 자연스러운 성장 중심 표현</div>
 <h1>최신 <em>버전 4</em>를 바로 실행하세요.</h1>
-<p>1~6학년 2학기 교과·창체·행발은 버전 4로 제공합니다. 저장 후 키워드와 방금 생성한 결과를 정리하고 다음 학생 선택으로 바로 이어지는 작업 흐름을 보강했습니다. 교과전담은 버전 3이 최신입니다.</p>
+<p>1~6학년 2학기 교과·창체·행발은 버전 4로 제공합니다. 최대 9문장 생성, 다음 학생 작성 흐름, 행발의 자연스러운 보완·성장 기대 표현을 보강했습니다. 교과전담은 버전 3이 최신입니다.</p>
 <div class="hero-actions"><a class="pill" href="#launch">생성기 선택 ↓</a><a class="pill" href="manual.html?version=v4">코드 복사 매뉴얼 ↗</a></div>
 </div><img src="assets/knolrecord-logo.png" alt="놀평어 로고"></div></section>
 
@@ -99,7 +99,7 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
   <article class="history-card"><span class="mini">VERSION 1</span><h3>기본 평어 생성기 구축</h3><p>1~6학년 교과·창체·행발 생성기를 제공하고, Gemini 공유 링크와 HTML 다운로드·코드 복사 방식의 기본 구조를 마련했습니다.</p></article>
   <article class="history-card"><span class="mini">VERSION 2</span><h3>내 평어함 저장 안전성 강화</h3><p>기존 평어 교체와 뒤에 이어붙이기를 구분하고, 저장 완료 내용과 기존 내용 덮어쓰기 여부를 확인할 수 있도록 저장 보호 흐름을 강화했습니다.</p></article>
   <article class="history-card"><span class="mini">VERSION 3 계열</span><h3>선택·결과 확인·평어 내용 개선</h3><p>학생 전체선택/해제와 결과 넓게 보기를 개선하고 창체·행발 내용을 보강했습니다. v3.1에서는 행발의 성장 중심 서술, 완곡 표현과 말투 선택을 추가로 다듬었습니다.</p></article>
-  <article class="history-card latest"><span class="mini">VERSION 4 · 최신</span><h3>다음 학생 작성 흐름 개선</h3><p>저장 후 작업용 키워드와 방금 생성한 결과를 정리하고 학생 선택으로 바로 이동하는 기능을 1~6학년 교과·창체·행발에 공통 적용했습니다.</p></article>
+  <article class="history-card latest"><span class="mini">VERSION 4 · 최신</span><h3>9문장 지원 · 작성 흐름 · 행발 표현 개선</h3><p>교과·창체·행발의 생성 문장 수를 최대 9문장까지 확대하고, 저장 후 다음 학생으로 이어지는 작업 흐름을 유지·개선했습니다. 행발은 부족한 점을 직접 단정하기보다 보완 가능성과 성장 기대가 자연스럽게 이어지도록 표현을 다듬었습니다.</p></article>
  </div>
 </details>
 <div class="grade-tabs" id="gradeTabs" role="tablist" aria-label="학년·교과전담 선택"></div>
@@ -114,12 +114,12 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 'use strict';
 const links={
  v4:{
-  1:{subject:'https://share.gemini.google/dOrKsri1GeJn',creative:'https://share.gemini.google/MlQW0JTLstkm',behavior:'https://share.gemini.google/sd6ZaqoykQvb'},
-  2:{subject:'https://share.gemini.google/vj7xHU9moZpx',creative:'https://share.gemini.google/WIz6C0a0hvKw',behavior:'https://share.gemini.google/YvyAjNylnHOu'},
-  3:{subject:'https://share.gemini.google/UMnK4rg2CxF4',creative:'https://share.gemini.google/DVvZjsbf1Vw6',behavior:'https://share.gemini.google/ccYuWhjfdrnA'},
-  4:{subject:'https://share.gemini.google/4k2FgtaiTTQY',creative:'https://share.gemini.google/KB3b1utpugh9',behavior:'https://share.gemini.google/iXphWNxqm5EB'},
-  5:{subject:'https://share.gemini.google/pJp3Xwjdf8WZ',creative:'https://share.gemini.google/dh6yBaOGvh5n',behavior:'https://share.gemini.google/xUXnyuoZ3THM'},
-  6:{subject:'https://share.gemini.google/yaY8TCwi5UVR',creative:'https://share.gemini.google/jgUdbwfz38Go',behavior:'https://share.gemini.google/WCyyHMvEsY3U'}
+  1:{subject:'https://share.gemini.google/WOzuuAaTpSQS',creative:'https://share.gemini.google/tKQW8BuUcUGM',behavior:'https://share.gemini.google/QxO0UICsu1B5'},
+  2:{subject:'https://share.gemini.google/f1zNEC24zFOf',creative:'https://share.gemini.google/FxGjy5aYZLJo',behavior:'https://share.gemini.google/IpJKRQiGZF8E'},
+  3:{subject:'https://share.gemini.google/d9INzvl4plUe',creative:'https://share.gemini.google/zZFvKe4iBdPe',behavior:'https://share.gemini.google/EyAa2ymqzhz0'},
+  4:{subject:'https://share.gemini.google/ulZ870MTAMgY',creative:'https://share.gemini.google/OjT0C2x6rUSK',behavior:'https://share.gemini.google/QEUumHkouWQw'},
+  5:{subject:'https://share.gemini.google/3ZHFHIAp2cIY',creative:'https://share.gemini.google/Cs1garCdwaTG',behavior:'https://share.gemini.google/ZdDG0qiSJost'},
+  6:{subject:'https://share.gemini.google/CIiZWVlTi7ia',creative:'https://share.gemini.google/RHo2NnQeH2j1',behavior:'https://share.gemini.google/0jkUT3ePkU72'}
  },
  v3:{
   1:{subject:'https://share.gemini.google/TuxpvRsttLrl',creative:'https://share.gemini.google/mmibdUVb5iS5',behavior:'https://share.gemini.google/Y4XWTqAlApCO'},
@@ -169,10 +169,10 @@ function setVersion(v){
  version=v;
  for(const x of ['v4','v3','v2','v1']){const el=document.getElementById('ver-'+x);el.classList.toggle('active',v===x);el.setAttribute('aria-selected',String(v===x))}
  versionInfo.className='version-info'+(v==='v1'?' old':'');
- if(v==='v4')versionInfo.innerHTML='<b>버전 4 · 현재 권장</b> — 1~6학년 교과·창체·행발에 <b>다음 학생 준비/작성 흐름</b>을 적용했습니다. 저장 후 작업용 키워드와 방금 생성한 결과를 정리하고 학생 선택으로 바로 이어갈 수 있습니다. 교과전담은 v3이 최신입니다.';
+ if(v==='v4')versionInfo.innerHTML='<b>버전 4 · 현재 권장</b> — 1~6학년 교과·창체·행발에서 <b>최대 9문장</b>을 지원합니다. 저장 후 다음 학생으로 이어지는 작성 흐름을 제공하며, 행발은 보완 가능성과 성장 기대가 더 자연스럽게 드러나도록 표현을 다듬었습니다. 교과전담은 v3이 최신입니다.';
  else if(v==='v3')versionInfo.innerHTML='<b>버전 3 계열</b> — 전체선택/해제와 결과 보기 편의성을 개선했고, 창체·행발 내용을 보강했습니다. 행발은 v3.1에서 성장 중심 서술과 완곡 표현을 추가 개선했습니다.';
  else if(v==='v2')versionInfo.innerHTML='<b>버전 2</b> — 내 평어함 이동 확인과 기존 평어 덮어쓰기 보호가 강화된 이전 배포본입니다.';
- else versionInfo.innerHTML='<b>버전 1</b> — 최초 배포본의 공유 링크와 HTML을 보관용으로 제공합니다. 특별한 이유가 없다면 버전 3 사용을 권장합니다.';
+ else versionInfo.innerHTML='<b>버전 1</b> — 최초 배포본의 공유 링크와 HTML을 보관용으로 제공합니다. 특별한 이유가 없다면 버전 4 사용을 권장합니다.';
  renderCards()
 }
 document.getElementById('ver-v4').onclick=()=>setVersion('v4');document.getElementById('ver-v3').onclick=()=>setVersion('v3');document.getElementById('ver-v2').onclick=()=>setVersion('v2');document.getElementById('ver-v1').onclick=()=>setVersion('v1');
