@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e9fcf5">
-<meta name="description" content="놀평어 버전 3 계열. 1~6학년 2학기 교과·창체는 v3, 행발은 v3.1 최신 버전을 Gemini에서 바로 실행하고 HTML을 복사·다운로드할 수 있습니다.">
+<meta name="description" content="놀평어 버전 4. 1~6학년 2학기 교과·창체·행발을 Gemini에서 바로 실행하고 HTML을 복사·다운로드할 수 있습니다. 저장 후 다음 학생 작성 흐름을 개선했습니다.">
 <link rel="canonical" href="https://record.knolquiz.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://record.knolquiz.com/assets/nolpyeongeo-share-v1.png">
 <meta name="twitter:image:alt" content="놀평어 로고와 교과·창체·행발·교과전담 평어 생성기 소개">
 <link rel="icon" type="image/png" href="assets/knolrecord-logo.png">
-<title>놀평어 | 버전 3 · 행발 v3.1</title>
+<title>놀평어 | 버전 4</title>
 <style>
 :root{--ink:#172b37;--muted:#62766f;--mint:#0b8f7b;--mint-dark:#087463;--mint-soft:#e7faf3;--line:#dfeae6;--bg:#f7faf9;--card:#fff;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:disabled{opacity:.55;cursor:wait}a:focus-visible,button:focus-visible{outline:3px solid #2b7ed1;outline-offset:3px}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
@@ -32,59 +32,40 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hero{padding:54px 0;background:radial-gradient(circle at 88% 12%,#bdf4e1 0,transparent 45%),linear-gradient(120deg,#effdf6,#f4f6fd);border-bottom:1px solid #e0ece8}.hero-row{display:flex;align-items:center;justify-content:space-between;gap:36px}.eyebrow{font-size:13px;font-weight:850;color:#087d6d}.hero h1{font-size:clamp(36px,5vw,54px);line-height:1.17;letter-spacing:-.068em;margin:12px 0 17px}.hero h1 em{font-style:normal;color:#0b937f}.hero p{max-width:720px;color:#4e6963;line-height:1.8;margin:0;font-size:16px}.hero img{width:205px;max-width:27%;border-radius:44px;box-shadow:0 16px 36px #133e3022}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:999px;background:#fff;border:1px solid #cfe5dc;font-size:13px;font-weight:850;color:#235a50}
 .section{padding-top:52px}.section h2{font-size:30px;letter-spacing:-.055em;margin:0 0 8px}.lead{color:#657a73;line-height:1.75;margin:0 0 20px}
 .version-tabs{display:flex;gap:9px;margin:0 0 12px}.version-tabs button{border:1px solid #d6e4df;background:#fff;border-radius:12px;padding:11px 17px;font-weight:900;color:#526b64}.version-tabs button.active{background:#0b8f7b;color:#fff;border-color:#0b8f7b}.version-tabs button.old.active{background:#475569;border-color:#475569}.version-info{border:1px solid #d7e8e2;background:#eefaf6;border-radius:13px;padding:13px 15px;color:#42655b;font-size:13px;line-height:1.65;margin-bottom:20px}.version-info.old{background:#f8fafc;border-color:#e2e8f0;color:#596773}
+.version-history{margin:0 0 20px;border:1px solid #dbe7e2;background:#fff;border-radius:14px;overflow:hidden}.version-history summary{cursor:pointer;padding:13px 15px;font-size:13px;font-weight:900;color:#315e54;background:#f8fcfa}.version-history summary:hover{background:#eff9f5}.history-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:13px}.history-card{border:1px solid #e0ebe7;border-radius:12px;padding:12px 13px;background:#fff}.history-card.latest{border-color:#a7dfcd;background:#f2fbf7}.history-card h3{margin:0 0 6px;font-size:14px;color:#183f37}.history-card p{margin:0;font-size:12.5px;line-height:1.65;color:#5f736d}.history-card .mini{display:inline-flex;margin-bottom:7px;padding:3px 7px;border-radius:999px;background:#eef7f4;color:#347064;font-size:10px;font-weight:900}
 .grade-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}.grade-tabs button{border:1px solid #d7e5e0;background:#fff;color:#526b64;border-radius:11px;padding:10px 15px;font-weight:850}.grade-tabs button.active{background:var(--mint);border-color:var(--mint);color:#fff}.grade-tabs button:hover:not(.active){background:#eff8f5}
 .launch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.launch-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 7px 22px #143e3009;display:flex;flex-direction:column;min-height:322px}.launch-card.specialist{grid-column:1/-1;min-height:0;background:linear-gradient(135deg,#fff,#f2fbf7)}.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.card-meta{font-size:12px;color:#0b8875;font-weight:850}.badge{background:#eff7f4;border:1px solid #d8eae4;color:#42675d;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;white-space:nowrap}.badge.old{background:#f1f5f9;border-color:#dce3ea;color:#596773}.launch-card h3{font-size:22px;line-height:1.35;letter-spacing:-.047em;margin:13px 0 8px}.launch-card p{font-size:14px;line-height:1.75;color:#637770;margin:0 0 18px;flex:1}.main-btn{display:flex;align-items:center;justify-content:center;min-height:49px;border-radius:12px;background:var(--mint);color:#fff;font-weight:900;padding:12px 15px}.main-btn:hover{background:var(--mint-dark)}.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.sub-btn{border:1px solid #d5e3de;border-radius:11px;background:#fff;color:#385f56;font-size:12.5px;font-weight:850;padding:10px 11px;display:flex;align-items:center;justify-content:center;min-height:42px}.sub-btn:hover{background:#f1f8f5}.help{margin-top:10px;font-size:11.5px;color:#7a8c86;line-height:1.55;min-height:18px}.manual-link{display:inline-flex;margin-top:8px;font-size:12px;font-weight:800;color:#477269;text-decoration:underline;text-underline-offset:3px}
 .notice{margin-top:26px;background:#fffaf0;border:1px solid #f1e2bd;border-radius:14px;padding:16px 18px;color:#675a39;font-size:13px;line-height:1.75}.notice strong{color:#4f452c}footer{border-top:1px solid #dbe8e3;padding:27px 0;margin-top:62px;font-size:12px;color:#6a8078;line-height:1.8}
 .noticePopup{position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.68);display:flex;align-items:center;justify-content:center;padding:18px}.noticePopup[hidden]{display:none}.noticeDialog{width:min(690px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 28px 90px rgba(15,23,42,.35)}.noticeTop{padding:24px 25px 18px;background:linear-gradient(135deg,#e8faf3,#f2f7ff);border-bottom:1px solid #dceae5}.noticeKicker{display:inline-flex;padding:5px 9px;border-radius:999px;background:#0b8f7b;color:#fff;font-size:11px;font-weight:900}.noticeTop h2{margin:12px 0 8px;font-size:25px;line-height:1.35;letter-spacing:-.05em}.noticeTop h2 em{font-style:normal;color:#087463}.noticeTop p{margin:0;color:#506962;font-size:14px;line-height:1.7}.noticeBody{padding:20px 25px 24px}.noticeImportant{padding:15px 16px;border:1px solid #f2c9c9;background:#fff7f7;border-radius:14px;color:#693b3b;font-size:14px;line-height:1.75}.noticeImportant strong{color:#b4232f}.demoButtons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}.demoButton{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:10px 11px;font-size:12px;font-weight:850;color:#334155;text-align:center}.noticeResult{padding:12px 14px;border-radius:12px;background:#edf9f5;border:1px solid #cdeade;color:#126556;font-size:13px;line-height:1.65;text-align:center;font-weight:750}.v2box{margin-top:15px;padding:15px 16px;border:1px solid #b9e4d6;background:#effbf6;border-radius:14px;font-size:13px;line-height:1.7;color:#355f54}.v2box b{color:#087463}.updateTitle{margin:0 0 10px;font-size:14px;font-weight:900;color:#173f38}.updateList{display:grid;gap:8px;margin:0;padding:0;list-style:none}.updateList li{position:relative;padding:10px 12px 10px 35px;border:1px solid #dbe8e3;background:#fff;border-radius:11px;color:#465f58;font-size:13px;line-height:1.6}.updateList li:before{content:"✓";position:absolute;left:12px;top:10px;width:17px;height:17px;border-radius:50%;display:grid;place-items:center;background:#dff7ed;color:#087463;font-size:11px;font-weight:950}.updateList strong{color:#193e36}.versionArchive{margin-top:14px;padding:13px 15px;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0;color:#5d6a72;font-size:12.5px;line-height:1.7}.versionArchive b{color:#334155}.noticeActions{display:flex;justify-content:flex-end;margin-top:18px}.noticeConfirm{border:0;border-radius:11px;background:#0b8f7b;color:#fff;padding:11px 18px;font-weight:900}
 @media(max-width:800px){.head{align-items:flex-start;flex-direction:column;padding:12px 0}.hero{padding:38px 0}.hero img{width:112px;border-radius:24px}.hero-row{gap:14px}.launch-grid{grid-template-columns:1fr}.launch-card{min-height:0}.launch-card.specialist{grid-column:auto}.section{padding-top:42px}}
-@media(max-width:520px){.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}.card-actions,.demoButtons{grid-template-columns:1fr}.noticeTop,.noticeBody{padding-left:17px;padding-right:17px}.noticeConfirm{width:100%}}
+@media(max-width:520px){.history-grid{grid-template-columns:1fr}.wrap{width:min(100% - 28px,1100px)}.hero img{display:none}.hero h1{font-size:33px}.grade-tabs button{flex:1 1 28%;padding:10px 8px}.card-actions,.demoButtons{grid-template-columns:1fr}.noticeTop,.noticeBody{padding-left:17px;padding-right:17px}.noticeConfirm{width:100%}}
 </style>
 </head>
 <body>
 <div class="noticePopup" id="recordGuidePopup" role="dialog" aria-modal="true" aria-labelledby="recordGuideTitle">
  <div class="noticeDialog">
   <div class="noticeTop">
-   <span class="noticeKicker">놀평어 VERSION 3 · 행발 v3.1 업데이트</span>
-   <h2 id="recordGuideTitle">버전 3의 편의성에 <em>행발 v3.1 성장 중심 서술</em>을 더했습니다.</h2>
-   <p>현재 1~6학년 2학기 교과·창체와 교과전담은 버전 3, 행발은 버전 3.1이 기본 실행 버전입니다. 기존 행발 v3과 버전 2·버전 1 자료도 보관되어 필요할 때 다시 사용할 수 있습니다.</p>
+   <span class="noticeKicker">놀평어 VERSION 4 업데이트</span>
+   <h2 id="recordGuideTitle">저장 후 바로 이어지는 <em>다음 학생 작성 흐름</em>을 개선했습니다.</h2>
+   <p>현재 1~6학년 2학기 교과·창체·행발의 기본 실행 버전은 버전 4입니다. 교과전담은 기존 최신 버전 3을 유지합니다.</p>
   </div>
   <div class="noticeBody">
    <div class="v2box">
-    <div class="updateTitle">버전 2 → 버전 3 주요 업데이트</div>
+    <div class="updateTitle">버전 4 주요 업데이트</div>
     <ul class="updateList">
-     <li><strong>학생 전체선택/해제 개선</strong><br>한 학생·여러 학생 일괄 모드에서 전체선택을 더 쉽게 사용할 수 있고, 전체선택을 다시 누르면 한 번에 해제할 수 있도록 정리했습니다.</li>
-     <li><strong>평어 결과를 더 넓게 확인</strong><br>학생별·일괄 생성 결과가 답답하지 않도록 결과 영역과 넓게 보기 동작을 개선했습니다.</li>
-     <li><strong>창체·행발 내용 보강</strong><br>창의적 체험활동과 행동특성 및 종합의견의 활동·관찰 키워드와 평어 생성 내용을 보강해 더 다양한 기록 상황을 반영하도록 개선했습니다.</li>
-     <li><strong>버전 2의 저장 보호 기능 유지</strong><br>‘내 평어함’ 이동 완료 확인과 기존 평어 덮어쓰기 보호 등 버전 2의 핵심 기능은 그대로 유지됩니다.</li>
-     <li><strong>이전 버전도 계속 이용 가능</strong><br>메인 화면에서 버전 2 또는 버전 1 탭을 선택하면 당시 Gemini 공유 링크와 HTML 다운로드·전체 코드 복사를 이용할 수 있습니다.</li>
-    </ul>
-   </div>
-
-   <div class="v2box" style="margin-top:15px">
-    <div class="updateTitle">행발 버전 3 → 버전 3.1 주요 업데이트</div>
-    <ul class="updateList">
-     <li><strong>기본 서술을 성장 중심으로 조정</strong><br>보완할 점을 곧바로 부정적으로 단정하기보다 현재 가능한 행동과 강점을 살리고, 필요한 연습·도움·다음 성장 방향이 자연스럽게 이어지도록 개선했습니다.</li>
-     <li><strong>지원 필요 표현을 더 완곡하게</strong><br>‘부족함·문제 있음’처럼 학생 자체를 규정하는 표현을 피하고, 관찰된 행동을 사실대로 유지하면서 교육적으로 기록하도록 보강했습니다.</li>
-     <li><strong>말투·표현 선택 보강</strong><br>학년별 생성기에서 기본 성장 중심 표현과 조금 더 직접적인 표현, 부드럽게 돌려 쓰는 표현 등을 선택할 수 있도록 정리했습니다. 직접적인 모드에서도 낙인·비난 표현은 사용하지 않습니다.</li>
-     <li><strong>기존 v3 기능은 그대로 유지</strong><br>전체선택/해제, 결과 넓게 보기, 내 평어함 저장 보호 등 버전 3에서 개선한 기능은 유지하면서 행발 문장 생성 방식만 한 단계 더 다듬었습니다.</li>
+     <li><strong>다음 학생 준비/작성 흐름 추가</strong><br>평어 저장을 마친 뒤 현재 작업용 키워드와 방금 생성한 결과를 정리하고 학생 선택 영역으로 바로 이동할 수 있습니다.</li>
+     <li><strong>저장 전에도 빠르게 다음 학생으로 이동</strong><br>필요할 때 키워드 선택을 한 번에 정리하고 학생 선택 영역으로 이동할 수 있어 반복 작성 동선을 줄였습니다.</li>
+     <li><strong>교과·창체·행발 공통 적용</strong><br>1~6학년 세 영역 모두 같은 작업 흐름을 사용할 수 있도록 정리했습니다.</li>
+     <li><strong>기존 저장 보호 기능 유지</strong><br>내 평어함 저장 확인, 기존 내용 교체/이어붙이기 구분, 저장 결과 확인 등 기존 안전 기능은 유지됩니다.</li>
     </ul>
    </div>
 
    <div class="noticeImportant" style="margin-top:15px"><strong>권장 설정 · 생성 성능이 가장 안정적입니다</strong>
-    <p style="margin:7px 0 0"><b>선택한 키워드 수와 생성할 문장 수를 같게 맞춰 주세요.</b> 예를 들어 키워드를 3개 선택했다면 생성 문장 수도 3문장으로 설정하는 것을 권장합니다.</p>
-    <div class="noticeResult" style="margin-top:10px">권장: 선택 키워드 3개 → 생성 문장 3개 · 선택 키워드 5개 → 생성 문장 5개</div>
+    <p style="margin:7px 0 0"><b>선택한 키워드 수와 생성할 문장 수를 같게 맞춰 주세요.</b> 예: 키워드 3개 → 3문장.</p>
    </div>
 
-   <div class="noticeImportant" style="margin-top:12px"><strong>‘내 평어함’ 저장도 마지막에 확인하세요</strong>
-    <p style="margin:7px 0 0">AI 평어를 생성한 것만으로는 ‘내 평어함’에 저장되지 않습니다. 학생별 결과 아래에서 필요한 붙이기 방식을 선택한 뒤 완료 안내와 ‘내 평어함’의 최종 내용을 확인해 주세요.</p>
-    <div class="demoButtons">
-     <div class="demoButton">기존 평어함 지우고 붙이기</div>
-     <div class="demoButton">평어함 뒤에 이어붙이기</div>
-    </div>
-   </div>
-
-   <div class="versionArchive"><b>버전 안내</b> · 교과·창체와 교과전담은 <b>v3</b>, 행발은 <b>v3.1</b> 사용을 권장합니다. 기존 행발 v3 HTML은 보관되어 있으며, 메인 화면의 버전 2·버전 1 탭에서도 이전 배포본을 계속 이용할 수 있습니다.</div>
-   <div class="noticeActions"><button class="noticeConfirm" id="recordGuideConfirm" type="button">업데이트 확인 · 최신 버전 사용하기</button></div>
+   <div class="versionArchive"><b>이전 업데이트가 궁금하다면</b> · 메인 화면의 <b>‘버전 1~4 업데이트 내용 요약 보기’</b>를 펼치면 각 버전의 핵심 변화를 확인할 수 있습니다. 이전 버전 HTML과 공유 링크도 계속 보관합니다.</div>
+   <div class="noticeActions"><button class="noticeConfirm" id="recordGuideConfirm" type="button">업데이트 확인 · 버전 4 사용하기</button></div>
   </div>
  </div>
 </div>
@@ -96,32 +77,50 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 
 <main>
 <section class="hero"><div class="wrap hero-row"><div>
-<div class="eyebrow">놀평어 VERSION 3 · 행발 v3.1 성장 중심 표현 개선</div>
-<h1>교과·창체 v3, <em>행발 v3.1</em>을 바로 실행하세요.</h1>
-<p>1~6학년 2학기 교과·창체와 교과전담은 버전 3, 행발은 성장 중심 서술과 완곡 표현을 보강한 버전 3.1을 제공합니다. Gemini 공유 링크로 바로 열 수 있고 HTML 원본 다운로드·전체 코드 복사도 지원합니다.</p>
-<div class="hero-actions"><a class="pill" href="#launch">생성기 선택 ↓</a><a class="pill" href="manual.html?version=v3">코드 복사 매뉴얼 ↗</a></div>
+<div class="eyebrow">놀평어 VERSION 4 · 다음 학생 작성 흐름 개선</div>
+<h1>최신 <em>버전 4</em>를 바로 실행하세요.</h1>
+<p>1~6학년 2학기 교과·창체·행발은 버전 4로 제공합니다. 저장 후 키워드와 방금 생성한 결과를 정리하고 다음 학생 선택으로 바로 이어지는 작업 흐름을 보강했습니다. 교과전담은 버전 3이 최신입니다.</p>
+<div class="hero-actions"><a class="pill" href="#launch">생성기 선택 ↓</a><a class="pill" href="manual.html?version=v4">코드 복사 매뉴얼 ↗</a></div>
 </div><img src="assets/knolrecord-logo.png" alt="놀평어 로고"></div></section>
 
 <section class="section wrap" id="launch">
 <h2>놀평어 생성기</h2>
-<p class="lead">1~6학년 교과·창체는 v3, 행발은 v3.1이 최신입니다. 이전 버전이 필요한 경우 버전 2 또는 버전 1 탭을 선택하세요.</p>
+<p class="lead">1~6학년 교과·창체·행발은 버전 4가 최신입니다. 교과전담은 버전 3을 유지하며, 이전 버전도 탭에서 계속 이용할 수 있습니다.</p>
 <div class="version-tabs" role="tablist" aria-label="놀평어 버전 선택">
- <button id="ver-v3" class="active" type="button" role="tab" aria-selected="true">버전 3 계열 · 최신</button>
+ <button id="ver-v4" class="active" type="button" role="tab" aria-selected="true">버전 4 · 최신</button>
+ <button id="ver-v3" type="button" role="tab" aria-selected="false">버전 3 계열</button>
  <button id="ver-v2" type="button" role="tab" aria-selected="false">버전 2</button>
  <button id="ver-v1" class="old" type="button" role="tab" aria-selected="false">버전 1</button>
 </div>
 <div class="version-info" id="versionInfo"></div>
+<details class="version-history">
+ <summary>버전 1~4 업데이트 내용 요약 보기</summary>
+ <div class="history-grid">
+  <article class="history-card"><span class="mini">VERSION 1</span><h3>기본 평어 생성기 구축</h3><p>1~6학년 교과·창체·행발 생성기를 제공하고, Gemini 공유 링크와 HTML 다운로드·코드 복사 방식의 기본 구조를 마련했습니다.</p></article>
+  <article class="history-card"><span class="mini">VERSION 2</span><h3>내 평어함 저장 안전성 강화</h3><p>기존 평어 교체와 뒤에 이어붙이기를 구분하고, 저장 완료 내용과 기존 내용 덮어쓰기 여부를 확인할 수 있도록 저장 보호 흐름을 강화했습니다.</p></article>
+  <article class="history-card"><span class="mini">VERSION 3 계열</span><h3>선택·결과 확인·평어 내용 개선</h3><p>학생 전체선택/해제와 결과 넓게 보기를 개선하고 창체·행발 내용을 보강했습니다. v3.1에서는 행발의 성장 중심 서술, 완곡 표현과 말투 선택을 추가로 다듬었습니다.</p></article>
+  <article class="history-card latest"><span class="mini">VERSION 4 · 최신</span><h3>다음 학생 작성 흐름 개선</h3><p>저장 후 작업용 키워드와 방금 생성한 결과를 정리하고 학생 선택으로 바로 이동하는 기능을 1~6학년 교과·창체·행발에 공통 적용했습니다.</p></article>
+ </div>
+</details>
 <div class="grade-tabs" id="gradeTabs" role="tablist" aria-label="학년·교과전담 선택"></div>
 <div class="launch-grid" id="launchGrid" aria-live="polite"></div>
 <div class="notice"><strong>공유 링크가 열리지 않을 때</strong> · 각 카드의 <b>HTML 전체 복사</b>를 누른 뒤 <a href="manual.html?version=v3" style="text-decoration:underline">코드 복사 매뉴얼</a>을 따라 Gemini Canvas에서 실행할 수 있습니다. 다운로드한 HTML은 백업·보관용으로도 사용할 수 있습니다.</div>
 </section>
 </main>
-<footer><div class="wrap">놀평어 · 놀퀴즈 서비스 | 교과·창체·교과전담 v3 · 행발 v3.1</div></footer>
+<footer><div class="wrap">놀평어 · 놀퀴즈 서비스 | 1~6학년 교과·창체·행발 v4 · 교과전담 v3</div></footer>
 
 <script>
 (()=>{
 'use strict';
 const links={
+ v4:{
+  1:{subject:'https://share.gemini.google/dOrKsri1GeJn',creative:'https://share.gemini.google/MlQW0JTLstkm',behavior:'https://share.gemini.google/sd6ZaqoykQvb'},
+  2:{subject:'https://share.gemini.google/vj7xHU9moZpx',creative:'https://share.gemini.google/WIz6C0a0hvKw',behavior:'https://share.gemini.google/YvyAjNylnHOu'},
+  3:{subject:'https://share.gemini.google/UMnK4rg2CxF4',creative:'https://share.gemini.google/DVvZjsbf1Vw6',behavior:'https://share.gemini.google/ccYuWhjfdrnA'},
+  4:{subject:'https://share.gemini.google/4k2FgtaiTTQY',creative:'https://share.gemini.google/KB3b1utpugh9',behavior:'https://share.gemini.google/iXphWNxqm5EB'},
+  5:{subject:'https://share.gemini.google/pJp3Xwjdf8WZ',creative:'https://share.gemini.google/dh6yBaOGvh5n',behavior:'https://share.gemini.google/xUXnyuoZ3THM'},
+  6:{subject:'https://share.gemini.google/yaY8TCwi5UVR',creative:'https://share.gemini.google/jgUdbwfz38Go',behavior:'https://share.gemini.google/WCyyHMvEsY3U'}
+ },
  v3:{
   1:{subject:'https://share.gemini.google/TuxpvRsttLrl',creative:'https://share.gemini.google/mmibdUVb5iS5',behavior:'https://share.gemini.google/Y4XWTqAlApCO'},
   2:{subject:'https://share.gemini.google/J1hQkq64JT6O',creative:'https://share.gemini.google/hG4p9wuWNToX',behavior:'https://share.gemini.google/jfNFQ5krkw1r'},
@@ -153,28 +152,30 @@ const links={
 const types=[{key:'subject',label:'교과 평어',desc:'교과학습발달상황 평어 생성기'},{key:'creative',label:'창체 평어',desc:'창의적 체험활동 평어 생성기'},{key:'behavior',label:'행발',desc:'행동특성 및 종합의견 생성기'}];
 const v1Paths=(g,t)=>`codes/g${g}-s2-${t}-v1.html`;
 const v2Paths=(g,t)=>`codes/v2/g${g}-s2-${t}.html`;
+const v4Paths=(g,t)=>`codes/v4/g${g}-s2-${t}.html`;
 const v3Paths=(g,t)=>`codes/v3/g${g}-s2-${t}.html`;
 const v31BehaviorPaths=g=>`codes/v3.1/g${g}-s2-behavior.html`;
 const tabs=document.getElementById('gradeTabs'),grid=document.getElementById('launchGrid'),versionInfo=document.getElementById('versionInfo');
-let version='v3';
+let version='v4';
 const savedGrade=localStorage.getItem('nolpyeongeo-grade');
 let grade=savedGrade==='specialist'?'specialist':(/^[1-6]$/.test(savedGrade)?Number(savedGrade):6);
 const cache=new Map();
 
-function effectiveVersion(g){return version}
-function codePath(g,t){const v=effectiveVersion(g);if(g==='specialist')return v==='v3'?'codes/v3/specialist-s2-subject.html':(v==='v2'?'codes/v2/specialist-s2-subject.html':'codes/v1/specialist-s2-subject.html');return v==='v3'?(t==='behavior'?v31BehaviorPaths(g):v3Paths(g,t)):(v==='v2'?v2Paths(g,t):v1Paths(g,t))}
+function effectiveVersion(g){return g==='specialist'&&version==='v4'?'v3':version}
+function codePath(g,t){const v=effectiveVersion(g);if(g==='specialist')return v==='v3'?'codes/v3/specialist-s2-subject.html':(v==='v2'?'codes/v2/specialist-s2-subject.html':'codes/v1/specialist-s2-subject.html');return v==='v4'?v4Paths(g,t):(v==='v3'?(t==='behavior'?v31BehaviorPaths(g):v3Paths(g,t)):(v==='v2'?v2Paths(g,t):v1Paths(g,t)))}
 async function copyText(text){try{await navigator.clipboard.writeText(text);return true}catch{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch{}ta.remove();return ok}}
 async function loadCode(path){if(cache.has(path))return cache.get(path);const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw Error('load');const t=await r.text();cache.set(path,t);return t}
 function setVersion(v){
  version=v;
- for(const x of ['v3','v2','v1']){const el=document.getElementById('ver-'+x);el.classList.toggle('active',v===x);el.setAttribute('aria-selected',String(v===x))}
+ for(const x of ['v4','v3','v2','v1']){const el=document.getElementById('ver-'+x);el.classList.toggle('active',v===x);el.setAttribute('aria-selected',String(v===x))}
  versionInfo.className='version-info'+(v==='v1'?' old':'');
- if(v==='v3')versionInfo.innerHTML='<b>버전 3 계열 · 현재 권장</b> — 교과·창체와 교과전담은 v3, <b>행발은 v3.1</b>입니다. 행발 v3.1은 성장 중심 서술, 완곡 표현, 말투 선택을 보강했습니다. <b>선택 키워드 수와 생성 문장 수를 같게 맞추는 것을 권장</b>합니다.';
+ if(v==='v4')versionInfo.innerHTML='<b>버전 4 · 현재 권장</b> — 1~6학년 교과·창체·행발에 <b>다음 학생 준비/작성 흐름</b>을 적용했습니다. 저장 후 작업용 키워드와 방금 생성한 결과를 정리하고 학생 선택으로 바로 이어갈 수 있습니다. 교과전담은 v3이 최신입니다.';
+ else if(v==='v3')versionInfo.innerHTML='<b>버전 3 계열</b> — 전체선택/해제와 결과 보기 편의성을 개선했고, 창체·행발 내용을 보강했습니다. 행발은 v3.1에서 성장 중심 서술과 완곡 표현을 추가 개선했습니다.';
  else if(v==='v2')versionInfo.innerHTML='<b>버전 2</b> — 내 평어함 이동 확인과 기존 평어 덮어쓰기 보호가 강화된 이전 배포본입니다.';
  else versionInfo.innerHTML='<b>버전 1</b> — 최초 배포본의 공유 링크와 HTML을 보관용으로 제공합니다. 특별한 이유가 없다면 버전 3 사용을 권장합니다.';
  renderCards()
 }
-document.getElementById('ver-v3').onclick=()=>setVersion('v3');document.getElementById('ver-v2').onclick=()=>setVersion('v2');document.getElementById('ver-v1').onclick=()=>setVersion('v1');
+document.getElementById('ver-v4').onclick=()=>setVersion('v4');document.getElementById('ver-v3').onclick=()=>setVersion('v3');document.getElementById('ver-v2').onclick=()=>setVersion('v2');document.getElementById('ver-v1').onclick=()=>setVersion('v1');
 
 function renderTabs(){tabs.innerHTML='';for(const g of [1,2,3,4,5,6,'specialist']){const b=document.createElement('button');b.type='button';b.textContent=g==='specialist'?'교과전담':g+'학년';b.className=g===grade?'active':'';b.onclick=()=>{grade=g;localStorage.setItem('nolpyeongeo-grade',String(g));renderTabs();renderCards()};tabs.appendChild(b)}}
 function renderCards(){
@@ -188,8 +189,8 @@ function makeCard(g,t){
  const path=codePath(g,t.key);
  const ev=effectiveVersion(g);
  const gemini=links[ev][g][t.key];
- const badge=ev==='v3'?(t.key==='behavior'?'버전 3.1 · 최신':'버전 3 · 최신'):(ev==='v2'?(g==='specialist'&&version==='v3'?'버전 2 · 교과전담 최신':'버전 2'):'버전 1');
- card.innerHTML=`<div class="card-top"><span class="card-meta">${g==='specialist'?'교과전담 · 2학기':g+'학년 · 2학기'}</span><span class="badge ${ev==='v1'?'old':''}">${badge}</span></div><h3>${label}</h3><p>${t.desc}입니다. Gemini에서 바로 실행하거나 HTML 원본을 보관·복사할 수 있습니다.</p><a class="main-btn" href="${gemini}" target="_blank" rel="noopener noreferrer">Gemini에서 바로 열기 ↗</a><div class="card-actions"><a class="sub-btn" href="${path}" download>HTML 다운로드 ↓</a><button class="sub-btn copy">HTML 전체 복사</button></div><a class="manual-link" href="manual.html?version=${ev}&grade=${g}&type=${t.key}#codes">공유 링크가 안 열리면 코드 복사 방법 보기 →</a><div class="help" role="status"></div>`;
+ const badge=version==='v4'&&g==='specialist'?'버전 3 · 교과전담 최신':(ev==='v4'?'버전 4 · 최신':(ev==='v3'?(t.key==='behavior'&&g!=='specialist'?'버전 3.1':'버전 3'):(ev==='v2'?'버전 2':'버전 1')));
+ card.innerHTML=`<div class="card-top"><span class="card-meta">${g==='specialist'?'교과전담 · 2학기':g+'학년 · 2학기'}</span><span class="badge ${ev==='v1'?'old':''}">${badge}</span></div><h3>${label}</h3><p>${t.desc}입니다. Gemini에서 바로 실행하거나 HTML 원본을 보관·복사할 수 있습니다.</p><a class="main-btn" href="${gemini}" target="_blank" rel="noopener noreferrer">Gemini에서 바로 열기 ↗</a><div class="card-actions"><a class="sub-btn" href="${path}" download>HTML 다운로드 ↓</a><button class="sub-btn copy">HTML 전체 복사</button></div><a class="manual-link" href="manual.html?version=${version}&grade=${g}&type=${t.key}#codes">공유 링크가 안 열리면 코드 복사 방법 보기 →</a><div class="help" role="status"></div>`;
  const btn=card.querySelector('.copy'),state=card.querySelector('.help');
  btn.onclick=async()=>{const old=btn.textContent;btn.disabled=true;btn.textContent='불러오는 중…';try{const code=await loadCode(path);if(!await copyText(code))throw Error('copy');btn.textContent='✓ 복사 완료';state.textContent='HTML 전체 코드가 클립보드에 복사되었습니다.'}catch{btn.textContent='다시 시도';state.textContent='코드를 불러오거나 복사하지 못했습니다.'}finally{setTimeout(()=>{btn.disabled=false;btn.textContent=old},1700)}};
  return card;
